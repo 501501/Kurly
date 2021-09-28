@@ -5,6 +5,9 @@
 
 <configuration>
 	<typeAliases>
+	<typeAlias type="e.market.kurly.board.BoardFilesDTO" alias="BoardFilesDTO"/>
+		<typeAlias type="e.market.kurly.mypage.qna.QnaDTO" alias="QnaDTO"/>
 		
+		<typeAlias type="java.lang.Long" alias="Long"/>
 	</typeAliases>
 </configuration>

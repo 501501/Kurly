@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="e.market.kurly.mypage.qna.QnaDAO">
+	<insert id="setInsert" parameterType="QnaDTO">
+		<selectKey order="BEFORE" resultType="Long" keyProperty="num">
+			SELECT QNA_SEQ.nextval FROM dual
+		</selectKey>
+		INSERT INTO QNA
+		VALUES (#{num}, #{category}, #{title}, #{orderNum}, #{email_ck}, #{phone_ck}, #{contents})
+	</insert>
+	
+	<insert id="setFile" parameterType="BoardFilesDTO">
+		INSERT INTO QNAFILES
+		VALUES (QNA_SEQ.nextval, #{num}, #{fileName}, #{oriName})
+	</insert>
+ </mapper>
