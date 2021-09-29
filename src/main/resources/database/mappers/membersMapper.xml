@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="e.market.kurly.member.MembersDAO">
+  	<insert id="setRegisterMember" parameterType="e.market.kurly.members.MembersDTO">
+  		insert into MEMBERS (ID, PW, NAME, EMAIL, PHONENUMBER, ADDRESS, GENDER, BIRTH)
+  		values (#{id}, #{pw}, #{name}, #{email}, #{phonenumber}, #{address}, #{gender}, #{birth})
+  	</insert>
+  	
+  	<select id="getIdCheck" parameterType="e.market.kurly.members.MembersDTO" resultType="e.market.kurly.members.MembersDTO">
+  		select * from MEMBERS
+  		where id = #{id}
+  	</select>
+  
+  </mapper>

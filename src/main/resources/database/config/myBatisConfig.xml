@@ -5,6 +5,6 @@
 
 <configuration>
 	<typeAliases>
-		
+		<typeAlias type="e.market.kurly.members.MembersDTO" alias="MembersDTO"/>
 	</typeAliases>
 </configuration>
