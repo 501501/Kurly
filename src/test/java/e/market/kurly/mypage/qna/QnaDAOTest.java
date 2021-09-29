@@ -1,6 +1,11 @@
 package e.market.kurly.mypage.qna;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
+import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +33,7 @@ public class QnaDAOTest extends MyJunitTest {
 		assertEquals(1, result);
 	}
 	
-	@Test
+	//@Test
 	public void setFileTest() throws Exception {
 		BoardFilesDTO boardFilesDTO = new BoardFilesDTO();
 		boardFilesDTO.setNum(1L);

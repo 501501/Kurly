@@ -3,8 +3,10 @@
  */
  
 let files = '<div>';
-files = files + '<input type="file" name="files">';
-files = files + '<button type="button" class="del">업로드 삭제</button></div>';
+files = files + '<input type="file" name="files2">';
+files = files + '<button type="button" class="del">';
+files = files + '업로드 삭제</button>';
+files = files + '</div>';
 
 let count = 1;
 

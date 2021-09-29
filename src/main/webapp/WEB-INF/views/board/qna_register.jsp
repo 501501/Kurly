@@ -46,11 +46,10 @@
 	<textarea rows="10" cols="50" id="contents" name="contents"></textarea>
 	
 	<label for="files"><h3>이미지</h3></label>
-	<input type="file" id="files" name="files">
+	<div id="fileAddResult">
+	<input type="file" id="files" name="files2">
 	<button type="button" id="fileAdd">업로드 추가</button>
-
-	<div id="fileAddResult">	
-	</div>	
+	</div>
 	
 	<br>
 	<div>- 파일은 최대 5개까지 업로드가 지원됩니다.</div>
