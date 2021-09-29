@@ -1,5 +1,7 @@
 package e.market.kurly.mypage;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +23,11 @@ public class QnaController {
 	@GetMapping("mypage_qna")
 	public ModelAndView mypage_qna() throws Exception {
 		ModelAndView mv = new ModelAndView();
+	
+		List<QnaDTO> ar = qnaService.getList();
+		mv.addObject("list", ar);
 		mv.setViewName("board/qna");
+		
 		return mv;
 	}
 
@@ -43,6 +49,13 @@ public class QnaController {
 		ModelAndView mv = new ModelAndView();
 		int result = qnaService.setInsert(qnaDTO, files2);
 		mv.setViewName("redirect:./mypage_qna");
+		return mv;
+	}
+	
+	@GetMapping("select")
+	public ModelAndView select() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("board/select");
 		return mv;
 	}
 }

@@ -1,5 +1,6 @@
 package e.market.kurly.mypage.qna;
 
+import java.sql.Date;
 import java.util.List;
 
 import e.market.kurly.board.BoardFilesDTO;
@@ -12,6 +13,7 @@ public class QnaDTO {
 	private String email_ck;
 	private String phone_ck;
 	private String contents;
+	private Date regDate;
 	
 	private List<BoardFilesDTO> files;
 	
@@ -69,6 +71,14 @@ public class QnaDTO {
 
 	public void setContents(String contents) {
 		this.contents = contents;
+	}
+	
+	public Date getRegDate() {
+		return regDate;
+	}
+
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
 	}
 
 	public List<BoardFilesDTO> getFiles() {

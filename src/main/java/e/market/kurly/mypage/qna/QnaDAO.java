@@ -22,4 +22,8 @@ public class QnaDAO {
 	public int setFile(BoardFilesDTO boardFilesDTO) throws Exception {
 		return sqlSession.insert(NAMESPACE+"setFile", boardFilesDTO);
 	}
+	
+	public List<QnaDTO> getList() throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getList");
+	}
 }

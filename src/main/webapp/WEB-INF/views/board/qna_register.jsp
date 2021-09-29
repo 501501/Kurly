@@ -13,17 +13,17 @@
 	<h3>제목</h3>
 	  <select name="category">
 	    <option value="0">선택해주세요.</option>
-	    <option value="1">배송지연/불만</option>
-	    <option value="2">컬리패스 (무료배송)</option>
-	    <option value="3">반품문의</option>
-	    <option value="4">A/S문의</option>
-	    <option value="5">환불문의</option>
-	    <option value="6">주문결제문의</option>
-	    <option value="7">회원정보문의</option>
-	    <option value="8">취소문의</option>
-	    <option value="9">교환문의</option>
-	    <option value="10">상품정보문의</option>
-	    <option value="11">기타문의</option>
+	    <option value="배송지연/불만">배송지연/불만</option>
+	    <option value="컬리패스 (무료배송)">컬리패스 (무료배송)</option>
+	    <option value="반품문의">반품문의</option>
+	    <option value="A/S문의">A/S문의</option>
+	    <option value="환불문의">환불문의</option>
+	    <option value="주문결제문의">주문결제문의</option>
+	    <option value="회원정보문의">회원정보문의</option>
+	    <option value="취소문의">취소문의</option>
+	    <option value="교환문의">교환문의</option>
+	    <option value="상품정보문의">상품정보문의</option>
+	    <option value="기타문의">기타문의</option>
 	  </select>
 	
 	<label for="title"></label>

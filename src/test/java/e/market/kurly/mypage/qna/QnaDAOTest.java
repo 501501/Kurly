@@ -43,4 +43,5 @@ public class QnaDAOTest extends MyJunitTest {
 		
 		assertEquals(1, result);
 	}
+
 }

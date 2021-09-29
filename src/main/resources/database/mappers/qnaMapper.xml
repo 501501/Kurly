@@ -9,11 +9,15 @@
 			SELECT QNA_SEQ.nextval FROM dual
 		</selectKey>
 		INSERT INTO QNA
-		VALUES (#{num}, #{category}, #{title}, #{orderNum}, #{email_ck}, #{phone_ck}, #{contents})
+		VALUES (#{num}, #{category}, #{title}, #{orderNum}, #{email_ck}, #{phone_ck}, #{contents}, sysdate)
 	</insert>
 	
 	<insert id="setFile" parameterType="BoardFilesDTO">
 		INSERT INTO QNAFILES
 		VALUES (QNA_SEQ.nextval, #{num}, #{fileName}, #{oriName})
 	</insert>
+	
+	<select id="getList" resultType="QnaDTO">
+		SELECT * FROM QNA ORDER BY NUM DESC
+	</select>
  </mapper>

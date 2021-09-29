@@ -43,5 +43,8 @@ public class QnaService {
 		}
 		return result;
 	}
-
+	
+	public List<QnaDTO> getList() throws Exception {
+		return qnaDAO.getList();
+	}
 }
