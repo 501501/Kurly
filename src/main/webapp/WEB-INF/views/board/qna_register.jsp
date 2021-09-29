@@ -9,26 +9,6 @@
 </head>
 <body>
 <form action="./mypage_qna_register" method="post" enctype="multipart/form-data">
-	<!-- <h1>1:1 문의</h1>
-	
-	<h3>category</h3>
-	<input type="text" name="category">
-	
-	<h3>title</h3>
-	<input type="text" name="title">
-	
-	<h3>orderNum</h3>
-	<input type="text" name="orderNum">
-	
-	<h3>email_ck</h3>
-	<input type="text" name="email_ck">
-	
-	<h3>phone_ck</h3>
-	<input type="text" name="phone_ck">
-	
-	<h3>contents</h3>
-	<input type="text" name="contents"> -->
-	
 	
 	<h3>제목</h3>
 	  <select name="category">
@@ -66,10 +46,10 @@
 	<textarea rows="10" cols="50" id="contents" name="contents"></textarea>
 	
 	<label for="files"><h3>이미지</h3></label>
-	<!-- <input type="file" name="files"> -->
+	<input type="file" id="files" name="files">
 	<button type="button" id="fileAdd">업로드 추가</button>
-	
-	<div id="fileAddResult">
+
+	<div id="fileAddResult">	
 	</div>	
 	
 	<br>

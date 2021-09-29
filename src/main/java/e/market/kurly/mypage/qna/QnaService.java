@@ -27,18 +27,17 @@ public class QnaService {
 		File file = new File(realPath);
 
 		int result = qnaDAO.setInsert(qnaDTO);
-
 		for (MultipartFile multipartFile : files) {
-			String fileName = fileManager.fileSave(multipartFile, file);
-			System.out.println(fileName);
-			BoardFilesDTO boardFilesDTO = new BoardFilesDTO();
-			boardFilesDTO.setFileName(fileName);
-			boardFilesDTO.setOriName(multipartFile.getOriginalFilename());
-			boardFilesDTO.setNum(qnaDTO.getNum());
-
-			result = qnaDAO.setFile(boardFilesDTO);
+				String fileName = fileManager.fileSave(multipartFile, file);
+				System.out.println(fileName);
+				BoardFilesDTO boardFilesDTO = new BoardFilesDTO();
+				boardFilesDTO.setFileName(fileName);
+				boardFilesDTO.setOriName(multipartFile.getOriginalFilename());
+				boardFilesDTO.setNum(qnaDTO.getNum());
+	
+				result = qnaDAO.setFile(boardFilesDTO);
 		}
-
+		
 		return result;
 	}
 }
