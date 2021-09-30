@@ -8,6 +8,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Component
 public class FileManager {
+	//fileDelete
+	public void fileDelete(File file) throws Exception {
+		file.delete();
+	}
+	
 	// fileSave
 	public String fileSave(MultipartFile multipartFile, File file) throws Exception {
 		if (!file.exists()) {

@@ -27,10 +27,11 @@
 			<tr class="select" data-list-num="${dto.num}">
 				<td>${dto.num}</td>
 				<td>${dto.category}</td>
-				<td><a href="./select?num=${dto.num}">${dto.title}</a></td>
+				<td>${dto.title}</td>
 				<td>작성자 ID</td>
 				<td>${dto.regDate}</td>
 			</tr>
+			<tr id="selectResult${dto.num}" colspan="5"></tr>
 			</c:forEach>
 		</tbody>
 	</table>

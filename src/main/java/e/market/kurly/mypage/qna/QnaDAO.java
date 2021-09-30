@@ -26,4 +26,16 @@ public class QnaDAO {
 	public List<QnaDTO> getList() throws Exception {
 		return sqlSession.selectList(NAMESPACE+"getList");
 	}
+	
+	public QnaDTO getOne(QnaDTO qnaDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getOne", qnaDTO);
+	}
+	
+	public List<BoardFilesDTO> getFiles(QnaDTO qnaDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getFiles", qnaDTO);
+	}
+	
+	public int setUpdate(QnaDTO qnaDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"setUpdate", qnaDTO);
+	}
 }

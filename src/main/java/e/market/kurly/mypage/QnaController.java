@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import e.market.kurly.board.BoardFilesDTO;
 import e.market.kurly.mypage.qna.QnaDTO;
 import e.market.kurly.mypage.qna.QnaService;
 
@@ -19,7 +20,7 @@ public class QnaController {
 
 	@Autowired
 	private QnaService qnaService;
-
+	
 	@GetMapping("mypage_qna")
 	public ModelAndView mypage_qna() throws Exception {
 		ModelAndView mv = new ModelAndView();
@@ -30,14 +31,30 @@ public class QnaController {
 		
 		return mv;
 	}
-
+	
+	// qna 수정
+	@GetMapping("mypage_qna/update")
+	public ModelAndView qna_update(Long num) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		QnaDTO qnaDTO = new QnaDTO();
+		qnaDTO.setNum(num);
+		qnaDTO = qnaService.getOne(qnaDTO);
+		
+		mv.setViewName("board/qna_update");
+		mv.addObject("dto", qnaDTO);
+		return mv;
+	}
+	
+	// qna 등록
 	@GetMapping("mypage_qna_register")
 	public ModelAndView qna_register() throws Exception {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("board/qna_register");
 		return mv;
 	}
-
+	
+	// qna 등록
 	@PostMapping("mypage_qna_register")
 	public ModelAndView qna_register(QnaDTO qnaDTO, MultipartFile[] files2) throws Exception {
 		System.out.println("upload");
@@ -52,10 +69,12 @@ public class QnaController {
 		return mv;
 	}
 	
-	@GetMapping("select")
-	public ModelAndView select() throws Exception {
+	// file 다운로드
+	@GetMapping("down")
+	public ModelAndView fileDown(BoardFilesDTO boardFilesDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("board/select");
+		mv.addObject("dto", boardFilesDTO);
+		mv.setViewName("fileDown");
 		return mv;
 	}
 }

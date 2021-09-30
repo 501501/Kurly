@@ -20,4 +20,17 @@
 	<select id="getList" resultType="QnaDTO">
 		SELECT * FROM QNA ORDER BY NUM DESC
 	</select>
+	
+	<select id="getOne" parameterType="QnaDTO" resultType="QnaDTO">
+		SELECT * FROM QNA WHERE NUM = #{num}
+	</select>
+	
+	<select id="getFiles" parameterType="QnaDTO" resultType="BoardFilesDTO">
+		SELECT * FROM QNAFILES WHERE NUM = #{num}
+	</select>
+	
+	<update id="setUpdate" parameterType="QnaDTO">
+		UPDATE QNA SET CATEGORY = #{category}, TITLE = #{title}, ORDERNUM = #{orderNum}, EMAIL_CK = #{email_ck}, PHONE_CK = #{phone_ck}, CONTENTS = #{contents}
+		WHERE NUM = #{num}
+	</update>
  </mapper>

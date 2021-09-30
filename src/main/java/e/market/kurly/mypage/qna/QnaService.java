@@ -29,7 +29,9 @@ public class QnaService {
 
 		int result = qnaDAO.setInsert(qnaDTO);
 		
-		if (files.length != 0) {
+		System.out.println(files.length);
+		
+		if (files.length > 0) {
 			for (MultipartFile multipartFile : files) {
 					String fileName = fileManager.fileSave(multipartFile, file);
 					System.out.println(fileName);
@@ -46,5 +48,17 @@ public class QnaService {
 	
 	public List<QnaDTO> getList() throws Exception {
 		return qnaDAO.getList();
+	}
+	
+	public QnaDTO getOne(QnaDTO qnaDTO) throws Exception {
+		return qnaDAO.getOne(qnaDTO);
+	}
+	
+	public List<BoardFilesDTO> getFiles(QnaDTO qnaDTO) throws Exception {
+		return qnaDAO.getFiles(qnaDTO);
+	}
+	
+	public int setUpdate(QnaDTO qnaDTO) throws Exception {
+		return qnaDAO.setUpdate(qnaDTO);
 	}
 }

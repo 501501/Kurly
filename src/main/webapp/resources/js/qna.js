@@ -9,5 +9,11 @@ $("#write_btn").click(function(){
 /*qna list 중 클릭한 글 번호 받아오기*/
 let item = document.querySelector('.select');
 $(".select").click(function() {
-	console.log(item.getAttribute('data-list-num'));
+	let num = (this).getAttribute('data-list-num');
+	console.log(num);
+	$.get('../ajax/select?num='+num, function(data){
+		data = data.trim();
+		console.log(data);
+		$("#selectResult"+num).html(data);
+	})
 });
