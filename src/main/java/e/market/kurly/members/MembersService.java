@@ -14,7 +14,13 @@ public class MembersService {
 		return membersDAO.setRegisterMember(membersDTO);
 	}
 	
+	/** 아이디 중복확인*/
 	public MembersDTO getIdCheck(MembersDTO membersDTO) throws Exception {
 		return membersDAO.getIdCheck(membersDTO);
+	}
+	
+	/** 이메일 중복확인 */
+	public MembersDTO getEmailCheck(MembersDTO membersDTO) throws Exception {
+		return membersDAO.getEmailCheck(membersDTO);
 	}
 }

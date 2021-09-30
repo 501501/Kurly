@@ -11,7 +11,30 @@ public class MembersDTO {
 	private String gender;
 	private String birth;
 	
+	/** 이용약관 선택 동의*/
+	private String private_agree;
+	private String private_sms;
+	private String private_email;
 	
+	
+	public String getPrivate_agree() {
+		return private_agree;
+	}
+	public void setPrivate_agree(String private_agree) {
+		this.private_agree = private_agree;
+	}
+	public String getPrivate_sms() {
+		return private_sms;
+	}
+	public void setPrivate_sms(String private_sms) {
+		this.private_sms = private_sms;
+	}
+	public String getPrivate_email() {
+		return private_email;
+	}
+	public void setPrivate_email(String private_email) {
+		this.private_email = private_email;
+	}
 	public String getId() {
 		return id;
 	}

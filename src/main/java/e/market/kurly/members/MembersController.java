@@ -1,10 +1,15 @@
 package e.market.kurly.members;
 
+import java.net.http.HttpResponse;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,7 +25,7 @@ public class MembersController {
 	@GetMapping("join")
 	public ModelAndView member_join() throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("member/join");
+		mv.setViewName("members/join");
 		
 		return mv;
 	}
@@ -44,18 +49,12 @@ public class MembersController {
 	}
 	
 	@PostMapping("idcheck")
-	public ModelAndView getIdCheck(MembersDTO memberDTO) throws Exception {
+	public ModelAndView getIdCheck(MembersDTO membersDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		memberDTO.setId("cccccc");
-		memberDTO = membersService.getIdCheck(memberDTO);
-		System.out.println(memberDTO);
-		
-		
-		System.out.println(memberDTO == null);
+		membersDTO = membersService.getIdCheck(membersDTO);
 		
 		int result = 0;
-		
-		if(memberDTO == null) {
+		if(membersDTO == null) {
 			result = 1;
 		}
 		
@@ -65,12 +64,29 @@ public class MembersController {
 		return mv;
 	} 
 	
+	@PostMapping("emailcheck")
+	public ModelAndView getEmailCheck(MembersDTO membersDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		membersDTO = membersService.getEmailCheck(membersDTO);
+		
+		int result = 0;
+		if(membersDTO == null) {
+			result = 1;
+		}
+		
+		mv.setViewName("common/ajaxResult");
+		mv.addObject("result", result);
+		
+		return mv;
+	}
 	
 	
+
 	@GetMapping("login")
 	public ModelAndView member_login() throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("member/login");
+		mv.setViewName("members/login");
 	
 		return mv;
 	}
