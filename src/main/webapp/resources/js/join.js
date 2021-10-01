@@ -10,16 +10,16 @@
 /** -------------------------------------------------------------------------------- */
 	
 	/* 아이디 조건 함수 */ 			// * "아이디 중복확인" 메세지 부분 손 봐야함 
-	$("#id").keyup(function(){
+	
+	$('#id').focus(function(){
+		 	$('#idResult1').html("• 6자 이상의 영문 혹은 영문과 숫자를 조합");
+		 	$('#idResult2').html("• 아이디 중복확인");
+		 	
+		 	return;		
+	})
+	.keyup(function(){
 	 	let content = $(this).val();
-	 	$('#idResult1').html("• 6자 이상의 영문 혹은 영문과 숫자를 조합");
-	 	$('#idResult2').html("• 아이디 중복확인");
-	 	
-	 	$(this).change(function(){
-			$('#idResult2').html('✕ 아이디 중복확인')
-			.css('color', 'red');
-		});
-	 	
+
 	 	if(content.length<6){
 	 		$('#idResult1').css('color', 'red');
 	 		$('#idResult1').html("✕ 6자 이상의 영문 혹은 영문과 숫자를 조합");
@@ -59,6 +59,11 @@
 			error : function(){
 				alert("error");
 			}			
+		});
+		
+		$("#id").change(function(){
+			$('#idResult2').html('✕ 아이디 중복확인')
+			.css('color', 'red');
 		});
 		
 	}
@@ -207,13 +212,13 @@ function address_searching(){
          }).open();
 }
 
+
 /** form 전송 주소data*/
 
 $("[name=addr3]").blur(function(){
 	let total = $("[name=addr2]").val() +$("[name=addr3]").val();
 	$('#address').val(total);	
 });
-
 
 
 	

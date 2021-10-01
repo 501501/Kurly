@@ -28,7 +28,7 @@
 				<td>
 				<div id="idResult1"></div>
 				<div id="idResult2"></div>
-				<div>asgdgasd</div>
+				<div>awddw</div>
 				</td>
 		  	</tr>
 		  </table>
@@ -132,7 +132,7 @@
 				<div class="check_view">
 					<input type="hidden" id="consentHidden" name="consent[1]" value="n">
 					<label class="check_agree label_block">
-						<input type="checkbox" name="hiddenCheck" value="n">
+						<input type="checkbox" id="private_agree" name="hiddenCheck" value="n">
 						<span class="ico"></span>개인정보 수집·이용 동의 <span class="sub">(선택)</span>
 					</label>
 					<a href="#none" class="link btn_link btn_choice">약관보기 </a>
@@ -145,11 +145,11 @@
 					</label>
 					<div class="check_event email_sms">
 					<label class="label_block check_agree">
-						<input type="checkbox" name="sms" value="n" >
+						<input type="checkbox" id="private_sms" name="sms" value="n">
 						<span class="ico"></span>SMS
 					</label>
 					<label class="label_block check_agree">
-						<input type="checkbox" name="mailling" value="n">
+						<input type="checkbox" id="private_email" name="mailling" value="n">
 						<span class="ico"></span>이메일
 					</label>
 					</div>
