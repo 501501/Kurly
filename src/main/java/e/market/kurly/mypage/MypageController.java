@@ -16,7 +16,7 @@ import e.market.kurly.mypage.qna.QnaService;
 
 @Controller
 @RequestMapping("/mypage/**")
-public class QnaController {
+public class MypageController {
 
 	@Autowired
 	private QnaService qnaService;
