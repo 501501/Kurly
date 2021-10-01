@@ -40,9 +40,21 @@ public class QnaController {
 		QnaDTO qnaDTO = new QnaDTO();
 		qnaDTO.setNum(num);
 		qnaDTO = qnaService.getOne(qnaDTO);
+		qnaDTO.setFiles(qnaService.getFiles(qnaDTO));
 		
 		mv.setViewName("board/qna_update");
 		mv.addObject("dto", qnaDTO);
+		return mv;
+	}
+	
+	@PostMapping("mypage_qna/update")
+	public ModelAndView qna_update(QnaDTO qnaDTO, MultipartFile[] files2) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		// 글 수정
+		int result = qnaService.setUpdate(qnaDTO, files2);
+		
+		mv.setViewName("redirect:../mypage_qna");
 		return mv;
 	}
 	
@@ -66,6 +78,15 @@ public class QnaController {
 		ModelAndView mv = new ModelAndView();
 		int result = qnaService.setInsert(qnaDTO, files2);
 		mv.setViewName("redirect:./mypage_qna");
+		return mv;
+	}
+	
+	// qna 삭제
+	@GetMapping("mypage_qna/delete")
+	public ModelAndView qna_delete(QnaDTO qnaDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = qnaService.setDelete(qnaDTO);
+		mv.setViewName("redirect:../mypage_qna");
 		return mv;
 	}
 	

@@ -29,8 +29,20 @@
 		SELECT * FROM QNAFILES WHERE NUM = #{num}
 	</select>
 	
+	<select id="getFileOne" parameterType="BoardFilesDTO" resultType="BoardFilesDTO">
+		SELECT * FROM QNAFILES WHERE FILENUM = #{fileNum}
+	</select>
+	
 	<update id="setUpdate" parameterType="QnaDTO">
 		UPDATE QNA SET CATEGORY = #{category}, TITLE = #{title}, ORDERNUM = #{orderNum}, EMAIL_CK = #{email_ck}, PHONE_CK = #{phone_ck}, CONTENTS = #{contents}
 		WHERE NUM = #{num}
 	</update>
+	
+	<delete id="setDelete" parameterType="QnaDTO">
+		DELETE FROM QNA WHERE NUM = #{num}
+	</delete>
+	
+	<delete id="setFileDelete" parameterType="BoardFilesDTO">
+		DELETE QNAFILES WHERE FILENUM = #{fileNum}
+	</delete>
  </mapper>

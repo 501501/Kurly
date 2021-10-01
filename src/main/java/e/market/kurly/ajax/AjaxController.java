@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import e.market.kurly.board.BoardFilesDTO;
 import e.market.kurly.mypage.qna.QnaDTO;
 import e.market.kurly.mypage.qna.QnaService;
 
@@ -29,6 +30,20 @@ public class AjaxController {
 		mv.addObject("dto", qnaDTO);
 
 		mv.addObject("num", num);
+		return mv;
+	}
+	
+	@GetMapping("fileDelete")
+	public ModelAndView fileDelete(Long fileNum) throws Exception {
+		System.out.println(fileNum);
+		ModelAndView mv = new ModelAndView();
+		BoardFilesDTO boardFilesDTO = new BoardFilesDTO();
+		boardFilesDTO.setFileNum(fileNum);
+		qnaService.getFileOne(boardFilesDTO);
+		int result = qnaService.setFileDelete(boardFilesDTO);
+		mv.setViewName("common/ajaxResult");
+		mv.addObject("result", result);
+		
 		return mv;
 	}
 	

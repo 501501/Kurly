@@ -38,4 +38,16 @@ public class QnaDAO {
 	public int setUpdate(QnaDTO qnaDTO) throws Exception {
 		return sqlSession.update(NAMESPACE+"setUpdate", qnaDTO);
 	}
+	
+	public int setDelete(QnaDTO qnaDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setDelete", qnaDTO);
+	}
+	
+	public int setFileDelete(BoardFilesDTO boardFilesDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setFileDelete", boardFilesDTO);
+	}
+	
+	public BoardFilesDTO getFileOne(BoardFilesDTO boardFilesDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getFileOne", boardFilesDTO);
+	}
 }
