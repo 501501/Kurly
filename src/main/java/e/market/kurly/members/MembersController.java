@@ -3,6 +3,7 @@ package e.market.kurly.members;
 import java.net.http.HttpResponse;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -80,8 +81,6 @@ public class MembersController {
 		
 		return mv;
 	}
-	
-	
 
 	@GetMapping("login")
 	public ModelAndView member_login() throws Exception {
@@ -90,4 +89,69 @@ public class MembersController {
 	
 		return mv;
 	}
+	
+	@PostMapping("login")
+	public ModelAndView member_login(MembersDTO membersDTO, HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		membersDTO = membersService.getLogin(membersDTO);
+		if(membersDTO != null) {
+			System.out.println("로그인 완료");
+			session.setAttribute("member", membersDTO);
+		} else {
+			System.out.println("로그인 실패");
+		}
+		
+		mv.setViewName("redirect:../");	
+		return mv;
+	}
+	
+	@GetMapping("myInfoCheck")
+	public ModelAndView member_myInfoCheck() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("members/myInfoCheck");
+		
+		return mv;
+	}
+	
+	@GetMapping("myInfo")
+	public ModelAndView member_myInfo() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("members/myInfo");
+		
+		return mv;
+	}
+	
+	@PostMapping("myInfo")
+	public ModelAndView member_myInfo(MembersDTO membersDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		membersDTO = membersService.getLogin(membersDTO);
+		
+		if(membersDTO != null) {
+			mv.setViewName("redirect:./myInfo");
+		} else {
+			mv.setViewName("redirect:./myInfoCheck");
+		}
+		
+		return mv;
+	}
+	
+	@PostMapping("delete")
+	public ModelAndView member_delete(MembersDTO membersDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		membersService.setDeleteId(membersDTO);
+		
+		return mv;
+	}
+	
+	@PostMapping("update")
+	public ModelAndView member_update(MembersDTO membersDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		membersService.setUpdateInfo(membersDTO);
+
+		return mv;
+	}
+	
+	
+	
 }

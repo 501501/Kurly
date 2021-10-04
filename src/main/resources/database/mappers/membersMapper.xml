@@ -18,5 +18,21 @@
   		select * from MEMBERS
   		where email = #{email}
   	</select>
+  	
+  	<select id="getLogin" parameterType="MembersDTO" resultType="MembersDTO">
+  		select * from MEMBERS
+  		where id=#{id} and pw=#{pw}
+  	</select>
+  	
+  	<delete id="setDeleteId" parameterType="MembersDTO">
+  		delete MEMBERS
+  		where id=#{id}
+  	</delete>
+  	
+  	<update id="setUpdateInfo" parameterType="MembersDTO">
+  		update MEMBERS set id=#{id}, pw=#{pw}, name=#{name}, email=#{email}, phonenumber=#{phonenumber}, gender=#{gender},
+  						   birth=#{birth}
+  	</update>
+
   
   </mapper>

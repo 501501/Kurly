@@ -23,4 +23,19 @@ public class MembersService {
 	public MembersDTO getEmailCheck(MembersDTO membersDTO) throws Exception {
 		return membersDAO.getEmailCheck(membersDTO);
 	}
+		
+	/** 로그인 */
+	public MembersDTO getLogin(MembersDTO membersDTO) throws Exception {
+		return membersDAO.getLogin(membersDTO);
+	}
+	
+	/** 아이디삭제 */
+	public int setDeleteId(MembersDTO membersDTO) throws Exception {
+		return membersDAO.setDeleteId(membersDTO);
+	}
+	
+	/** 회원정보 수정 */
+	public int setUpdateInfo(MembersDTO membersDTO) throws Exception {
+		return membersDAO.setUpdateInfo(membersDTO);
+	}
 }
