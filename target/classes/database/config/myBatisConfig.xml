@@ -9,6 +9,7 @@
 		<typeAlias type="e.market.kurly.mypage.qna.QnaDTO" alias="QnaDTO"/>
 		<typeAlias type="e.market.kurly.mypage.offer.OfferDTO" alias="OfferDTO"/>
 		<typeAlias type="e.market.kurly.mypage.echo.EchoDTO" alias="EchoDTO"/>
+		<typeAlias type="e.market.kurly.mypage.bulk.BulkDTO" alias="BulkDTO"/>
 		
 		<typeAlias type="java.lang.Long" alias="Long"/>
 	</typeAliases>
