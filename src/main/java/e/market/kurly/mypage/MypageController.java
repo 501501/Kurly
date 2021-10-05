@@ -27,7 +27,7 @@ public class MypageController {
 	
 		List<QnaDTO> ar = qnaService.getList();
 		mv.addObject("list", ar);
-		mv.setViewName("board/qna");
+		mv.setViewName("qna/qna");
 		
 		return mv;
 	}
@@ -42,7 +42,7 @@ public class MypageController {
 		qnaDTO = qnaService.getOne(qnaDTO);
 		qnaDTO.setFiles(qnaService.getFiles(qnaDTO));
 		
-		mv.setViewName("board/qna_update");
+		mv.setViewName("qna/qna_update");
 		mv.addObject("dto", qnaDTO);
 		return mv;
 	}
@@ -62,7 +62,7 @@ public class MypageController {
 	@GetMapping("mypage_qna_register")
 	public ModelAndView qna_register() throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("board/qna_register");
+		mv.setViewName("qna/qna_register");
 		return mv;
 	}
 	
@@ -96,6 +96,30 @@ public class MypageController {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("dto", boardFilesDTO);
 		mv.setViewName("fileDown");
+		return mv;
+	}
+	
+	// 대량주문
+	@GetMapping("bulk_order")
+	public ModelAndView bulk_order() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("bulk/bulk_order");
+		return mv;
+	}
+	
+	// 상품제안
+	@GetMapping("offer")
+	public ModelAndView offer() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("offer/offer");
+		return mv;
+	}
+
+	// 에코포장 피드백
+	@GetMapping("echo_packing")
+	public ModelAndView echo_packing() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("echo/echo_packing");
 		return mv;
 	}
 }

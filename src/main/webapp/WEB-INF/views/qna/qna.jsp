@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,7 @@
 </head>
 <body>
 	<h1>1:1 문의</h1>
+	<c:set var="rownum" value="${fn:length(list)}"></c:set>
 
 	<table>
 		<thead>
@@ -23,9 +25,9 @@
 		</thead>
 
 		<tbody>
-			<c:forEach items="${list}" var="dto">
+			<c:forEach items="${list}" var="dto" begin="0" end="${rownum}" varStatus="r">
 			<tr class="select" data-list-num="${dto.num}">
-				<td>${dto.num}</td>
+				<td>${rownum-r.index}</td>
 				<td>${dto.category}</td>
 				<td>${dto.title}</td>
 				<td>작성자 ID</td>
