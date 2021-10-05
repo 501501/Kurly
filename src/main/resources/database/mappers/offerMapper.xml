@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="e.market.kurly.mypage.offer.OfferDAO">
+	<insert id="setInsert" parameterType="OfferDTO">
+		<selectKey order="BEFORE" resultType="Long" keyProperty="num">
+			SELECT OFFER_SEQ.nextval FROM dual
+		</selectKey>
+		INSERT INTO OFFER
+		VALUES (#{num}, #{category}, #{title}, #{contents}, sysdate)
+	</insert>
+	
+	<insert id="setFile" parameterType="BoardFilesDTO">
+		INSERT INTO OFFERFILES
+		VALUES (OFFER_SEQ.nextval, #{num}, #{fileName}, #{oriName})
+	</insert>
+	
+	<select id="getList" resultType="OfferDTO">
+		SELECT * FROM OFFER ORDER BY NUM DESC
+	</select>
+	
+	<select id="getOne" parameterType="OfferDTO" resultType="OfferDTO">
+		SELECT * FROM OFFER WHERE NUM = #{num}
+	</select>
+	
+	<select id="getFiles" parameterType="OfferDTO" resultType="BoardFilesDTO">
+		SELECT * FROM OFFERFILES WHERE NUM = #{num}
+	</select>
+	
+	<select id="getFileOne" parameterType="BoardFilesDTO" resultType="BoardFilesDTO">
+		SELECT * FROM OFFERFILES WHERE FILENUM = #{fileNum}
+	</select>
+	
+	<update id="setUpdate" parameterType="OfferDTO">
+		UPDATE OFFER SET CATEGORY = #{category}, TITLE = #{title}, CONTENTS = #{contents}
+		WHERE NUM = #{num}
+	</update>
+	
+	<delete id="setDelete" parameterType="OfferDTO">
+		DELETE FROM OFFER WHERE NUM = #{num}
+	</delete>
+	
+	<delete id="setFileDelete" parameterType="BoardFilesDTO">
+		DELETE OFFERFILES WHERE FILENUM = #{fileNum}
+	</delete>
+ </mapper>

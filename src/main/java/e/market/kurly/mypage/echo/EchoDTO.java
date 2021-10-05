@@ -1,14 +1,15 @@
-package e.market.kurly.mypage.offer;
+package e.market.kurly.mypage.echo;
 
 import java.sql.Date;
 import java.util.List;
 
 import e.market.kurly.board.BoardFilesDTO;
 
-public class OfferDTO {
+public class EchoDTO {
 	private Long num;
 	private String category;
 	private String title;
+	private String productName;
 	private String contents;
 	private Date regDate;
 	private List<BoardFilesDTO> files;
@@ -31,6 +32,12 @@ public class OfferDTO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
 	public String getContents() {
 		return contents;
 	}
@@ -49,4 +56,5 @@ public class OfferDTO {
 	public void setFiles(List<BoardFilesDTO> files) {
 		this.files = files;
 	}
+	
 }

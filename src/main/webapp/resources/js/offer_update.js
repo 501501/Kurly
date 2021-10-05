@@ -24,22 +24,6 @@ $("#fileAddResult").on('click', '.del', function(){
 	count--;
 });
 
-$("#update").click(function(){
-	if ($("#email_ck_hidden").is(':checked')) {
-		$("#email_ck").val('y');
-	} else {
-		$("#email_ck").val('n');
-	}
-});
-
-$("#update").click(function(){
-	if ($("#phone_ck_hidden").is(':checked')) {
-		$("#phone_ck").val('y');
-	} else {
-		$("#phone_ck").val('n');
-	}
-});
-
 let del_ck = $(".del_ck");
 
 $("#update").click(function(){
@@ -50,7 +34,7 @@ $("#update").click(function(){
 			let fileNum = document.getElementsByClassName("del_ck")[i].getAttribute('data-file-num');
 			console.log(fileNum);
 			
-			$.get('../../ajax/qna_fileDelete?fileNum='+fileNum, function(result){
+			$.get('../../ajax/offer_fileDelete?fileNum='+fileNum, function(result){
 				result = result.trim();
 				console.log(result);
 			})

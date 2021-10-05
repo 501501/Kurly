@@ -121,7 +121,7 @@ img {
 			<c:if test="${not empty f.oriName}">
 				<span class="del">
 					<input type="checkbox" class="del_ck" data-file-num="${f.fileNum}">삭제
-					<img src="./down?fileName=${f.fileName}">
+					<img src="../down?fileName=${f.fileName}">
 				</span>
 			</c:if>
 		</c:forEach>

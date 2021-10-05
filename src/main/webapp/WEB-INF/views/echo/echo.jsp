@@ -10,14 +10,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>상품 제안</h1>
+	<h1>에코포장 피드백</h1>
 	<c:set var="rownum" value="${fn:length(list)}"></c:set>
 
 	<table>
 		<thead>
 			<tr>
 				<th>번호</th>
-				<th>카테고리</th>
+				<th>분류</th>
 				<th>제목</th>
 				<th>작성자</th>
 				<th>작성일</th>
@@ -28,7 +28,7 @@
 			<c:forEach items="${list}" var="dto" begin="0" end="${rownum}" varStatus="r">
 			<tr class="select" data-list-num="${dto.num}">
 				<td>${rownum-r.index}</td>
-				<td>${dto.category}</td>
+				<td>[${dto.category}]</td>
 				<td>${dto.title}</td>
 				<td>작성자 ID</td>
 				<td>${dto.regDate}</td>
@@ -37,9 +37,9 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	
+
 	<button id="write_btn">글쓰기</button>
 	
-	<script type="text/javascript" src="../resources/js/offer.js"></script>
+	<script type="text/javascript" src="../resources/js/echo.js"></script>
 </body>
 </html>

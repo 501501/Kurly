@@ -1,25 +1,29 @@
-package e.market.kurly.mypage;
+package e.market.kurly.mypage.qna;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import e.market.kurly.board.BoardFilesDTO;
-import e.market.kurly.mypage.qna.QnaDTO;
-import e.market.kurly.mypage.qna.QnaService;
 
 @Controller
-@RequestMapping("/mypage/**")
-public class MypageController {
-
+@RequestMapping("/mypage/*")
+public class QnaController {
+	
 	@Autowired
 	private QnaService qnaService;
+	
+	@ModelAttribute("board")
+	public String  getBoard() {
+		return "qna";
+	}
 	
 	@GetMapping("mypage_qna")
 	public ModelAndView mypage_qna() throws Exception {
@@ -69,7 +73,7 @@ public class MypageController {
 	// qna 등록
 	@PostMapping("mypage_qna_register")
 	public ModelAndView qna_register(QnaDTO qnaDTO, MultipartFile[] files2) throws Exception {
-		System.out.println("upload");
+		//System.out.println("upload");
 		// original file name 출력
 		for (MultipartFile muFile : files2) {
 			System.out.println(muFile.getOriginalFilename());
@@ -96,30 +100,6 @@ public class MypageController {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("dto", boardFilesDTO);
 		mv.setViewName("fileDown");
-		return mv;
-	}
-	
-	// 대량주문
-	@GetMapping("bulk_order")
-	public ModelAndView bulk_order() throws Exception {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("bulk/bulk_order");
-		return mv;
-	}
-	
-	// 상품제안
-	@GetMapping("offer")
-	public ModelAndView offer() throws Exception {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("offer/offer");
-		return mv;
-	}
-
-	// 에코포장 피드백
-	@GetMapping("echo_packing")
-	public ModelAndView echo_packing() throws Exception {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("echo/echo_packing");
 		return mv;
 	}
 }

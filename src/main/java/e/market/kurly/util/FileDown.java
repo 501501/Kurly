@@ -22,7 +22,7 @@ public class FileDown extends AbstractView {
 		// TODO Auto-generated method stub
 	
 		// 폴더명
-		String board = "qna";
+		String board = (String)model.get("board");
 		
 		// filename
 		BoardFilesDTO boardFilesDTO = (BoardFilesDTO)model.get("dto");

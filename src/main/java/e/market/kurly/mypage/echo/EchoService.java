@@ -1,4 +1,4 @@
-package e.market.kurly.mypage.offer;
+package e.market.kurly.mypage.echo;
 
 import java.io.File;
 import java.util.List;
@@ -13,21 +13,21 @@ import e.market.kurly.board.BoardFilesDTO;
 import e.market.kurly.util.FileManager;
 
 @Service
-public class OfferService {
+public class EchoService {
 	@Autowired
-	private OfferDAO offerDAO;
+	private EchoDAO echoDAO;
 	@Autowired
 	private ServletContext servletContext;
 	@Autowired
 	private FileManager fileManager;
-
-	public int setInsert(OfferDTO offerDTO, MultipartFile[] files) throws Exception {
+	
+	public int setInsert(EchoDTO echoDTO, MultipartFile[] files) throws Exception {
 		// 1. 어느 폴더 /resources/upload/offer/
-		String realPath = servletContext.getRealPath("/resources/upload/offer/");
+		String realPath = servletContext.getRealPath("/resources/upload/echo /");
 		System.out.println(realPath);
 		File file = new File(realPath);
 
-		int result = offerDAO.setInsert(offerDTO);
+		int result = echoDAO.setInsert(echoDTO);
 
 		if (files.length > 0) {
 			for (MultipartFile multipartFile : files) {
@@ -36,34 +36,34 @@ public class OfferService {
 				BoardFilesDTO boardFilesDTO = new BoardFilesDTO();
 				boardFilesDTO.setFileName(fileName);
 				boardFilesDTO.setOriName(multipartFile.getOriginalFilename());
-				boardFilesDTO.setNum(offerDTO.getNum());
+				boardFilesDTO.setNum(echoDTO.getNum());
 
 				// if (boardFilesDTO.getOriName().equals(""))
-				result = offerDAO.setFile(boardFilesDTO);
+				result = echoDAO.setFile(boardFilesDTO);
 			}
 		}
 		return result;
 	}
 	
-	public List<OfferDTO> getList() throws Exception {
-		return offerDAO.getList();
+	public List<EchoDTO> getList() throws Exception {
+		return echoDAO.getList();
 	}
 	
-	public OfferDTO getOne(OfferDTO offerDTO) throws Exception {
-		return offerDAO.getOne(offerDTO);
+	public EchoDTO getOne(EchoDTO echoDTO) throws Exception {
+		return echoDAO.getOne(echoDTO);
 	}
 	
-	public List<BoardFilesDTO> getFiles(OfferDTO offerDTO) throws Exception {
-		return offerDAO.getFiles(offerDTO);
+	public List<BoardFilesDTO> getFiles(EchoDTO echoDTO) throws Exception {
+		return echoDAO.getFiles(echoDTO);
 	}
 	
-	public int setUpdate(OfferDTO offerDTO, MultipartFile[] files) throws Exception {
-		// 1. 어느 폴더 /resources/upload/offer/
-		String realPath = servletContext.getRealPath("/resources/upload/offer/");
+	public int setUpdate(EchoDTO echoDTO, MultipartFile[] files) throws Exception {
+		// 1. 어느 폴더 /resources/upload/echo/
+		String realPath = servletContext.getRealPath("/resources/upload/echo/");
 		System.out.println(realPath);
 		File file = new File(realPath);
 
-		int result = offerDAO.setUpdate(offerDTO);
+		int result = echoDAO.setUpdate(echoDTO);
 
 		if (files.length > 0) {
 			for (MultipartFile multipartFile : files) {
@@ -72,41 +72,41 @@ public class OfferService {
 				BoardFilesDTO boardFilesDTO = new BoardFilesDTO();
 				boardFilesDTO.setFileName(fileName);
 				boardFilesDTO.setOriName(multipartFile.getOriginalFilename());	
-				boardFilesDTO.setNum(offerDTO.getNum());
+				boardFilesDTO.setNum(echoDTO.getNum());
 				
 				//if (boardFilesDTO.getOriName().equals(""))
-				result = offerDAO.setFile(boardFilesDTO);
+				result = echoDAO.setFile(boardFilesDTO);
 			}
 		}
 		return result;
 	}
 	
-	public int setDelete(OfferDTO offerDTO) throws Exception {
+	public int setDelete(EchoDTO echoDTO) throws Exception {
 		// Files Table에서 삭제할 파일명들 조회
-		List<BoardFilesDTO> ar = offerDAO.getFiles(offerDTO);
+		List<BoardFilesDTO> ar = echoDAO.getFiles(echoDTO);
 		
 		// 어느 폴더
-		String realPath = servletContext.getRealPath("/resources/upload/offer/");
+		String realPath = servletContext.getRealPath("/resources/upload/echo/");
 		for(BoardFilesDTO bDTO : ar) {
 			File file = new File(realPath, bDTO.getFileName());
 			fileManager.fileDelete(file);
 		}
 		
 		// DB 삭제
-		return offerDAO.setDelete(offerDTO);
+		return echoDAO.setDelete(echoDTO);
 	}
 	
 	public int setFileDelete(BoardFilesDTO boardFilesDTO) throws Exception {
 		// 폴더에서 파일 삭제
-		String realPath = servletContext.getRealPath("/resources/upload/offer/");
+		String realPath = servletContext.getRealPath("/resources/upload/echo/");
 
 		//File file = new File(realPath, boardFilesDTO.getFileName());
 		//fileManager.fileDelete(file);
 		
-		return offerDAO.setFileDelete(boardFilesDTO);
+		return echoDAO.setFileDelete(boardFilesDTO);
 	}
 	
 	public BoardFilesDTO getFileOne(BoardFilesDTO boardFilesDTO) throws Exception {
-		return offerDAO.getFileOne(boardFilesDTO);
+		return echoDAO.getFileOne(boardFilesDTO);
 	}
 }

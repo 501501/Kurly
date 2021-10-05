@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import e.market.kurly.board.BoardFilesDTO;
+import e.market.kurly.mypage.echo.EchoDTO;
+import e.market.kurly.mypage.echo.EchoService;
+import e.market.kurly.mypage.offer.OfferDTO;
+import e.market.kurly.mypage.offer.OfferService;
 import e.market.kurly.mypage.qna.QnaDTO;
 import e.market.kurly.mypage.qna.QnaService;
 
@@ -16,9 +20,13 @@ public class AjaxController {
 	
 	@Autowired
 	private QnaService qnaService;
+	@Autowired
+	private OfferService offerService;
+	@Autowired
+	private EchoService echoService;
 	
-	@GetMapping("select")
-	public ModelAndView select(Long num) throws Exception {
+	@GetMapping("qna_select")
+	public ModelAndView qna_select(Long num) throws Exception {
 		ModelAndView mv = new ModelAndView();
 
 		QnaDTO qnaDTO = new QnaDTO();
@@ -26,21 +34,84 @@ public class AjaxController {
 		qnaDTO = qnaService.getOne(qnaDTO);
 		qnaDTO.setFiles(qnaService.getFiles(qnaDTO));
 	
-		mv.setViewName("common/selectResult");
+		mv.setViewName("qna/selectResult");
 		mv.addObject("dto", qnaDTO);
-
+		mv.addObject("board", "mypage_qna");
+		
 		mv.addObject("num", num);
 		return mv;
 	}
 	
-	@GetMapping("fileDelete")
-	public ModelAndView fileDelete(Long fileNum) throws Exception {
+	@GetMapping("qna_fileDelete")
+	public ModelAndView qna_fileDelete(Long fileNum) throws Exception {
 		System.out.println(fileNum);
 		ModelAndView mv = new ModelAndView();
 		BoardFilesDTO boardFilesDTO = new BoardFilesDTO();
 		boardFilesDTO.setFileNum(fileNum);
 		qnaService.getFileOne(boardFilesDTO);
 		int result = qnaService.setFileDelete(boardFilesDTO);
+		mv.setViewName("common/ajaxResult");
+		mv.addObject("result", result);
+		
+		return mv;
+	}
+	
+	@GetMapping("offer_select")
+	public ModelAndView offer_select(Long num) throws Exception {
+		ModelAndView mv = new ModelAndView();
+
+		OfferDTO offerDTO = new OfferDTO();
+		offerDTO.setNum(num);
+		offerDTO = offerService.getOne(offerDTO);
+		offerDTO.setFiles(offerService.getFiles(offerDTO));
+	
+		mv.setViewName("offer/selectResult");
+		mv.addObject("dto", offerDTO);
+		mv.addObject("board", "offer");
+		
+		mv.addObject("num", num);
+		return mv;
+	}
+	
+	@GetMapping("offer_fileDelete")
+	public ModelAndView offer_fileDelete(Long fileNum) throws Exception {
+		System.out.println(fileNum);
+		ModelAndView mv = new ModelAndView();
+		BoardFilesDTO boardFilesDTO = new BoardFilesDTO();
+		boardFilesDTO.setFileNum(fileNum);
+		offerService.getFileOne(boardFilesDTO);
+		int result = offerService.setFileDelete(boardFilesDTO);
+		mv.setViewName("common/ajaxResult");
+		mv.addObject("result", result);
+		
+		return mv;
+	}
+	
+	@GetMapping("echo_select")
+	public ModelAndView echo_select(Long num) throws Exception {
+		ModelAndView mv = new ModelAndView();
+
+		EchoDTO echoDTO = new EchoDTO();
+		echoDTO.setNum(num);
+		echoDTO = echoService.getOne(echoDTO);
+		echoDTO.setFiles(echoService.getFiles(echoDTO));
+	
+		mv.setViewName("echo/selectResult");
+		mv.addObject("dto", echoDTO);
+		mv.addObject("board", "echo");
+		
+		mv.addObject("num", num);
+		return mv;
+	}
+	
+	@GetMapping("echo_fileDelete")
+	public ModelAndView echo_fileDelete(Long fileNum) throws Exception {
+		System.out.println(fileNum);
+		ModelAndView mv = new ModelAndView();
+		BoardFilesDTO boardFilesDTO = new BoardFilesDTO();
+		boardFilesDTO.setFileNum(fileNum);
+		echoService.getFileOne(boardFilesDTO);
+		int result = echoService.setFileDelete(boardFilesDTO);
 		mv.setViewName("common/ajaxResult");
 		mv.addObject("result", result);
 		
