@@ -85,6 +85,22 @@ public class MembersController {
 		
 		return mv;
 	}
+	
+	@PostMapping("pwcheck")
+	public ModelAndView getPwCheck(MembersDTO membersDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		membersDTO = membersService.getPwCheck(membersDTO);
+		
+		int result = 0;
+		if(membersDTO != null) {
+			result = 1;
+		}
+		
+		mv.setViewName("common/ajaxResult");
+		mv.addObject("result", result);
+		
+		return mv;
+	} 
 
 	@GetMapping("login")
 	public ModelAndView member_login() throws Exception {
@@ -164,7 +180,9 @@ public class MembersController {
 	@PostMapping("update")
 	public ModelAndView member_update(MembersDTO membersDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		membersService.setUpdateInfo(membersDTO);
+		int result = membersService.setUpdateInfo(membersDTO);
+		
+		mv.setViewName("redirect:../");
 
 		return mv;
 	}

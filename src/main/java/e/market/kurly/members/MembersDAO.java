@@ -26,6 +26,12 @@ public class MembersDAO {
 		return sqlSession.selectOne(NAMESPACE+"getEmailCheck", membersDTO);
 	}
 	
+	/** 비밀번호 확인*/
+	public MembersDTO getPwCheck(MembersDTO membersDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getPwCheck", membersDTO);
+	}
+	
+	
 	/** 로그인*/
 	public MembersDTO getLogin(MembersDTO membersDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"getLogin", membersDTO);

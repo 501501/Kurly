@@ -23,6 +23,10 @@ public class MembersService {
 	public MembersDTO getEmailCheck(MembersDTO membersDTO) throws Exception {
 		return membersDAO.getEmailCheck(membersDTO);
 	}
+	
+	public MembersDTO getPwCheck(MembersDTO membersDTO) throws Exception {
+		return membersDAO.getPwCheck(membersDTO);
+	}
 		
 	/** 로그인 */
 	public MembersDTO getLogin(MembersDTO membersDTO) throws Exception {

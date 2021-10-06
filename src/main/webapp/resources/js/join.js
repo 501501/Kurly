@@ -105,3 +105,14 @@ $('#recomm').on('click', function(){
 		'placeholder':'추천인 아이디를 입력해주세요.'
 	});
 });	
+
+
+$('#btn-join').click(function(){
+	if($('.check-necessary').prop('checked')){
+		$('#form').submit();
+		alert('회원가입 성공 ㅊㅋ');
+	} else {
+		alert('약관에 동의하셔야 합니다');
+	}
+});
+

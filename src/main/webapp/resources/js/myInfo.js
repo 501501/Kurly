@@ -33,3 +33,28 @@
     });
     
 
+	$('#btn-updateId').click(function(){
+		let curId = $('#id').val();
+		let curPw = $('#password').val();
+		
+		$.ajax({
+			url: "./pwcheck",
+			type: "POST",
+			data: {
+				"pw" : curPw,
+				"id" : curId
+				},
+			success : function(result){
+				let rs = result.trim();
+				if(rs == 1){
+					$('#frm').submit();
+					alert('수정 완료');
+				} else {
+					alert('현재 비밀번호를 다시 확인해주세요');
+				}
+			},
+			error : function(){
+				alert('error뜸');
+			}
+		});
+	});

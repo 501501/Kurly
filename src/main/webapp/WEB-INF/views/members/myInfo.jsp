@@ -14,7 +14,7 @@
 	<a href="../">홈으로</a>
 	<hr>
 		
-	<form method="post" action="update">
+	<form method="post" action="update" id="frm">
 		<div>
 			<label for="id">아이디</label>
 			<input type="text" name="id" id="id" class="" value="${member.id}" readonly="readonly" />
@@ -99,7 +99,7 @@
 		<hr>
 		
 		<a href="#" id="btn-delId" data-value="${member.id}">탈퇴하기</a>
-		<button type="submit" id="btn-updateId">회원정보 수정</button>
+		<button type="button" id="btn-updateId">회원정보 수정</button>
 	</form>
 	
 	

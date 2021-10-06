@@ -120,13 +120,13 @@
 
             <tr>
                 <td>
-                    <input type="checkbox" name="check-clause" class="check-view cbx" />
+                    <input type="checkbox" name="check-clause" class="check-view cbx check-necessary" />
                     <label>이용약관 동의 <span style="color:gray;">(필수)</span></label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="checkbox" name="check-clause" class="check-view cbx" />
+                    <input type="checkbox" name="check-clause" class="check-view cbx check-necessary" />
                     <label>개인정보 수집이용 동의 <span style="color:gray;">(필수)</span></label>
                 </td>
             </tr>
@@ -152,7 +152,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="checkbox" name="check-clause" class="check-view cbx" />
+                    <input type="checkbox" name="check-clause" class="check-view cbx check-necessary" />
                     <label>본인은 만 14세 이상입니다.<span style="color:gray;">(필수)</span></label>
                 </td>
             </tr>
@@ -164,7 +164,7 @@
 		
 		<div class="mb-3 my-4">
 	    	<label class="form-label"></label>
-	  		<button id="btn" type="submit" class="btn btn-primary">가입하기</button>
+	  		<button id="btn-join" type="button" class="btn btn-primary">가입하기</button>
 	  	</div>
 
 	</form>

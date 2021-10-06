@@ -21,6 +21,11 @@
   		where email = #{email}
   	</select>
   	
+  	<select id="getPwCheck" parameterType="MembersDTO" resultType="MembersDTO">
+  		select * from MEMBERS
+  		where pw = #{pw} and id = #{id}
+  	</select>
+  	
   	<select id="getLogin" parameterType="MembersDTO" resultType="MembersDTO">
   		select * from MEMBERS
   		where id=#{id} and pw=#{pw}
@@ -32,8 +37,9 @@
   	</delete>
   	
   	<update id="setUpdateInfo" parameterType="MembersDTO">
-  		update MEMBERS set id=#{id}, pw=#{pw}, name=#{name}, email=#{email}, phone_num=#{phone_num}, gender=#{gender}, 
-  						   clause_private=#{clause_private}, clause_sms=#{clause_sms}, clause_email=#{clause_email} 					
+  		update MEMBERS set pw=#{pw}, email=#{email}, phone_num=#{phone_num}, gender=#{gender}, 
+  						   clause_private=#{clause_private}, clause_sms=#{clause_sms}, clause_email=#{clause_email} 			
+  		where id=#{id}		
   	</update>
 
   
