@@ -13,6 +13,8 @@ import e.market.kurly.mypage.offer.OfferDTO;
 import e.market.kurly.mypage.offer.OfferService;
 import e.market.kurly.mypage.qna.QnaDTO;
 import e.market.kurly.mypage.qna.QnaService;
+import e.market.kurly.service.faq.FaqDAO;
+import e.market.kurly.service.faq.FaqDTO;
 
 @Controller
 @RequestMapping("/ajax/**")
@@ -24,6 +26,8 @@ public class AjaxController {
 	private OfferService offerService;
 	@Autowired
 	private EchoService echoService;
+	@Autowired
+	private FaqDAO faqDAO;
 	
 	@GetMapping("qna_select")
 	public ModelAndView qna_select(Long num) throws Exception {
@@ -114,6 +118,19 @@ public class AjaxController {
 		int result = echoService.setFileDelete(boardFilesDTO);
 		mv.setViewName("common/ajaxResult");
 		mv.addObject("result", result);
+		
+		return mv;
+	}
+	
+	@GetMapping("faq_select")
+	public ModelAndView faq_select(Long num) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		FaqDTO faqDTO = new FaqDTO();
+		faqDTO.setNum(num);
+		faqDTO = faqDAO.getOne(faqDTO);
+		
+		mv.addObject("dto", faqDTO);
+		mv.setViewName("board/selectResult");
 		
 		return mv;
 	}
