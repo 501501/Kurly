@@ -11,7 +11,7 @@
 
 	<h1>회원가입 페이지</h1>
 	
-	<form id="form" name="frmMember" method="post" action="./join">
+	<form id="form" name="frmMember" method="post" action="join">
 	
 		<div class="mb-3">
 		  <table>
@@ -28,7 +28,7 @@
 				<td>
 				<div id="idResult1"></div>
 				<div id="idResult2"></div>
-				<div>awddw</div>
+				<div></div>
 				</td>
 		  	</tr>
 		  </table>
@@ -60,12 +60,17 @@
 		  <div id="emailResult"></div>
 		</div>
 		
+		<div class="mb-3">
+		  <label for="phone_num" class="form-label">휴대폰</label>
+		  <input type="text" name="phone_num" class="form-control not phone_num" id="phone_num">		  		  
+		</div>
+		
 		<div class="mb-3">		  
 			<div class="form-group">
 				<button type="button" class="btn btn-default" onclick="address_searching()">주소검색</button>                               
 			</div>
 			<div class="form-group">           
-				<input class="form-control" style="width: 40%;" placeholder="우편번호" name="addr1" id="addr1" type="text" readonly="readonly"/>        
+				<input class="form-control" style="width: 40%;" placeholder="우편번호" name="address_post" id="address_post" type="text" readonly="readonly"/>        
 			</div>
 			<div class="form-group">
 			    <input class="form-control" style="top: 5px;" placeholder="도로명 주소" name="addr2" id="addr2" type="text" readonly="readonly"/>
@@ -74,113 +79,100 @@
 			    <input class="form-control" placeholder="상세주소" name="addr3" id="addr3" type="text"/>
 			</div>
 			<div class="form-group">
-			    <input class="form-control" placeholder="주소값" name="address" id="address" type="text" readonly="readonly" hidden="hidden"/>
+			    <input class="form-control" placeholder="주소값" name="address_loca" id="address_loca" type="text" readonly="readonly" hidden="hidden"/>
 			</div>
 		</div>
 		
 		
-		<div class="mb-3">
+		<div class="mb-3" value>
 		  <label for="gender" class="form-label">성별</label>
-		  <input type="checkbox" class="checkb m" value="m">
+		  <input type="checkbox" class="checkb m" name="gender" value="m">
 		  <span id="chbox_m">남자</span>
-		  <input type="checkbox" class="checkb w" value="w">
+		  <input type="checkbox" class="checkb w" name="gender" value="w">
 		  <span id="chbox_w">여자</span>
-		  <input type="checkbox" class="checkb n" value="n" checked>
+		  <input type="checkbox" class="checkb n" name="gender" value="n" checked>
 		  <span id="cbox_n">선택안함</span>
 		</div>
 		
 		<div class="mb-3">
-		  <label for="birth_year">생년월일</label>			
-		  <input type="text" name="birth" id="birth" pattern="[0-9]*" value label="생년월일" size="8" maxlength="6" placeholder="YYYYMMDD">
+		  <label for="birth_date">생년월일</label>			
+		  <input type="text" name="birth_date" id="birth_date" pattern="[0-9]*" value label="생년월일" size="8" maxlength="8" placeholder="YYYYMMDD">
 		</div>
-		
+
+		<div class="mb-3">
+			<label for="recommender">추가입력 사항</label>
+			<input type="checkbox" name="recomm" id="recomm" label="추천인 아이디" /><span>추천인 아이디</span>
+			<input type="checkbox" name="pEvent" id="pEvent" label="참여이벤트명" /><span>참여 이벤트명</span>
+			<div>			
+				<input type="text" name="recommender" id="writeValue" hidden="hidden" />
+			</div>
+		</div>
+
 		<hr>
 		
 		<table>
-		  <tr class="reg_agree">
-				<th>이용약관 동의
-					<span class="ico">*</span>
-				</th>
-			<td>
-			  <div class="checkbox_group">
-				<div class="check">
-					<label class="check_agree label_all_check label_block">
-						<input type="checkbox" name="agree_allcheck" value="n">
-						<span class="ico"></span>
-						<strong>전체 동의합니다.</strong>
-					</label>
-					<p class="sub">선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
-				</div>
-				
-			
-				<div class="check_view">
-					<label class="check_agree label_block">
-						<input type="checkbox" value="n" name="agree" required="" label="이용약관">
-						<span class="ico"></span>이용약관 동의 <span class="sub">(필수)</span>
-					</label>
-					<a href="#none" class="link btn_link btn_agreement">약관보기 </a>
-				</div>
-				
-				<div class="check_view">
-					<label class="check_agree label_block">
-						<input type="checkbox" id="private1" name="private1" value="n" required="" label="개인정보 수집·이용" checked="checked">
-						<span class="ico"></span>개인정보 수집·이용 동의 <span class="sub">(필수)</span>
-					</label>
-					<a href="#none" class="link btn_link btn_essential">약관보기 </a>
-				</div>
-				
-				<div class="check_view">
-					<input type="hidden" id="consentHidden" name="consent[1]" value="n">
-					<label class="check_agree label_block">
-						<input type="checkbox" id="private_agree" name="hiddenCheck" value="n">
-						<span class="ico"></span>개인정보 수집·이용 동의 <span class="sub">(선택)</span>
-					</label>
-					<a href="#none" class="link btn_link btn_choice">약관보기 </a>
-				</div>
-				
-				<div class="check_view">
-					<label class="label_block check_agree">
-						<input type="checkbox" name="marketing" value="n" onclick="marketingCheck()">
-						<span class="ico"></span>무료배송, 할인쿠폰 등 혜택/정보 수신 동의 <span class="sub">(선택)</span>
-					</label>
-					<div class="check_event email_sms">
-					<label class="label_block check_agree">
-						<input type="checkbox" id="private_sms" name="sms" value="n">
-						<span class="ico"></span>SMS
-					</label>
-					<label class="label_block check_agree">
-						<input type="checkbox" id="private_email" name="mailling" value="n">
-						<span class="ico"></span>이메일
-					</label>
-					</div>
-					<p class="sms_info">
-					동의 시 한 달간 [5% 적립] + [무제한 무료배송] <span class="sub">(첫 주문 후 적용)</span>
-					</p>
-				</div>
-				
-				<div class="check_view">
-					<label class="check_agree label_block">
-						<input type="checkbox" value="n" name="fourteen_chk" required="" label="만 14세 이상">
-						<span class="ico"></span>본인은 만 14세 이상입니다. <span class="sub">(필수)</span>
-					</label>
-				</div>
-			  </div>
-			</td>
-		  </tr>			
-		</table>
-		
-		
-		
+        <tr>
+            <td rowspan="8" style="font-size:small;">이용약관동의  <span style="color:red; font-size:small;">*</span></td>
+            <td>
+                <input type="checkbox" name="checkAll" class="checkAll cbx" />
+                <label for="checkAll">전체 동의합니다.</label>
+            </td>
+
+            <tr>
+                <td>
+                    <input type="checkbox" name="check-clause" class="check-view cbx" />
+                    <label>이용약관 동의 <span style="color:gray;">(필수)</span></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="check-clause" class="check-view cbx" />
+                    <label>개인정보 수집이용 동의 <span style="color:gray;">(필수)</span></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="check-clause" class="check-view cbx" />
+                    <label>개인정보 수집이용 동의 <span style="color:gray;">(선택)</span></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="clause_private" class="check-view cbx market-check" id="cbx-com" value="1" />
+                    <label>무료배송, 할인쿠폰 등 혜택/정보 수신 동의 <span style="color:gray;">(선택)</span></label>
+                    <div>
+                        <span>&nbsp; &nbsp;</span>
+                        <input type="checkbox" name="clause_sms" class="check-view cbx market-check dot" value="1"/>
+                        <label for="check-clause">SMS</label>
+
+                        <input type="checkbox" name="clause_email" class="check-view cbx market-check dot" value="1"/>
+                        <label for="check-clause">이메일</label>                        
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="check-clause" class="check-view cbx" />
+                    <label>본인은 만 14세 이상입니다.<span style="color:gray;">(필수)</span></label>
+                </td>
+            </tr>
+
+        </tr>
+    </table>
+
 		<hr>
 		
 		<div class="mb-3 my-4">
 	    	<label class="form-label"></label>
 	  		<button id="btn" type="submit" class="btn btn-primary">가입하기</button>
 	  	</div>
+
 	</form>
 	
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>	
 <script type="text/javascript" src="../resources/js/join.js"></script>
+<script type="text/javascript" src="../resources/js/addressSelect.js"></script>
+<script type="text/javascript" src="../resources/js/check.js"></script>
 <script type="text/javascript" src="../resources/js/clause.js"></script>
 </body>
 </html>

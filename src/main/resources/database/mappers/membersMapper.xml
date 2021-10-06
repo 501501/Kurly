@@ -5,9 +5,11 @@
 
   <mapper namespace="e.market.kurly.members.MembersDAO">
   	<insert id="setRegisterMember" parameterType="e.market.kurly.members.MembersDTO">
-  		insert into MEMBERS (ID, PW, NAME, EMAIL, PHONENUMBER, ADDRESS, GENDER, BIRTH)
-  		values (#{id}, #{pw}, #{name}, #{email}, #{phonenumber}, #{address}, #{gender}, #{birth})
+  		insert into MEMBERS 
+  		values (#{id}, #{pw}, #{name}, #{email}, #{phone_num}, #{address_loca}, #{address_post}, #{gender}, #{birth_date},
+  			    #{recommender}, #{clause_private}, #{clause_sms}, #{clause_email})
   	</insert>
+  	<!-- #{recommender}, #{clause_private}, #{clause_sms}, #{clause_email} -->
   	
   	<select id="getIdCheck" parameterType="e.market.kurly.members.MembersDTO" resultType="e.market.kurly.members.MembersDTO">
   		select * from MEMBERS
@@ -30,8 +32,8 @@
   	</delete>
   	
   	<update id="setUpdateInfo" parameterType="MembersDTO">
-  		update MEMBERS set id=#{id}, pw=#{pw}, name=#{name}, email=#{email}, phonenumber=#{phonenumber}, gender=#{gender},
-  						   birth=#{birth}
+  		update MEMBERS set id=#{id}, pw=#{pw}, name=#{name}, email=#{email}, phone_num=#{phone_num}, gender=#{gender}, 
+  						   clause_private=#{clause_private}, clause_sms=#{clause_sms}, clause_email=#{clause_email} 					
   	</update>
 
   

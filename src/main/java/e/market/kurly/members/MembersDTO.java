@@ -1,40 +1,26 @@
 package e.market.kurly.members;
 
+import java.sql.Date;
+
 public class MembersDTO {
 
 	private String id;
 	private String pw;
 	private String name;
 	private String email;
-	private String phoneNumber;
-	private String address;
+	private String phone_num;
+	private String address_loca;
+	private String address_post;
 	private String gender;
-	private String birth;
-	
+	private String birth_date;
+	private String recommender;
+
 	/** 이용약관 선택 동의*/
-	private String private_agree;
-	private String private_sms;
-	private String private_email;
+	private int clause_private;
+	private int clause_sms;
+	private int clause_email;
 	
 	
-	public String getPrivate_agree() {
-		return private_agree;
-	}
-	public void setPrivate_agree(String private_agree) {
-		this.private_agree = private_agree;
-	}
-	public String getPrivate_sms() {
-		return private_sms;
-	}
-	public void setPrivate_sms(String private_sms) {
-		this.private_sms = private_sms;
-	}
-	public String getPrivate_email() {
-		return private_email;
-	}
-	public void setPrivate_email(String private_email) {
-		this.private_email = private_email;
-	}
 	public String getId() {
 		return id;
 	}
@@ -59,17 +45,23 @@ public class MembersDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public String getPhone_num() {
+		return phone_num;
 	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setPhone_num(String phone_num) {
+		this.phone_num = phone_num;
 	}
-	public String getAddress() {
-		return address;
+	public String getAddress_loca() {
+		return address_loca;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAddress_loca(String address_loca) {
+		this.address_loca = address_loca;
+	}
+	public String getAddress_post() {
+		return address_post;
+	}
+	public void setAddress_post(String address_post) {
+		this.address_post = address_post;
 	}
 	public String getGender() {
 		return gender;
@@ -77,12 +69,38 @@ public class MembersDTO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getBirth() {
-		return birth;
+	public String getBirth_date() {
+		return birth_date;
 	}
-	public void setBirth(String birth) {
-		this.birth = birth;
+	public void setBirth_date(String birth_date) {
+		this.birth_date = birth_date;
 	}
+	public String getRecommender() {
+		return recommender;
+	}
+	public void setRecommender(String recommender) {
+		this.recommender = recommender;
+	}
+	public int getClause_private() {
+		return clause_private;
+	}
+	public void setClause_private(int clause_private) {
+		this.clause_private = clause_private;
+	}
+	public int getClause_sms() {
+		return clause_sms;
+	}
+	public void setClause_sms(int clause_sms) {
+		this.clause_sms = clause_sms;
+	}
+	public int getClause_email() {
+		return clause_email;
+	}
+	public void setClause_email(int clause_email) {
+		this.clause_email = clause_email;
+	}
+
+
 	
 	
 }

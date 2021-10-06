@@ -42,9 +42,13 @@ public class MembersController {
 			msg = "회원가입 성공! Kurly 회원이 되신 걸 환영합니다!";
 		}
 		
-		mv.addObject("msg", msg);
-		mv.addObject("url", "./login");
-		mv.setViewName("common/result");
+		if(result >0) {
+			mv.addObject("msg", msg);
+			mv.addObject("url", "./login");
+			mv.setViewName("redirect:../");
+		} else {
+			mv.setViewName("members/join");
+		}
 		
 		return mv;
 	}
@@ -106,6 +110,15 @@ public class MembersController {
 		return mv;
 	}
 	
+	@GetMapping("logout")
+	public ModelAndView member_logout(HttpSession session) throws Exception {
+		session.invalidate();		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:../");
+		
+		return mv;
+	}
+	
 	@GetMapping("myInfoCheck")
 	public ModelAndView member_myInfoCheck() throws Exception {
 		ModelAndView mv = new ModelAndView();
@@ -128,7 +141,8 @@ public class MembersController {
 		membersDTO = membersService.getLogin(membersDTO);
 		
 		if(membersDTO != null) {
-			mv.setViewName("redirect:./myInfo");
+			mv.addObject("member", membersDTO);
+			mv.setViewName("members/myInfo");
 		} else {
 			mv.setViewName("redirect:./myInfoCheck");
 		}
@@ -136,10 +150,13 @@ public class MembersController {
 		return mv;
 	}
 	
-	@PostMapping("delete")
-	public ModelAndView member_delete(MembersDTO membersDTO) throws Exception {
+	@GetMapping("delete")
+	public ModelAndView member_delete(MembersDTO membersDTO, HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		membersService.setDeleteId(membersDTO);
+		int result = membersService.setDeleteId(membersDTO);
+		session.invalidate();
+		mv.addObject("result", result);
+		mv.setViewName("redirect:../");
 		
 		return mv;
 	}
