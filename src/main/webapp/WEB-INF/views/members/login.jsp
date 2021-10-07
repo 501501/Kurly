@@ -19,14 +19,21 @@
 		<div class="mb-3">
 			<input type="password" id="pw" name="pw" size="20" value placeholder="비밀번호를 입력해주세요"/>
 		</div>
+		
+		<div>
+			<a href="./find_id">아이디 찾기</a>
+			<a href="./find_pwd">비밀번호 찾기</a>
+		</div>
+		
 		<div class="mb-3">
 			<button type="submit" class="btn_type1">
 				<span type="txt_type">로그인</span>
 			</button>
 		</div>		
+		<a href="./join" class="btn_2">회원가입</a>
 	</form>
 	
-	<a href="./join" class="btn_2">회원가입</a>
+	
 	
 
 

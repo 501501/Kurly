@@ -46,6 +46,14 @@ public class MembersDAO {
 	public int setUpdateInfo(MembersDTO membersDTO) throws Exception {
 		return sqlSession.update(NAMESPACE+"setUpdateInfo", membersDTO);
 	}
+	
+	public MembersDTO getFindId(MembersDTO membersDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getFindId", membersDTO);
+	}
+	
+	public MembersDTO getFindPw(MembersDTO membersDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getFindPw", membersDTO);
+	}
 
 	
 }

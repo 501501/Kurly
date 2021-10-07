@@ -41,6 +41,16 @@
   						   clause_private=#{clause_private}, clause_sms=#{clause_sms}, clause_email=#{clause_email} 			
   		where id=#{id}		
   	</update>
+  	
+  	<select id="getFindId" parameterType="MembersDTO" resultType="MembersDTO">
+  		select * from MEMBERS
+  		where name=#{name} and email=#{email}
+  	</select>
+  	
+  	<select id="getFindPw" parameterType="MembersDTO" resultType="MembersDTO">
+  		select * from MEMBERS
+  		where name=#{name} and id=#{id} and email=#{email}
+  	</select>
 
   
   </mapper>

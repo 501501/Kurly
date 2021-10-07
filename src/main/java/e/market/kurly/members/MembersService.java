@@ -24,6 +24,7 @@ public class MembersService {
 		return membersDAO.getEmailCheck(membersDTO);
 	}
 	
+	/** 비밀번호 체크*/
 	public MembersDTO getPwCheck(MembersDTO membersDTO) throws Exception {
 		return membersDAO.getPwCheck(membersDTO);
 	}
@@ -41,5 +42,13 @@ public class MembersService {
 	/** 회원정보 수정 */
 	public int setUpdateInfo(MembersDTO membersDTO) throws Exception {
 		return membersDAO.setUpdateInfo(membersDTO);
+	}
+	
+	public MembersDTO getFindId(MembersDTO membersDTO) throws Exception {
+		return membersDAO.getFindId(membersDTO);
+	}
+	
+	public MembersDTO getFindPw(MembersDTO membersDTO) throws Exception {
+		return membersDAO.getFindPw(membersDTO);
 	}
 }

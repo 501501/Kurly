@@ -1,7 +1,5 @@
 package e.market.kurly.members;
 
-import java.net.http.HttpResponse;
-
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -187,6 +185,42 @@ public class MembersController {
 		return mv;
 	}
 	
+	@GetMapping("find_id")
+	public ModelAndView find_id() throws Exception {
+		ModelAndView mv = new ModelAndView();		
+		mv.setViewName("members/find/find_id");
+		
+		return mv;
+	}
 	
+	@PostMapping("find_id")
+	public ModelAndView find_id(MembersDTO membersDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		membersDTO = membersService.getFindId(membersDTO);
+		
+		mv.addObject("member", membersDTO);
+		mv.setViewName("members/find/findResult/find_id2");
+		
+		return mv;
+	}
+	
+	@GetMapping("find_pwd")
+	public ModelAndView find_pwd() throws Exception {
+		ModelAndView mv = new ModelAndView();		
+		mv.setViewName("members/find/find_pwd");
+		
+		return mv;
+	}
+	
+	@PostMapping("find_pwd")
+	public ModelAndView find_pwd(MembersDTO membersDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		membersDTO = membersService.getFindPw(membersDTO);
+		
+		mv.addObject("member", membersDTO);
+		mv.setViewName("members/find/findResult/find_pwd2");
+		
+		return mv;
+	}
 	
 }
