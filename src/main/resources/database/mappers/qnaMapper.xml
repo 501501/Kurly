@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="e.market.kurly.mypage.qna.QnaDAO">
+	<insert id="setInsert" parameterType="QnaDTO">
+		<selectKey order="BEFORE" resultType="Long" keyProperty="num">
+			SELECT QNA_SEQ.nextval FROM dual
+		</selectKey>
+		INSERT INTO QNA
+		VALUES (#{num}, #{category}, #{title}, #{orderNum}, #{email_ck}, #{phone_ck}, #{contents}, sysdate)
+	</insert>
+	
+	<insert id="setFile" parameterType="BoardFilesDTO">
+		INSERT INTO QNAFILES
+		VALUES (QNA_SEQ.nextval, #{num}, #{fileName}, #{oriName})
+	</insert>
+	
+	<select id="getList" resultType="QnaDTO">
+		SELECT * FROM QNA ORDER BY NUM DESC
+	</select>
+	
+	<select id="getOne" parameterType="QnaDTO" resultType="QnaDTO">
+		SELECT * FROM QNA WHERE NUM = #{num}
+	</select>
+	
+	<select id="getFiles" parameterType="QnaDTO" resultType="BoardFilesDTO">
+		SELECT * FROM QNAFILES WHERE NUM = #{num}
+	</select>
+	
+	<select id="getFileOne" parameterType="BoardFilesDTO" resultType="BoardFilesDTO">
+		SELECT * FROM QNAFILES WHERE FILENUM = #{fileNum}
+	</select>
+	
+	<update id="setUpdate" parameterType="QnaDTO">
+		UPDATE QNA SET CATEGORY = #{category}, TITLE = #{title}, ORDERNUM = #{orderNum}, EMAIL_CK = #{email_ck}, PHONE_CK = #{phone_ck}, CONTENTS = #{contents}
+		WHERE NUM = #{num}
+	</update>
+	
+	<delete id="setDelete" parameterType="QnaDTO">
+		DELETE FROM QNA WHERE NUM = #{num}
+	</delete>
+	
+	<delete id="setFileDelete" parameterType="BoardFilesDTO">
+		DELETE QNAFILES WHERE FILENUM = #{fileNum}
+	</delete>
+ </mapper>

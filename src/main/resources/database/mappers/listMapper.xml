@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="e.market.kurly.board.list.ListDAO">
+	<select id="getList" parameterType="Pager" resultType="ListDTO">
+		SELECT * FROM
+		(SELECT ROWNUM R, N.* FROM
+			(SELECT * FROM NOTICE
+			WHERE
+				<choose>
+					<when test="kind=='name'">
+							WRITER
+					</when>
+					<when test="kind=='title'">
+						TITLE
+					</when>
+					<otherwise>
+						CONTENTS
+					</otherwise>
+				</choose>
+					LIKE '%' || #{search} || '%'
+		ORDER BY NUM DESC) N)
+		WHERE R BETWEEN #{startRow} and #{lastRow}
+	</select>
+	
+	<select id="getCount" parameterType="Pager" resultType="Long">
+		SELECT COUNT(NUM) FROM NOTICE
+		<if test="kind == 'name'">WHERE writer LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'title'">WHERE title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'contents'">WHERE contents LIKE '%' || #{search} || '%'</if>
+	</select>
+	
+	<select id="getOne" resultType="ListDTO">
+		SELECT * FROM NOTICE WHERE NUM = #{num}
+	</select>
+	
+	<update id="setHits" parameterType="ListDTO">
+		UPDATE NOTICE SET HITS = HITS + 1
+		WHERE NUM = #{num}
+	</update>
+ </mapper>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="e.market.kurly.mypage.echo.EchoDAO">
+	<insert id="setInsert" parameterType="EchoDTO">
+		<selectKey order="BEFORE" resultType="Long" keyProperty="num">
+			SELECT ECHO_SEQ.nextval FROM dual
+		</selectKey>
+		INSERT INTO ECHO
+		VALUES (#{num}, #{category}, #{title}, #{productName}, #{contents}, sysdate)
+	</insert>
+	
+	<insert id="setFile" parameterType="BoardFilesDTO">
+		INSERT INTO ECHOFILES
+		VALUES (ECHO_SEQ.nextval, #{num}, #{fileName}, #{oriName})
+	</insert>
+	
+	<select id="getList" resultType="EchoDTO">
+		SELECT * FROM ECHO ORDER BY NUM DESC
+	</select>
+	
+	<select id="getOne" parameterType="EchoDTO" resultType="EchoDTO">
+		SELECT * FROM ECHO WHERE NUM = #{num}
+	</select>
+	
+	<select id="getFiles" parameterType="EchoDTO" resultType="BoardFilesDTO">
+		SELECT * FROM ECHOFILES WHERE NUM = #{num}
+	</select>
+	
+	<select id="getFileOne" parameterType="BoardFilesDTO" resultType="BoardFilesDTO">
+		SELECT * FROM ECHOFILES WHERE FILENUM = #{fileNum}
+	</select>
+	
+	<update id="setUpdate" parameterType="EchoDTO">
+		UPDATE ECHO SET CATEGORY = #{category}, TITLE = #{title}, PRODUCTNAME = #{productName}, CONTENTS = #{contents}
+		WHERE NUM = #{num}
+	</update>
+	
+	<delete id="setDelete" parameterType="EchoDTO">
+		DELETE FROM ECHO WHERE NUM = #{num}
+	</delete>
+	
+	<delete id="setFileDelete" parameterType="BoardFilesDTO">
+		DELETE ECHOFILES WHERE FILENUM = #{fileNum}
+	</delete>
+ </mapper>

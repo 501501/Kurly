@@ -5,6 +5,16 @@
 
 <configuration>
 	<typeAliases>
+		<typeAlias type="e.market.kurly.util.Pager" alias="Pager"/>
 		<typeAlias type="e.market.kurly.members.MembersDTO" alias="MembersDTO"/>
+		<typeAlias type="e.market.kurly.board.BoardFilesDTO" alias="BoardFilesDTO"/>
+		<typeAlias type="e.market.kurly.mypage.qna.QnaDTO" alias="QnaDTO"/>
+		<typeAlias type="e.market.kurly.mypage.offer.OfferDTO" alias="OfferDTO"/>
+		<typeAlias type="e.market.kurly.mypage.echo.EchoDTO" alias="EchoDTO"/>
+		<typeAlias type="e.market.kurly.mypage.bulk.BulkDTO" alias="BulkDTO"/>
+		<typeAlias type="e.market.kurly.board.list.ListDTO" alias="ListDTO"/>
+		<typeAlias type="e.market.kurly.service.faq.FaqDTO" alias="FaqDTO"/>
+		
+		<typeAlias type="java.lang.Long" alias="Long"/>
 	</typeAliases>
 </configuration>

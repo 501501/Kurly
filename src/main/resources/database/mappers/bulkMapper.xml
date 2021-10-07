@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="e.market.kurly.mypage.bulk.BulkDAO">
+	<insert id="setInsert" parameterType="BulkDTO">
+		<selectKey order="BEFORE" resultType="Long" keyProperty="num">
+			SELECT BULKORDER_SEQ.nextval FROM dual
+		</selectKey>
+		INSERT INTO BULKORDER
+		VALUES (#{num}, #{name}, #{phone}, #{email}, #{pickupDate}, #{address}, #{inquiry}, sysdate)
+	</insert>
+ </mapper>
