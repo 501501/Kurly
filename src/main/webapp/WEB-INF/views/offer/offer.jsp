@@ -33,7 +33,7 @@
 				<td>작성자 ID</td>
 				<td>${dto.regDate}</td>
 			</tr>
-			<tr id="selectResult${dto.num}" colspan="5"></tr>
+			<tr id="selectResult${dto.num}"></tr>
 			</c:forEach>
 		</tbody>
 	</table>

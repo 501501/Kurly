@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="./offer_register" method="post" enctype="multipart/form-data">
+<form action="./echo_register" method="post" enctype="multipart/form-data">
 	
 	<h3>제목</h3>
 	  <select name="category">

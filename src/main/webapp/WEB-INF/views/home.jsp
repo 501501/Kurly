@@ -15,7 +15,7 @@
 		<a href="./members/logout" class="btn_logout">로그아웃</a>
 	</c:if>
 	
-	<c:if test="${empty member}">>
+	<c:if test="${empty member}">
 		<h2>Login하기 전 Page입니다</h2>
 		<a href="./members/login" class="btn_login">로그인</a>
 	</c:if>

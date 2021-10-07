@@ -68,11 +68,11 @@ img {
 		<label for="title"></label> 
 		<input type="text" id="title" name="title" value="${dto.title}"> 
 		
-		<label for="productName"></label>
-		<input type="text" id="productName" name="productName">
+		<label for="productName"><h3>상품명</h3></label>
+		<input type="text" id="productName" name="productName" value="${dto.productName}">
 		
 		<label for="contents"><h3>내용</h3></label>
-		<textarea rows="10" cols="50" id="contents" name="contents"></textarea>
+		<textarea rows="10" cols="50" id="contents" name="contents">${dto.contents}</textarea>
 	
 		<label for="files"><h3>이미지</h3></label> 
 		<input type="file" id="files" name="files2" class="del">
@@ -82,7 +82,7 @@ img {
 			<c:if test="${not empty f.oriName}">
 				<span class="del">
 					<input type="checkbox" class="del_ck" data-file-num="${f.fileNum}">삭제
-					<img src="../offer_down?fileName=${f.fileName}">
+					<img src="../echo_down?fileName=${f.fileName}">
 				</span>
 			</c:if>
 		</c:forEach>

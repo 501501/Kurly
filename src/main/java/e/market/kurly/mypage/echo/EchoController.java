@@ -29,7 +29,6 @@ public class EchoController {
 	@GetMapping("echo_packing")
 	public ModelAndView echo_packing() throws Exception {
 		ModelAndView mv = new ModelAndView();
-		
 		List<EchoDTO> ar = echoService.getList();
 		mv.addObject("list", ar);
 		mv.setViewName("echo/echo");
@@ -56,7 +55,8 @@ public class EchoController {
 	public ModelAndView qna_update(EchoDTO echoDTO, MultipartFile[] files2) throws Exception {
 		ModelAndView mv = new ModelAndView();
 
-		// 글 수정 int result = echoService.setUpdate(echoDTO, files2);
+		//글 수정 
+		int result = echoService.setUpdate(echoDTO, files2);
 
 		mv.setViewName("redirect:../echo_packing");
 		return mv;

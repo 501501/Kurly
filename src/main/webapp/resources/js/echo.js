@@ -10,10 +10,14 @@ $("#write_btn").click(function(){
 let item = document.querySelector('.select');
 $(".select").click(function() {
 	let num = (this).getAttribute('data-list-num');
-	console.log(num);
-	$.get('../ajax/echo_select?num='+num, function(data){
-		data = data.trim();
-		console.log(data);
-		$("#selectResult"+num).html(data);
-	})
+	//console.log(num);
+	if($("#td"+num).length == 0){
+		$.get('../ajax/echo_select?num='+num, function(data){
+			data = data.trim();
+			console.log(data);
+			$("#selectResult"+num).html(data);
+		})
+	} else {
+		$('td').remove('#td'+num);
+	}
 });

@@ -22,8 +22,8 @@ public class EchoService {
 	private FileManager fileManager;
 	
 	public int setInsert(EchoDTO echoDTO, MultipartFile[] files) throws Exception {
-		// 1. 어느 폴더 /resources/upload/offer/
-		String realPath = servletContext.getRealPath("/resources/upload/echo /");
+		// 1. 어느 폴더 /resources/upload/echo/
+		String realPath = servletContext.getRealPath("/resources/upload/echo/");
 		System.out.println(realPath);
 		File file = new File(realPath);
 
