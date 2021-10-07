@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="e.market.kurly.members.MembersDAO">
+  	<insert id="setRegisterMember" parameterType="e.market.kurly.members.MembersDTO">
+  		insert into MEMBERS 
+  		values (#{id}, #{pw}, #{name}, #{email}, #{phone_num}, #{address_loca}, #{address_post}, #{gender}, #{birth_date},
+  			    #{recommender}, #{clause_private}, #{clause_sms}, #{clause_email})
+  	</insert>
+  	<!-- #{recommender}, #{clause_private}, #{clause_sms}, #{clause_email} -->
+  	
+  	<select id="getIdCheck" parameterType="e.market.kurly.members.MembersDTO" resultType="e.market.kurly.members.MembersDTO">
+  		select * from MEMBERS
+  		where id = #{id}
+  	</select>
+  	
+  	<select id="getEmailCheck" parameterType="e.market.kurly.members.MembersDTO" resultType="e.market.kurly.members.MembersDTO">
+  		select * from MEMBERS
+  		where email = #{email}
+  	</select>
+  	
+  	<select id="getPwCheck" parameterType="MembersDTO" resultType="MembersDTO">
+  		select * from MEMBERS
+  		where pw = #{pw} and id = #{id}
+  	</select>
+  	
+  	<select id="getLogin" parameterType="MembersDTO" resultType="MembersDTO">
+  		select * from MEMBERS
+  		where id=#{id} and pw=#{pw}
+  	</select>
+  	
+  	<delete id="setDeleteId" parameterType="MembersDTO">
+  		delete MEMBERS
+  		where id=#{id}
+  	</delete>
+  	
+  	<update id="setUpdateInfo" parameterType="MembersDTO">
+  		update MEMBERS set pw=#{pw}, email=#{email}, phone_num=#{phone_num}, gender=#{gender}, 
+  						   clause_private=#{clause_private}, clause_sms=#{clause_sms}, clause_email=#{clause_email} 			
+  		where id=#{id}		
+  	</update>
+  	
+  	<select id="getFindId" parameterType="MembersDTO" resultType="MembersDTO">
+  		select * from MEMBERS
+  		where name=#{name} and email=#{email}
+  	</select>
+  	
+  	<select id="getFindPw" parameterType="MembersDTO" resultType="MembersDTO">
+  		select * from MEMBERS
+  		where name=#{name} and id=#{id} and email=#{email}
+  	</select>
+
+  
+  </mapper>
