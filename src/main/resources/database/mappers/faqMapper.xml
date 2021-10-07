@@ -38,13 +38,13 @@
 	
 	<select id="getCount" parameterType="Pager" resultType="Long">
 		SELECT COUNT(NUM) FROM FAQ
-		<if test="kind == 'k0'">title LIKE '%' || #{search} || '%'</if>
-		<if test="kind == 'k1'">CATEGORY = '회원문의' AND title LIKE '%' || #{search} || '%'</if>
-		<if test="kind == 'k2'">CATEGORY = '주문/결제' AND title LIKE '%' || #{search} || '%'</if>
-		<if test="kind == 'k3'">CATEGORY = '취소/교환/반품' AND title LIKE '%' || #{search} || '%'</if>
-		<if test="kind == 'k4'">CATEGORY = '배송문의' AND title LIKE '%' || #{search} || '%'</if>
-		<if test="kind == 'k5'">CATEGORY = '쿠폰/적립금' AND title LIKE '%' || #{search} || '%'</if>
-		<if test="kind == 'k6'">CATEGORY = '서비스 이용 및 기타' AND title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k0'">WHERE title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k1'">WHERE CATEGORY = '회원문의' AND title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k2'">WHERE CATEGORY = '주문/결제' AND title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k3'">WHERE CATEGORY = '취소/교환/반품' AND title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k4'">WHERE CATEGORY = '배송문의' AND title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k5'">WHERE CATEGORY = '쿠폰/적립금' AND title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k6'">WHERE CATEGORY = '서비스 이용 및 기타' AND title LIKE '%' || #{search} || '%'</if>
 	</select>
 	
 	<select id="getOne" parameterType="FaqDTO" resultType="FaqDTO">
