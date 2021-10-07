@@ -9,16 +9,16 @@ $(".title").click(function(){
 	let num = (this).getAttribute('data-faq-num');
 	//console.log(num);
 
-	count++;
-	
-	if(count%2==1){
-		console.log(count);	
+	if($("#td"+num).length == 0){
 		$.get('../ajax/faq_select?num='+num, function(data){
 		data = data.trim();
 		$("#selectResult"+num).html(data);
 		})
 	} else {
-		console.log(count);
 		$('td').remove('#td'+num);
 	}
+});
+
+$("#sel").change(function(){
+	$("#frm").submit();
 });

@@ -5,7 +5,8 @@
 
 <configuration>
 	<typeAliases>
-	<typeAlias type="e.market.kurly.board.BoardFilesDTO" alias="BoardFilesDTO"/>
+		<typeAlias type="e.market.kurly.util.Pager" alias="Pager"/>
+		<typeAlias type="e.market.kurly.board.BoardFilesDTO" alias="BoardFilesDTO"/>
 		<typeAlias type="e.market.kurly.mypage.qna.QnaDTO" alias="QnaDTO"/>
 		<typeAlias type="e.market.kurly.mypage.offer.OfferDTO" alias="OfferDTO"/>
 		<typeAlias type="e.market.kurly.mypage.echo.EchoDTO" alias="EchoDTO"/>

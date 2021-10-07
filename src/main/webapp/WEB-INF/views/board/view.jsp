@@ -31,8 +31,8 @@
 			</td>
 		</tr>
 		<tr>
-			<td>
-				${contents}
+			<td colspan="2">
+				${dto.contents}
 			</td>
 		</tr>
 	</table>

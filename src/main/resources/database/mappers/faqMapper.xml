@@ -4,8 +4,47 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
  <mapper namespace="e.market.kurly.service.faq.FaqDAO">
-	<select id="getList" resultType="FaqDTO">
-		SELECT * FROM FAQ ORDER BY NUM DESC
+	<select id="getList" resultType="FaqDTO" parameterType="Pager">
+		SELECT * FROM
+		(SELECT ROWNUM R, F.* FROM
+			(SELECT * FROM FAQ 
+				<choose>
+					<when test="kind=='k1'">
+						WHERE CATEGORY = '회원문의'
+					</when>
+					<when test="kind=='k2'">
+						WHERE CATEGORY = '주문/결제'
+					</when>
+					<when test="kind=='k3'">
+						WHERE CATEGORY = '취소/교환/반품'
+					</when>
+					<when test="kind=='k4'">
+						WHERE CATEGORY = '배송문의'
+					</when>
+					<when test="kind=='k5'">
+						WHERE CATEGORY = '쿠폰/적립금'
+					</when>
+					<when test="kind=='k6'">
+						WHERE CATEGORY = '서비스 이용 및 기타'
+					</when>
+					<otherwise>
+						WHERE CATEGORY LIKE '%%'
+					</otherwise>
+				</choose>
+				AND TITLE LIKE '%' || #{search} || '%'
+		ORDER BY NUM DESC) F)
+		WHERE R BETWEEN #{startRow} and #{lastRow}
+	</select>
+	
+	<select id="getCount" parameterType="Pager" resultType="Long">
+		SELECT COUNT(NUM) FROM FAQ
+		<if test="kind == 'k0'">title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k1'">CATEGORY = '회원문의' AND title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k2'">CATEGORY = '주문/결제' AND title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k3'">CATEGORY = '취소/교환/반품' AND title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k4'">CATEGORY = '배송문의' AND title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k5'">CATEGORY = '쿠폰/적립금' AND title LIKE '%' || #{search} || '%'</if>
+		<if test="kind == 'k6'">CATEGORY = '서비스 이용 및 기타' AND title LIKE '%' || #{search} || '%'</if>
 	</select>
 	
 	<select id="getOne" parameterType="FaqDTO" resultType="FaqDTO">

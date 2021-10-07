@@ -8,18 +8,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import e.market.kurly.util.Pager;
+
 @Controller
 @RequestMapping("/board/**")
 public class ListController {
 	
 	@Autowired
-	private ListDAO listDAO;
+	private ListService listService;
 	
 	@GetMapping("list")
-	public ModelAndView list() throws Exception {
+	public ModelAndView list(Pager pager) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		List<ListDTO> ar = listDAO.getList();
+		List<ListDTO> ar = listService.getList(pager);
+		
 		mv.addObject("list", ar);
+		mv.addObject("pager", pager);
+		
 		mv.setViewName("board/notice");
 		return mv;
 	}
@@ -29,7 +34,11 @@ public class ListController {
 		ModelAndView mv = new ModelAndView();
 		ListDTO listDTO = new ListDTO();
 		listDTO.setNum(num);
-		listDTO = listDAO.getOne(listDTO);
+		// num으로 선택한 공지 조회
+		listDTO = listService.getOne(listDTO);
+		
+		// 조회수 업데이트
+		listService.setHits(listDTO);
 		
 		mv.addObject("dto", listDTO);
 		mv.setViewName("board/view");
