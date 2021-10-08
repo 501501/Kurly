@@ -54,6 +54,11 @@ public class MembersDAO {
 	public MembersDTO getFindPw(MembersDTO membersDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"getFindPw", membersDTO);
 	}
+	
+	//회원가입시 입력한 주소를 Address테이블에 최초입력하는 쿼리
+	public int startAddress(MembersDTO membersDTO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"startAddress", membersDTO);
+	}
 
 	
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="e.market.kurly.mypage.destination.DestinationDAO">
+ 	<select id="getDestinationList" parameterType="MembersDTO" resultType="DestinationDTO">
+ 		select * from ADDRESS
+ 		where id=#{id}
+ 	</select>
+ 	
+ 	<insert id="setDestination" parameterType="DestinationDTO">
+ 		insert into ADDRESS (id, address_post, address_location, basic_destination, delivery_type)
+ 		values (#{id}, #{address_post}, #{address_location},#{basic_destination},'s') 
+ 	</insert>
+ 	
+ 	<update id="updateBasicDestination" parameterType="DestinationDTO">
+ 		update ADDRESS set basic_destination='n'
+ 		where id=#{id}
+ 	</update>
+ 	
+ 	<update id="updateMembersDestination" parameterType="DestinationDTO">
+ 		update MEMBERS set address_loca=#{address_location}, address_post=#{address_post}
+ 		where id=#{id} 
+ 	</update>
+ </mapper>

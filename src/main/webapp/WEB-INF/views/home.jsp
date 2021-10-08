@@ -13,6 +13,7 @@
 		<h2>Login에 성공하셨습니다</h2>
 		<a href="./members/myInfoCheck" class="btn_myInfo">개인정보수정</a>
 		<a href="./members/logout" class="btn_logout">로그아웃</a>
+		<a href="./mypage/destination?id=${member.id}" class="btn_destination">배송지 관리</a>
 	</c:if>
 	
 	<c:if test="${empty member}">

@@ -11,7 +11,10 @@ public class MembersService {
 	
 	/** 회원가입 */
 	public int setRegisterMember(MembersDTO membersDTO) throws Exception {
-		return membersDAO.setRegisterMember(membersDTO);
+		int result = membersDAO.setRegisterMember(membersDTO);
+		int startAddress = membersDAO.startAddress(membersDTO);
+		
+		return result;
 	}
 	
 	/** 아이디 중복확인*/
@@ -51,4 +54,7 @@ public class MembersService {
 	public MembersDTO getFindPw(MembersDTO membersDTO) throws Exception {
 		return membersDAO.getFindPw(membersDTO);
 	}
+	
+	
+	
 }

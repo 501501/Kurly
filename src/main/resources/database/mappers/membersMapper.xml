@@ -51,6 +51,12 @@
   		select * from MEMBERS
   		where name=#{name} and id=#{id} and email=#{email}
   	</select>
+  	
+  	<!-- 회원가입시 입력한 주소를 Address테이블에 최초입력하는 쿼리, 일단 배송유형은 전부 샛별배송('s')으로 들어가게 했음-->
+  	<insert id="startAddress" parameterType="MembersDTO">
+  		insert into ADDRESS (id, receiver_name, receiver_phone, address_post, address_location, basic_destination, select_destination, delivery_type)
+  		values (#{id}, #{name}, #{phone_num}, #{address_post}, #{address_loca}, 'b', 's', 's')
+  	</insert>
 
   
   </mapper>
