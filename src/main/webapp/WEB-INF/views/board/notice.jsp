@@ -4,11 +4,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<h1>공지사항</h1>
+	
+	<h2>고객센터</h2>
+	<div>
+		<ul class="pagediv">
+			<li>
+				<a href="/kurly/board/list">공지사항</a>
+			</li>
+			<li>
+				<a href="/kurly/service/faq">자주하는 질문</a>
+			</li>
+			<li>
+				<a href="/kurly/mypage/mypage_qna" class="control" data-member-id="${member.id}">1:1 문의</a>
+			</li>
+			<li>
+				<a href="/kurly/mypage/bulk_order">대량주문 문의</a>
+			</li>
+			<li>
+				<a href="/kurly/mypage/offer" class="control" data-member-id="${member.id}">상품 제안</a>
+			</li>
+			<li>
+				<a href="/kurly/mypage/echo_packing" class="control" data-member-id="${member.id}">에코포장 피드백</a>
+			</li>
+		</ul>
+	</div>
+	
 	<table>
 	<tr>
 		<th>번호</th>
@@ -63,5 +89,7 @@
 		<input type="text" name="search">
 		<button type="submit">검색</button>
 	</form>
+	
+	<script type="text/javascript" src="../resources/js/notice.js"></script>
 </body>
 </html>

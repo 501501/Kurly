@@ -10,6 +10,31 @@
 </head>
 <body>
 	<h1>자주하는 질문</h1>
+	
+	<h2>고객센터</h2>
+	<div>
+		<ul class="pagediv">
+			<li>
+				<a href="/kurly/board/list">공지사항</a>
+			</li>
+			<li>
+				<a href="/kurly/service/faq">자주하는 질문</a>
+			</li>
+			<li>
+				<a href="/kurly/mypage/mypage_qna" class="control" data-member-id="${member.id}">1:1 문의</a>
+			</li>
+			<li>
+				<a href="/kurly/mypage/bulk_order" id="bulk_order" data-member-id="${member.id}">대량주문 문의</a>
+			</li>
+			<li>
+				<a href="/kurly/mypage/offer" class="control" data-member-id="${member.id}">상품 제안</a>
+			</li>
+			<li>
+				<a href="/kurly/mypage/echo_packing" class="control" data-member-id="${member.id}">에코포장 피드백</a>
+			</li>
+		</ul>
+	</div>
+	
 	<!-- 카테고리별 검색 -->
 	<form action="./faq" method="get" id="frm">
 		<select name="kind" id="sel">

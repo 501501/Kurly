@@ -32,11 +32,14 @@ public class QnaController {
 	public ModelAndView mypage_qna(HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
-		
-		List<QnaDTO> ar = qnaService.getList(membersDTO);
-		mv.addObject("list", ar);
-		mv.setViewName("qna/qna");
-		
+		if (membersDTO == null) {
+			mv.setViewName("redirect:../members/login");
+		}
+		else {
+			List<QnaDTO> ar = qnaService.getList(membersDTO);
+			mv.addObject("list", ar);
+			mv.setViewName("qna/qna");
+		}
 		return mv;
 	}
 	

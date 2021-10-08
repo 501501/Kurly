@@ -16,7 +16,6 @@ public class ListService {
 		Long totalCount = listDAO.getCount(pager);
 		pager.makeNum(totalCount);
 		pager.makeRow();
-		
 		return listDAO.getList(pager);
 	}
 	

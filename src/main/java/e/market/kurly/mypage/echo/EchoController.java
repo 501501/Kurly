@@ -33,11 +33,14 @@ public class EchoController {
 	public ModelAndView echo_packing(HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
-		
-		List<EchoDTO> ar = echoService.getList(membersDTO);
-		mv.addObject("list", ar);
-		mv.setViewName("echo/echo");
-		
+		if (membersDTO == null) {
+			mv.setViewName("redirect:../members/login");
+		}
+		else {
+			List<EchoDTO> ar = echoService.getList(membersDTO);
+			mv.addObject("list", ar);
+			mv.setViewName("echo/echo");
+		}
 		return mv;
 	}
 

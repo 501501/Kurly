@@ -33,11 +33,14 @@ public class OfferController {
 	public ModelAndView offer(HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
-		
-		List<OfferDTO> ar = offerService.getList(membersDTO);
-		mv.addObject("list", ar);
-		mv.setViewName("offer/offer");
-
+		if (membersDTO == null) {
+			mv.setViewName("redirect:../members/login");
+		}
+		else {
+			List<OfferDTO> ar = offerService.getList(membersDTO);
+			mv.addObject("list", ar);
+			mv.setViewName("offer/offer");
+		}
 		return mv;
 	}
 	
