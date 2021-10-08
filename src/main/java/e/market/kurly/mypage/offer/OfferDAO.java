@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import e.market.kurly.board.BoardFilesDTO;
+import e.market.kurly.members.MembersDTO;
 
 @Repository
 public class OfferDAO {
@@ -23,8 +24,8 @@ public class OfferDAO {
 		return sqlSession.insert(NAMESPACE+"setFile", boardFilesDTO);
 	}
 	
-	public List<OfferDTO> getList() throws Exception {
-		return sqlSession.selectList(NAMESPACE+"getList");
+	public List<OfferDTO> getList(MembersDTO membersDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getList", membersDTO);
 	}
 	
 	public OfferDTO getOne(OfferDTO offerDTO) throws Exception {

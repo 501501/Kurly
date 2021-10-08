@@ -2,6 +2,8 @@ package e.market.kurly.mypage.offer;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import e.market.kurly.board.BoardFilesDTO;
-import e.market.kurly.mypage.qna.QnaDTO;
+import e.market.kurly.members.MembersDTO;
 
 @Controller
 @RequestMapping("/mypage/*")
@@ -28,10 +30,11 @@ public class OfferController {
 
 	// 상품제안
 	@GetMapping("offer")
-	public ModelAndView offer() throws Exception {
+	public ModelAndView offer(HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
+		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
 		
-		List<OfferDTO> ar = offerService.getList();
+		List<OfferDTO> ar = offerService.getList(membersDTO);
 		mv.addObject("list", ar);
 		mv.setViewName("offer/offer");
 

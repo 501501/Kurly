@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import e.market.kurly.board.BoardFilesDTO;
+import e.market.kurly.members.MembersDTO;
 import e.market.kurly.util.FileManager;
 
 @Service
@@ -45,8 +46,8 @@ public class EchoService {
 		return result;
 	}
 	
-	public List<EchoDTO> getList() throws Exception {
-		return echoDAO.getList();
+	public List<EchoDTO> getList(MembersDTO membersDTO) throws Exception {
+		return echoDAO.getList(membersDTO);
 	}
 	
 	public EchoDTO getOne(EchoDTO echoDTO) throws Exception {

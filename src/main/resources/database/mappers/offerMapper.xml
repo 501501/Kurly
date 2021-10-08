@@ -9,7 +9,7 @@
 			SELECT OFFER_SEQ.nextval FROM dual
 		</selectKey>
 		INSERT INTO OFFER
-		VALUES (#{num}, #{category}, #{title}, #{contents}, sysdate)
+		VALUES (#{num}, #{category}, #{title}, #{contents}, sysdate, #{id})
 	</insert>
 	
 	<insert id="setFile" parameterType="BoardFilesDTO">
@@ -17,8 +17,9 @@
 		VALUES (OFFER_SEQ.nextval, #{num}, #{fileName}, #{oriName})
 	</insert>
 	
-	<select id="getList" resultType="OfferDTO">
-		SELECT * FROM OFFER ORDER BY NUM DESC
+	<select id="getList" parameterType="MembersDTO" resultType="OfferDTO">
+		SELECT * FROM OFFER WHERE ID = #{id}
+		ORDER BY NUM DESC
 	</select>
 	
 	<select id="getOne" parameterType="OfferDTO" resultType="OfferDTO">

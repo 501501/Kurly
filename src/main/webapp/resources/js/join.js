@@ -98,13 +98,26 @@
 /** -------------------------------------------------------------------------------- */
 
 /** 추가입력사항 기능 */
+$('.rem_ck').on('click', function(){
+	let ck1 = $(":input:radio[id='recomm']:checked").val();
+	let ck2 = $(":input:radio[id='pEvnet']:checked").val();	
 
-$('#recomm').on('click', function(){
 	$('#writeValue').removeAttr('hidden');
-	$('#writeValue').attr({
+	
+	/* 추천인 아이디 */
+	if (ck1 == 'on'){
+		$('#writeValue').attr({
 		'placeholder':'추천인 아이디를 입력해주세요.'
-	});
-});	
+		});
+		
+	/* 참여 이벤트명 */
+	} else if (ck2 == 'on'){
+		$('#writeValue').attr({
+		'placeholder':'참여 이벤트명을 입력해주세요.'
+		});
+	}
+	
+});
 
 
 $('#btn-join').click(function(){

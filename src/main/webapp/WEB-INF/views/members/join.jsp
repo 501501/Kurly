@@ -101,8 +101,8 @@
 
 		<div class="mb-3">
 			<label for="recommender">추가입력 사항</label>
-			<input type="checkbox" name="recomm" id="recomm" label="추천인 아이디" /><span>추천인 아이디</span>
-			<input type="checkbox" name="pEvent" id="pEvent" label="참여이벤트명" /><span>참여 이벤트명</span>
+			<input type="radio" name="rcm" id="recomm" class="rem_ck"/><span>추천인 아이디</span>
+			<input type="radio" name="rcm" id="pEvnet" class="rem_ck"/><span>참여 이벤트명</span>
 			<div>			
 				<input type="text" name="recommender" id="writeValue" hidden="hidden" />
 			</div>

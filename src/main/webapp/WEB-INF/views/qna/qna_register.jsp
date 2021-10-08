@@ -33,12 +33,12 @@
 	<input type="text" id="orderNum" name="orderNum">
 	
 	<label for="email"><h3>이메일</h3></label>
-	<input type="email" id="email" value="test@email.com" readonly="readonly">
+	<input type="email" id="email" value="${member.email}" readonly="readonly">
 	<input type="checkbox" id="email_ck_hidden" name="email_ck_hidden">
 	<input type="hidden" id="email_ck" name="email_ck" value="n">
 	
 	<label for="phone"><h3>문자메시지</h3></label>
-	<input type="text" id="phone" value="010-1111-1111" readonly="readonly">
+	<input type="text" id="phone" value="${member.phone_num}" readonly="readonly">
 	<input type="checkbox" id="phone_ck_hidden" name="phone_ck_hidden">
 	<input type="hidden" id="phone_ck" name="phone_ck" value="n">
 	
@@ -50,6 +50,8 @@
 	<input type="file" id="files" name="files2">
 	<button type="button" id="fileAdd">업로드 추가</button>
 	</div>
+	
+	<input type="text" name="id" value="${member.id}" hidden="hidden">
 	
 	<br>
 	<div>- 파일은 최대 5개까지 업로드가 지원됩니다.</div>

@@ -74,7 +74,6 @@ img {
 		<label for="title"></label> 
 		<input type="text" id="title" name="title" value="${dto.title}"> 
 		
-		<input type="hidden" id="phone_ck" name="phone_ck"> 
 		<label for="contents"><h3>내용</h3></label>
 		<textarea rows="10" cols="50" id="contents" name="contents">${dto.contents}</textarea>
 	

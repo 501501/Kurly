@@ -2,6 +2,8 @@ package e.market.kurly.mypage.echo;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import e.market.kurly.board.BoardFilesDTO;
+import e.market.kurly.members.MembersDTO;
 
 @Controller
 @RequestMapping("/mypage/*")
@@ -27,9 +30,11 @@ public class EchoController {
 	
 	// 에코포장
 	@GetMapping("echo_packing")
-	public ModelAndView echo_packing() throws Exception {
+	public ModelAndView echo_packing(HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		List<EchoDTO> ar = echoService.getList();
+		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
+		
+		List<EchoDTO> ar = echoService.getList(membersDTO);
 		mv.addObject("list", ar);
 		mv.setViewName("echo/echo");
 		

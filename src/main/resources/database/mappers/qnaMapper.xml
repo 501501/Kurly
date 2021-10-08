@@ -9,7 +9,7 @@
 			SELECT QNA_SEQ.nextval FROM dual
 		</selectKey>
 		INSERT INTO QNA
-		VALUES (#{num}, #{category}, #{title}, #{orderNum}, #{email_ck}, #{phone_ck}, #{contents}, sysdate)
+		VALUES (#{num}, #{category}, #{title}, #{orderNum}, #{email_ck}, #{phone_ck}, #{contents}, sysdate, #{id})
 	</insert>
 	
 	<insert id="setFile" parameterType="BoardFilesDTO">
@@ -17,8 +17,9 @@
 		VALUES (QNA_SEQ.nextval, #{num}, #{fileName}, #{oriName})
 	</insert>
 	
-	<select id="getList" resultType="QnaDTO">
-		SELECT * FROM QNA ORDER BY NUM DESC
+	<select id="getList" parameterType="MembersDTO" resultType="QnaDTO">
+		SELECT * FROM QNA WHERE ID = #{id}
+		ORDER BY NUM DESC
 	</select>
 	
 	<select id="getOne" parameterType="QnaDTO" resultType="QnaDTO">

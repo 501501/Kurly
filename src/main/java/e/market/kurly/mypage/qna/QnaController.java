@@ -2,6 +2,8 @@ package e.market.kurly.mypage.qna;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import e.market.kurly.board.BoardFilesDTO;
+import e.market.kurly.members.MembersDTO;
 
 @Controller
 @RequestMapping("/mypage/*")
@@ -26,10 +29,11 @@ public class QnaController {
 	}
 	
 	@GetMapping("mypage_qna")
-	public ModelAndView mypage_qna() throws Exception {
+	public ModelAndView mypage_qna(HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
-	
-		List<QnaDTO> ar = qnaService.getList();
+		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
+		
+		List<QnaDTO> ar = qnaService.getList(membersDTO);
 		mv.addObject("list", ar);
 		mv.setViewName("qna/qna");
 		

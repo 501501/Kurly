@@ -30,7 +30,7 @@
 				<td>${rownum-r.index}</td>
 				<td>${dto.category}</td>
 				<td>${dto.title}</td>
-				<td>작성자 ID</td>
+				<td>${dto.id}</td>
 				<td>${dto.regDate}</td>
 			</tr>
 			<tr id="selectResult${dto.num}"></tr>

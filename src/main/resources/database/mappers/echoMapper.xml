@@ -9,7 +9,7 @@
 			SELECT ECHO_SEQ.nextval FROM dual
 		</selectKey>
 		INSERT INTO ECHO
-		VALUES (#{num}, #{category}, #{title}, #{productName}, #{contents}, sysdate)
+		VALUES (#{num}, #{category}, #{title}, #{productName}, #{contents}, sysdate, #{id})
 	</insert>
 	
 	<insert id="setFile" parameterType="BoardFilesDTO">
@@ -17,8 +17,9 @@
 		VALUES (ECHO_SEQ.nextval, #{num}, #{fileName}, #{oriName})
 	</insert>
 	
-	<select id="getList" resultType="EchoDTO">
-		SELECT * FROM ECHO ORDER BY NUM DESC
+	<select id="getList" parameterType="MembersDTO" resultType="EchoDTO">
+		SELECT * FROM ECHO WHERE ID = #{id}
+		ORDER BY NUM DESC
 	</select>
 	
 	<select id="getOne" parameterType="EchoDTO" resultType="EchoDTO">

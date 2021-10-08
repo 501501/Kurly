@@ -37,6 +37,8 @@
 	<button type="button" id="fileAdd">업로드 추가</button>
 	</div>
 	
+	<input type="text" name="id" value="${member.id}" hidden="hidden">
+	
 	<br>
 	<div>- 파일은 최대 5개까지 업로드가 지원됩니다.</div>
 	

@@ -11,6 +11,8 @@ public class OfferDTO {
 	private String title;
 	private String contents;
 	private Date regDate;
+	private String id;
+	
 	private List<BoardFilesDTO> files;
 	
 	public Long getNum() {
@@ -42,6 +44,12 @@ public class OfferDTO {
 	}
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	public List<BoardFilesDTO> getFiles() {
 		return files;

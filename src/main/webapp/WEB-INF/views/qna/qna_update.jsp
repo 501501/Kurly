@@ -95,7 +95,7 @@ img {
 		<label for="orderNum"><h3>주문번호</h3></label>
 		<input type="text" id="orderNum" name="orderNum" value="${dto.orderNum}"> 
 		<label for="email"><h3>이메일</h3></label>
-		<input type="email" id="email" value="test@email.com" readonly="readonly"> 
+		<input type="email" id="email" value="${member.email}" readonly="readonly"> 
 		<input type="checkbox" id="email_ck_hidden" name="email_ck_hidden"
 			<c:if test="${dto.email_ck eq 'y'}">
 				checked="checked"
@@ -103,7 +103,7 @@ img {
 			
 		<input type="hidden" id="email_ck" name="email_ck"> 
 		<label for="phone"><h3>문자메시지</h3></label> 
-		<input type="text" id="phone" value="010-0000-1111" readonly="readonly"> 
+		<input type="text" id="phone" value="${member.phone_num}" readonly="readonly"> 
 		<input type="checkbox" id="phone_ck_hidden" name="phone_ck_hidden"
 			<c:if test="${dto.phone_ck eq 'y'}">
 				checked="checked"
