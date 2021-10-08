@@ -9,7 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>자주하는 질문</h1>
+	<h2>
+		자주하는 질문
+	</h2>
+	<span>고객님들께서 가장 자주하시는 질문을 모두 모았습니다.</span>
 	
 	<h2>고객센터</h2>
 	<div>

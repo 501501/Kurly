@@ -17,7 +17,7 @@
 		<a href="./members/login" class="btn_login">로그인</a>
 	</c:if>
 
-	<h1>고객센터</h1>
+	<h2>고객센터</h2>
 	<a href="./board/list"><h3>공지사항</h3></a>
 	<a href="./service/faq"><h3>자주하는 질문</h3></a>
 	<a class="control" data-member-id="${member.id}" data-click-board="qna"><h3>1:1 문의</h3></a>

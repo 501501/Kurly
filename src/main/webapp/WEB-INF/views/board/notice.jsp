@@ -9,7 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>공지사항</h1>
+	<h2>
+		공지사항
+	</h2>
+	<span>컬리의 새로운 소식들과 유용한 정보들을 한 곳에서 확인하세요.</span>
 	
 	<h2>고객센터</h2>
 	<div>
