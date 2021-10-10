@@ -20,21 +20,13 @@ public class DestinationService {
 	
 	/** 새 배송지 추가 */
 	public int setDestination(DestinationDTO destinationDTO) throws Exception {
-		
-		int result = destinationDAO.setDestination(destinationDTO);
-		
-		if(destinationDTO.getBasic_destination().isEmpty()) {
-			destinationDTO.setBasic_destination("n");
-			
-			result = destinationDAO.setDestination(destinationDTO);
-		} else if(destinationDTO.getBasic_destination().equals("b")) {
+	
+		if(destinationDTO.getBasic_destination().equals("b")) {
 			destinationDAO.updateBasicDestination(destinationDTO);
 			destinationDAO.updateMembersDestination(destinationDTO);
-			
-			result = destinationDAO.setDestination(destinationDTO);
 		}
 		
-		return result;
+		return destinationDAO.setDestination(destinationDTO);
 	}
 	
 	

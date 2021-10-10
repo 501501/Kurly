@@ -18,6 +18,9 @@ public class DestinationController {
 	@Autowired
 	private DestinationService destinationService;
 	
+///////////////////////////////////////////////////////////////////////////////	
+	
+	/** 배송지관리 버튼 누르면 배송지관리 화면 띄우기*/
 	@GetMapping("destination")
 	public ModelAndView destination_control(MembersDTO membersDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -28,6 +31,8 @@ public class DestinationController {
 		
 		return mv;
 	}
+	
+///////////////////////////////////////////////////////////////////////////
 	
 	@GetMapping("destination/form")
 	public ModelAndView add_destination() throws Exception {
@@ -46,6 +51,16 @@ public class DestinationController {
 		mv.addObject("result", result);
 		mv.addObject("id", destinationDTO.getId());
 		mv.setViewName("redirect:./");
+		
+		return mv;
+	}
+	
+///////////////////////////////////////////////////////////////////////////////////////////
+	
+	@GetMapping("destination/update")
+	public ModelAndView update_destination(DestinationDTO destinationDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("destination/update_destination");
 		
 		return mv;
 	}

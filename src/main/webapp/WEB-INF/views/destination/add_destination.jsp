@@ -35,7 +35,7 @@
 		</div>
 		
 		<div>
-			<button type="button" id="btn_storage">저장</button>
+			<button type="submit" id="btn_storage">저장</button>
 		</div>
 	
 	</form>
@@ -62,7 +62,12 @@
 		if($('#cbx_basic').is(':checked') == true){
 			$('#cbx_basic2').attr('disabled', true);
 		} 
-		$('#frm').submit();
+		
+		$('#btn_storage').click(function(){
+			self.close();
+			opener.parent.location.reload();
+		});
+		
 	});
 	
 	
