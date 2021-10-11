@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="e.market.kurly.mypage.destination.DestinationDAO">
+	<insert id="setInsert" parameterType="DestinationDTO">
+		INSERT INTO DESTINATION
+		VALUES (#{id}, #{address_loca}, #{address_post}, #{name}, #{phone_num}, #{shipping_type}, #{default_type}, #{check_type})
+	</insert>
+	
+	<select id="getList" parameterType="MembersDTO" resultType="DestinationDTO">
+		SELECT * FROM DESTINATION 
+		WHERE ID = #{id}
+	</select>
+ </mapper>

@@ -9,6 +9,7 @@
 	<c:if test="${not empty member}">
 		<h2>Login에 성공하셨습니다</h2>
 		<a href="./members/myInfoCheck" class="btn_myInfo">개인정보수정</a>
+		<a href="./mypage/destination/list">배송지 관리</a>
 		<a href="./members/logout" class="btn_logout">로그아웃</a>
 	</c:if>
 	

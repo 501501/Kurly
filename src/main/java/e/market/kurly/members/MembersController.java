@@ -1,6 +1,5 @@
 package e.market.kurly.members;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +11,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import e.market.kurly.mypage.destination.DestinationDAO;
+import e.market.kurly.mypage.destination.DestinationDTO;
+import e.market.kurly.mypage.destination.DestinationService;
+
 @Controller
 @RequestMapping("/members/**")
 public class MembersController {
 
 	@Autowired
 	private MembersService membersService;
+	@Autowired
+	private DestinationService destinationService;
 	
 /** ------------------------------------------------*/
 	
@@ -30,10 +35,15 @@ public class MembersController {
 	}
 	
 	@PostMapping("join")
-	public ModelAndView member_join(MembersDTO membersDTO) throws Exception {
+	public ModelAndView member_join(MembersDTO membersDTO, DestinationDTO destinationDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		
+		// 회원 가입정보 추가 (members table)
 		int result = membersService.setRegisterMember(membersDTO);
+		// 배송지 테이블에 추가 (destination table)
+		int destinationResult = destinationService.setInsert(destinationDTO);
+		
+		System.out.println("배송지 삽입: " + destinationResult);
 		
 		String msg = "회원가입에 실패하셨습니다";
 		if(result>0) {

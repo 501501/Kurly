@@ -83,7 +83,6 @@
 			</div>
 		</div>
 		
-		
 		<div class="mb-3" value>
 		  <label for="gender" class="form-label">성별</label>
 		  <input type="checkbox" class="checkb m" name="gender" value="m">
@@ -106,6 +105,15 @@
 			<div>			
 				<input type="text" name="recommender" id="writeValue" hidden="hidden" />
 			</div>
+		</div>
+		
+		<div>
+			<!-- 배송 유형 -->
+			<input type="text" name="shipping_type" value="배송유형" hidden="hidden">
+			<!-- 기본 배송지 여부 -->
+			<input type="text" name="default_type" value="y" hidden="hidden">
+			<!-- 지정 배송지 여부 -->
+			<input type="text" name="check_type" value="y" hidden="hidden">
 		</div>
 
 		<hr>

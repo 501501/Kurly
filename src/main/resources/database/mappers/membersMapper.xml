@@ -6,7 +6,7 @@
   <mapper namespace="e.market.kurly.members.MembersDAO">
   	<insert id="setRegisterMember" parameterType="e.market.kurly.members.MembersDTO">
   		insert into MEMBERS 
-  		values (#{id}, #{pw}, #{name}, #{email}, #{phone_num}, #{address_loca}, #{address_post}, #{gender}, #{birth_date},
+  		values (#{id}, #{pw}, #{name}, #{email}, #{phone_num}, #{gender}, #{birth_date},
   			    #{recommender}, #{clause_private}, #{clause_sms}, #{clause_email})
   	</insert>
   	<!-- #{recommender}, #{clause_private}, #{clause_sms}, #{clause_email} -->
