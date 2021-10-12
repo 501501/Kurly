@@ -12,12 +12,12 @@
 $(function(){
 
     $("#btnList").click(function(){
-        location.href="#";
+        location.href="../goods_list";
     });
 
     $("#btnDelete").click(function(){
         if(confirm("장바구니를 비우시겠습니까?")){
-            location.href="./deleteAll";
+            location.href="./deleteAll?userId=${map.userId}";
         }
     });
 });

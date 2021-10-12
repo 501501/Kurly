@@ -54,6 +54,7 @@ public class GoodsCartController {
 			map.put("sum", sumMoney+fee);
 			map.put("list", list);
 			map.put("count", list.size());
+			map.put("userId", userId);
 			
 			mv.setViewName("goods/goods_cart");
 			mv.addObject("map", map);
