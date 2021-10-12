@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+	<mapper namespace="e.market.kurly.goods.goods_cart.GoodsCartDAO">
+		<insert id="insertCart" parameterType="e.market.kurly.goods.goods_cart.GoodsCartDTO">
+			insert into GoodsCart (cart_id, userId, product_id, amount)
+			values (cart_seq.nextval, #{userId}, #{product_id}, #{amount})
+		</insert>
+		
+		
+		<select id="listCart" parameterType="java.lang.String" resultType="e.market.kurly.goods.goods_cart.GoodsCartDTO">
+			select cart_id, g.product_id, c.userId, name, product_name, amount, price, (price*amount) money
+			from MEMBERS m, GoodsCart c, GOODS g
+			where m.id=c.userId and c.product_id=g.product_id and c.userId=#{userId}
+			order by cart_id
+		</select>
+		
+		<select id="sumMoney" parameterType="java.lang.String" resultType="java.lang.Integer">
+			select NVL(sum(price*amount), 0)
+			from GoodsCart c, Goods g
+			where c.product_id=g.product_id and userId=#{userId}
+		</select>
+		
+		<delete id="deleteOne" parameterType="e.market.kurly.goods.goods_cart.GoodsCartDTO">
+			delete from GoodsCart where cart_id=#{cart_id}
+		</delete>
+		
+		<delete id="deleteAll" parameterType="e.market.kurly.goods.goods_cart.GoodsCartDTO">
+			delete from GoodsCart where userId=#{userId}
+		</delete>
+	</mapper>

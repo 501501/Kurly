@@ -10,6 +10,7 @@
 		<h2>Login에 성공하셨습니다</h2>
 		<a href="./members/myInfoCheck" class="btn_myInfo">개인정보수정</a>
 		<a href="./members/logout" class="btn_logout">로그아웃</a>
+		<a href="./goods/goods_cart/" class="btn_cart">장바구니</a>
 	</c:if>
 	
 	<c:if test="${empty member}">
@@ -24,6 +25,9 @@
 	<a data-member-id="${member.id}" id="bulk_order"><h3>대량주문 문의</h3></a>
 	<a class="control" data-member-id="${member.id}" data-click-board="offer"><h3>상품 제안</h3></a>
 	<a class="control" data-member-id="${member.id}" data-click-board="echo"><h3>에코포장 피드백</h3></a>
+	
+	<h1>상품 리스트</h1>
+	<a href="./goods/goods_list">상품 리스트</a>
 
 <script type="text/javascript" src="./resources/js/home.js"></script>
 </body>
