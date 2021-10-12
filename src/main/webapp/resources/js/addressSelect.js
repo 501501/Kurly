@@ -48,6 +48,6 @@ function address_searching(){
 /** form 전송 주소data*/
 
 $("[name=addr3]").blur(function(){
-	let total = $("[name=addr2]").val() +$("[name=addr3]").val();
+	let total = $("[name=addr2]").val() + " " + $("[name=addr3]").val();
 	$('#address_loca').val(total);	
 });

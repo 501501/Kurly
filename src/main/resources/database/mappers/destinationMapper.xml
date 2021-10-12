@@ -12,5 +12,42 @@
 	<select id="getList" parameterType="MembersDTO" resultType="DestinationDTO">
 		SELECT * FROM DESTINATION 
 		WHERE ID = #{id}
+		ORDER BY ADDRESS_LOCA
 	</select>
+	
+	<update id="setDefaultUpdate" parameterType="DestinationDTO">
+		UPDATE DESTINATION SET DEFAULT_TYPE = 'n'
+		WHERE ADDRESS_POST NOT LIKE #{address_post}
+	</update>
+	
+	<update id="setCheckSelect" parameterType="DestinationDTO">
+		UPDATE DESTINATION SET CHECK_TYPE = 'y'
+		WHERE ADDRESS_POST = #{address_post}
+	</update>
+		
+	<update id="setCheckUpdate" parameterType="DestinationDTO">
+		UPDATE DESTINATION SET CHECK_TYPE = 'n'
+		WHERE ADDRESS_POST NOT LIKE #{address_post}
+	</update>
+	
+	<select id="getListOne" parameterType="DestinationDTO" resultType="DestinationDTO">
+		SELECT * FROM DESTINATION
+		WHERE ADDRESS_POST = #{address_post}
+	</select>
+	
+	<update id="setUpdate" parameterType="DestinationDTO">
+		UPDATE DESTINATION
+		SET ADDRESS_LOCA = #{address_loca}, NAME = #{name}, PHONE_NUM = #{phone_num}, DEFAULT_TYPE = #{default_type}
+		WHERE ADDRESS_POST = #{address_post}
+	</update>
+	
+	<delete id="setDelete" parameterType="DestinationDTO">
+		DELETE FROM DESTINATION 
+		WHERE ADDRESS_POST = #{address_post}
+	</delete>
+	
+	<update id="setDefaultToCheck">
+		UPDATE DESTINATION SET CHECK_TYPE = 'y'
+		WHERE ADDRESS_POST = (SELECT ADDRESS_POST FROM DESTINATION WHERE DEFAULT_TYPE = 'y')
+	</update>
  </mapper>

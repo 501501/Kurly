@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import e.market.kurly.board.BoardFilesDTO;
+import e.market.kurly.mypage.destination.DestinationDTO;
+import e.market.kurly.mypage.destination.DestinationService;
 import e.market.kurly.mypage.echo.EchoDTO;
 import e.market.kurly.mypage.echo.EchoService;
 import e.market.kurly.mypage.offer.OfferDTO;
@@ -28,6 +30,8 @@ public class AjaxController {
 	private EchoService echoService;
 	@Autowired
 	private FaqDAO faqDAO;
+	@Autowired
+	private DestinationService destinationService;
 	
 	@GetMapping("qna_select")
 	public ModelAndView qna_select(Long num) throws Exception {
@@ -131,6 +135,18 @@ public class AjaxController {
 		
 		mv.addObject("dto", faqDTO);
 		mv.setViewName("board/selectResult");
+		
+		return mv;
+	}
+	
+	@GetMapping("check_type")
+	public ModelAndView check_type(String post) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		DestinationDTO destinationDTO = new DestinationDTO();
+		destinationDTO.setAddress_post(post);
+		int result = destinationService.setCheckSelect(destinationDTO);		
+		mv.setViewName("common/ajaxResult");
+		mv.addObject("result", result);
 		
 		return mv;
 	}

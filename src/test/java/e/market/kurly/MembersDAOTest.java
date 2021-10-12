@@ -5,8 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.sql.Date;
 
-import org.apache.ibatis.session.SqlSession;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import e.market.kurly.members.MembersDAO;
@@ -36,9 +34,7 @@ public class MembersDAOTest extends MyJunitTest {
 		membersDTO.setPhone_num("01055557756");
 		membersDTO.setEmail("a5@naver.com");
 		membersDTO.setName("a5");
-		
-		membersDTO.setAddress_loca("흑석동");
-		membersDTO.setAddress_post("12345");
+	
 		membersDTO.setGender("m");
 		membersDTO.setRecommender("a1");
 		membersDTO.setClause_email(1);
@@ -46,7 +42,6 @@ public class MembersDAOTest extends MyJunitTest {
 		membersDTO.setClause_sms(1);
 		
 		int result = membersDAO.setRegisterMember(membersDTO);
-		
 		assertEquals(1, result);
 		
 	}
