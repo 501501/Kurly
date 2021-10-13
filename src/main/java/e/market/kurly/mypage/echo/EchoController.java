@@ -102,7 +102,6 @@ public class EchoController {
 	public ModelAndView echo_delete(EchoDTO echoDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		int result = echoService.setDelete(echoDTO);
-		System.out.println("삭제 결과: "+result);
 		// 삭제 성공
 		if (result > 0) {
 			mv.addObject("msg", "정상적으로 삭제되었습니다.");
