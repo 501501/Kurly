@@ -30,4 +30,14 @@
 		<delete id="deleteAll" parameterType="e.market.kurly.goods.goods_cart.GoodsCartDTO">
 			delete from GoodsCart where userId=#{userId}
 		</delete>
+		
+		<update id="updatePlus" parameterType="e.market.kurly.goods.goods_cart.GoodsCartDTO">
+			update GoodsCart set amount=amount+1
+			where cart_id=#{cart_id} and userId=#{userId}
+		</update>
+		
+		<update id="updateMinus" parameterType="e.market.kurly.goods.goods_cart.GoodsCartDTO">
+			update GoodsCart set amount=amount-1
+			where cart_id=#{cart_id} and userId=#{userId}
+		</update>
 	</mapper>

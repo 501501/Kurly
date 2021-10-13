@@ -1,14 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>Insert title here</title>
-<script>
+<style>
+ 	input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+</style>
+<script type="text/javascript">
 $(function(){
 
     $("#btnList").click(function(){
@@ -27,15 +33,23 @@ $(function(){
 <h2>장바구니</h2>
 <c:choose>
     <c:when test="${map.count == 0 }">
-        장바구니가 비었습니다.
+        장바구니에 담긴 상품이 없습니다
     </c:when>
     
     <c:otherwise>
-
+		
+		<div>
+			<input type="checkbox" id="cbxAll" name="cbxAll" class="cbxSelect"/>
+			<label for="cbxAll">전체선택</label> 
+			<span>&nbsp;&nbsp;</span> <a href="#none" class="btn_delete">선택삭제</a>
+		</div>
+		<hr/>
+		
         <form id="form1" name="form1" method="post"
         action="#">
             <table border="1" width="400px">
                 <tr>
+                	<th>선택</th>
                     <th>상품명</th>
                     <th>단가</th>
                     <th>수량</th>
@@ -43,27 +57,33 @@ $(function(){
                     <th>&nbsp;</th>
                 </tr>
 
-            <c:forEach var="row" items="${map.list}">
+            <input type="text" id="hiddenVal" value="${fn:length(map.list)}" hidden="hidden" />
+            <input type="text" id="userIdVal" value="${map.userId}" hidden="hidden" />  
+            
+            <c:forEach var="row" items="${map.list}" varStatus="status">
                 <tr align="center">
+                	<td>
+                		<input type="checkbox" id="cbx_${status.index}" class="cbxSelect cbxMinor" />
+                	</td>
+                
                     <td>${row.product_name}</td>
                     
                     <td><fmt:formatNumber value="${row.price}"
                             pattern="#,###,###" /></td>
-                            <!-- fmt:formatNumber 태그는 숫자를 양식에 맞춰서 문자열로 변환해주는 태그 -->
-                            <!-- 여기선 금액을 표현할 때 사용 -->
-                            <!-- ex) 5,000 / 10,000 등등-->
                             
-                    <td><input type="number" name="amount" 
-                        style="width:30px;"
-                        value="<fmt:formatNumber value="${row.amount}"
-                            pattern="#,###,###" />">
-                    <!-- 물건의 개수 (amount)를 fmt태그를 사용해서 패턴의 형식에 맞춰서 문자열로 변환 -->
-                    <!--1,000 / 5,000 등등  -->
-                    
-                            <input type="hidden" name="cart_id"
-                            value="${row.cart_id}">
-                            
-                                
+                    <td>
+						<div>
+							<button type="button" class="btn minus off" data-item-id="${row.product_id}" data-opt="decrease"
+							onclick="minusAmount(${row.cart_id})">-</button>
+							
+							<input type="number" style="width:20px;" value="${row.amount}" class="num" id="stepperCounter" />
+							
+							<button type="button" class="btn plus" data-item-id="${row.product_id}" data-opt="increase"
+							onclick="plusAmount(${row.cart_id})">+</button>
+						</div>
+						
+                            <input type="hidden" name="cart_id" id="cart_id${status.index}"
+                            value="${row.cart_id}">                             
                     </td>
                     <td><fmt:formatNumber value="${row.money}"
                             pattern="#,###,###" /></td>
@@ -88,5 +108,31 @@ $(function(){
     </c:otherwise>
 </c:choose>
 <button type="button" id="btnList">상품목록</button>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		// 전체 체크박스 클릭 시 작동
+		$('#cbxAll').click(function(){
+			if($('#cbxAll').prop('checked')) {
+				$('.cbxSelect').prop('checked', true);
+			} else {
+				$('.cbxSelect').prop('checked', false);
+			}
+		});
+		
+		// 전체 체크박스 선택 중 하위 체크박스 하나가 풀렸을 때 전체 체크 해제
+		$('.cbxSelect').click(function(){
+			if($('.cbxMinor:checked').length == $('#hiddenVal').val()){
+				$('#cbxAll').prop('checked', true);
+			} else {
+				$('#cbxAll').prop('checked', false);
+			}
+		});
+	});
+
+</script>
+
+<script type="text/javascript" src="../../resources/js/goods_cart.js"></script>
 </body>
 </html>

@@ -49,7 +49,13 @@ public class GoodsCartDAO {
 		return sqlSession.update(NAMESPACE+"modifyCart", cartDTO);
 	}
 
+	public int updatePlus(GoodsCartDTO cartDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"updatePlus", cartDTO);
+	}
 	
+	public int updateMinus(GoodsCartDTO cartDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"updateMinus", cartDTO);
+	}
 	
 	
 	

@@ -46,4 +46,12 @@ public class GoodsCartService {
 	public int modifyCart(GoodsCartDTO cartDTO) throws Exception {
 		return goodsCartDAO.modifyCart(cartDTO);
 	}
+	
+	public int updatePlus(GoodsCartDTO cartDTO) throws Exception {
+		return goodsCartDAO.updatePlus(cartDTO);
+	}
+	
+	public int updateMinus(GoodsCartDTO cartDTO) throws Exception {
+		return goodsCartDAO.updateMinus(cartDTO);
+	}
 }

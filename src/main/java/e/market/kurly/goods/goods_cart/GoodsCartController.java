@@ -85,5 +85,23 @@ public class GoodsCartController {
 		return "redirect: ./";
 	}
 	
+	@PostMapping("update/plus_amount")
+	public ModelAndView updatePlus(GoodsCartDTO cartDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = cartService.updatePlus(cartDTO);
+		mv.addObject("result", result);
+		mv.setViewName("common/ajaxResult");
+		return mv;
+	}
+	
+	@PostMapping("update/minus_amount")
+	public ModelAndView updateMinus(GoodsCartDTO cartDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = cartService.updateMinus(cartDTO);
+		mv.addObject("result", result);
+		mv.setViewName("common/ajaxResult");
+		return mv;
+	}
+	
 	
 }

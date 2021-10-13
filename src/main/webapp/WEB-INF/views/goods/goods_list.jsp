@@ -30,14 +30,14 @@
 		</tr>
 	</thead>
 	<tbody><br>
-<c:forEach var="good" items="${goodsList}">
-	<tr align="center">
-		<td style="width:10px;">${good.product_id}</td>
-		<td style="width:10px;"><a href="./goods_view?product_id=${good.product_id}">${good.product_name}</a></td>
-		<td style="width:10px;">${good.price}</td>
-		<td style="width:100px;">${good.description}</td>
-	</tr>
-</c:forEach>
+		<c:forEach var="good" items="${goodsList}">
+			<tr align="center">
+				<td style="width:10px;">${good.product_id}</td>
+				<td style="width:10px;"><a href="./goods_view?product_id=${good.product_id}">${good.product_name}</a></td>
+				<td style="width:10px;">${good.price}</td>
+				<td style="width:100px;">${good.description}</td>
+			</tr>
+		</c:forEach>
 	</tbody>
 </table>	
 </body>
