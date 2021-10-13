@@ -59,6 +59,9 @@ public class DestinationController {
 			destinationService.setDefaultUpdate(destinationDTO);
 		}
 		
+		// 새로 추가한 배송지 외 다른 배송지의 CHECK_TYPE을 n으로 업데이트
+		destinationService.setCheckUpdate(destinationDTO);
+		
 		mv.setViewName("redirect:./submit");
 		return mv;
 	}

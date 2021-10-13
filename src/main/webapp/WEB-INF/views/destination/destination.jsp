@@ -15,8 +15,8 @@
 	<button class="btn" id="newAddressAdd">새 배송지 추가</button>
 	
 	<!-- 부모창에서 전달할 값 (hidden) -->	
-	<input name="address_post" id="address_post" type="text" hidden="hidden" />
-	<input name="addr2" id="addr2" type="text" readonly="readonly" hidden="hidden" />
+	<input name="address_post" id="address_post" type="text" hidden="hidden"/>
+	<input name="addr2" id="addr2" type="text" hidden="hidden"/>
 
 	<table>
 	<tr>
@@ -44,7 +44,10 @@
 		</td>
 		<td>${dto.name}</td>
 		<td>${dto.phone_num}</td>
-		<td>${dto.shipping_type}</td>
+		<td>
+			<c:if test="${dto.shipping_type eq 'direct'}">샛별배송</c:if>
+			<c:if test="${dto.shipping_type eq 'indirect'}">택배배송</c:if>
+		</td>
 		<td><button class="modify" data-delivery-post="${dto.address_post}">수정</button></td>
 	</tr>
 	</c:forEach>

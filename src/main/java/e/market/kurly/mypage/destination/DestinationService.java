@@ -34,6 +34,10 @@ public class DestinationService {
 		return result;
 	}
 	
+	public int setCheckUpdate(DestinationDTO destinationDTO) throws Exception {
+		return destinationDAO.setCheckUpdate(destinationDTO);
+	}
+	
 	public DestinationDTO getListOne(DestinationDTO destinationDTO) throws Exception {
 		return destinationDAO.getListOne(destinationDTO);
 	}

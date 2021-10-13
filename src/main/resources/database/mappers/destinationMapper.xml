@@ -12,7 +12,7 @@
 	<select id="getList" parameterType="MembersDTO" resultType="DestinationDTO">
 		SELECT * FROM DESTINATION 
 		WHERE ID = #{id}
-		ORDER BY ADDRESS_LOCA
+		ORDER BY CHECK_TYPE DESC, ADDRESS_LOCA ASC
 	</select>
 	
 	<update id="setDefaultUpdate" parameterType="DestinationDTO">

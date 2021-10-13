@@ -4,8 +4,13 @@
 
 /* 주소 검색기능 메서드 */
 function address_searching() {
-
+	var width = 516;
+	var height = 453.6;
+	
 	new daum.Postcode({
+		width: width,
+		height: height,
+		
 		oncomplete: function(data) {
 			// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 			
@@ -36,14 +41,17 @@ function address_searching() {
 			}
 
 			// 우편번호와 주소 정보를 해당 필드에 넣는다.
-			console.log(data.zonecode);
-			console.log(fullRoadAddr);
+			// console.log(data.zonecode);
+			// console.log(fullRoadAddr);
 
 			$("[name=address_post]").val(data.zonecode);
 			$("[name=addr2]").val(fullRoadAddr);
 			
 		}
-	}).open();
+	}).open({
+		left: (window.screen.width / 2) - (width / 2),
+    	top: (window.screen.height / 2) - (height / 2)
+	});
 }
 
 
@@ -55,7 +63,16 @@ $("[name=addr3]").blur(function(){
 
 /* form창 열기 */
 function openWin(){
-	window.open("./form", "_blank", "width=800, height=700");
+	
+	// 팝업 사이즈
+	let popupWidth = 516;
+	let popupHeight = 453.6;
+	
+	// 화면 중앙 정렬
+	let popupX = (window.screen.width / 2) - (popupWidth / 2);
+	let popupY= (window.screen.height / 2) - (popupHeight / 2);
+
+	window.open("./form", "_blank", 'status=no, height=' + popupHeight  + ', width=' + popupWidth  + ', left='+ popupX + ', top='+ popupY);
 }
 
 /* 새 배송지 추가 버튼 클릭*/
