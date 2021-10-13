@@ -13,5 +13,19 @@
 	${dto.contents}
 	
 	<a href="./${board}/update?num=${num}"><input type="button" value="수정"></a>
-	<a href="./${board}/delete?num=${num}"><input type="button" value="삭제"></a>
+	<%-- <a href="./${board}/delete?num=${num}"> --%>
+	<input id="del" type="button" value="삭제">
+	<!-- </a> -->
 </td>
+
+<script type="text/javascript">
+	// 새 창
+	function openWin(){
+	window.open("./mypage_offer/delete_ck?num="+${num}, "_blank", "width=400, height=200");
+	}
+	
+	// 삭제 버튼 클릭 이벤트
+	$("#del").click(function(){
+		openWin();
+	});
+</script>

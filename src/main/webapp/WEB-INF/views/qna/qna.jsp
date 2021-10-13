@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body>	
 	<h1>1:1 문의</h1>
 	<c:set var="rownum" value="${fn:length(list)}"></c:set>
 

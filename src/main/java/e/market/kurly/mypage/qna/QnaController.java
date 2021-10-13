@@ -77,15 +77,17 @@ public class QnaController {
 	// qna 등록
 	@PostMapping("mypage_qna_register")
 	public ModelAndView qna_register(QnaDTO qnaDTO, MultipartFile[] files2) throws Exception {
-		//System.out.println("upload");
-		// original file name 출력
-		for (MultipartFile muFile : files2) {
-			System.out.println(muFile.getOriginalFilename());
-		}
-
 		ModelAndView mv = new ModelAndView();
 		int result = qnaService.setInsert(qnaDTO, files2);
-		mv.setViewName("redirect:./mypage_qna");
+		// 등록 성공
+		if (result > 0) {
+			mv.addObject("msg", "정상적으로 등록되었습니다. 상담 문의가 급증할 경우, 답변처리가 다소 지연될 수 있음을 양해 바랍니다.");
+		// 등록 실패
+		} else {
+			mv.addObject("msg", "등록에 실패했습니다. 다시 시도해주세요.");
+		}
+		mv.addObject("url", "./mypage_qna");
+		mv.setViewName("common/result");
 		return mv;
 	}
 	
@@ -94,7 +96,21 @@ public class QnaController {
 	public ModelAndView qna_delete(QnaDTO qnaDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		int result = qnaService.setDelete(qnaDTO);
-		mv.setViewName("redirect:../mypage_qna");
+		// 삭제 성공
+		if (result > 0) {
+			mv.addObject("msg", "정상적으로 삭제되었습니다.");
+		} else {
+			mv.addObject("msg", "삭제를 실패했습니다. 재시도 해주세요.");
+		}
+		mv.addObject("url", "../mypage_qna");
+		mv.setViewName("common/result");
+		return mv;
+	}
+	
+	@GetMapping("mypage_qna/delete_ck")
+	public ModelAndView delete_ck() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("common/delete");
 		return mv;
 	}
 	

@@ -1,7 +1,8 @@
 /**
  * qna.js
- */
- 
+ */ 
+
+/* 글쓰기 버튼 클릭 이벤트 */
 $("#write_btn").click(function(){
 	location = "./mypage_qna_register";
 });

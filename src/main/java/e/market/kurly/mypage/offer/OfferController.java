@@ -86,16 +86,39 @@ public class OfferController {
 
 		ModelAndView mv = new ModelAndView();
 		int result = offerService.setInsert(offerDTO, files2);
-		mv.setViewName("redirect:./offer");
+		if (result > 0) {
+			mv.addObject("msg", "정상적으로 등록되었습니다. 상담 문의가 급증할 경우, 답변처리가 다소 지연될 수 있음을 양해 바랍니다.");
+		// 등록 실패
+		} else {
+			mv.addObject("msg", "등록에 실패했습니다. 다시 시도해주세요.");
+		}
+		mv.addObject("url", "./offer");
+		mv.setViewName("common/result");
+		//mv.setViewName("redirect:./offer");
 		return mv;
 	}
 	
 	// 상품제안 삭제
-	@GetMapping("offer/delete")
+	@GetMapping("mypage_offer/delete")
 	public ModelAndView qna_delete(OfferDTO offerDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		int result = offerService.setDelete(offerDTO);
-		mv.setViewName("redirect:../offer");
+		// 삭제 성공
+		if (result > 0) {
+			mv.addObject("msg", "정상적으로 삭제되었습니다.");
+		} else {
+			mv.addObject("msg", "삭제를 실패했습니다. 재시도 해주세요.");
+		}
+		mv.addObject("url", "../offer");
+		mv.setViewName("common/result");
+		//mv.setViewName("redirect:../offer");
+		return mv;
+	}
+	
+	@GetMapping("mypage_offer/delete_ck")
+	public ModelAndView delete_ck() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("common/delete");
 		return mv;
 	}
 
