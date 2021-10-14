@@ -1,5 +1,9 @@
 package e.market.kurly.ajax;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,12 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import e.market.kurly.board.BoardFilesDTO;
+import e.market.kurly.members.MembersDTO;
 import e.market.kurly.mypage.destination.DestinationDTO;
 import e.market.kurly.mypage.destination.DestinationService;
 import e.market.kurly.mypage.echo.EchoDTO;
 import e.market.kurly.mypage.echo.EchoService;
 import e.market.kurly.mypage.offer.OfferDTO;
 import e.market.kurly.mypage.offer.OfferService;
+import e.market.kurly.mypage.order.OrderDTO;
+import e.market.kurly.mypage.order.OrderService;
 import e.market.kurly.mypage.qna.QnaDTO;
 import e.market.kurly.mypage.qna.QnaService;
 import e.market.kurly.service.faq.FaqDAO;
@@ -32,6 +39,8 @@ public class AjaxController {
 	private FaqDAO faqDAO;
 	@Autowired
 	private DestinationService destinationService;
+	@Autowired
+	private OrderService orderService;
 	
 	@GetMapping("qna_select")
 	public ModelAndView qna_select(Long num) throws Exception {
@@ -148,6 +157,23 @@ public class AjaxController {
 		mv.setViewName("common/ajaxResult");
 		mv.addObject("result", result);
 		
+		return mv;
+	}
+	
+	@GetMapping("order_select")
+	public ModelAndView order_select(String orderNum, HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
+		/*
+		 * // script 파일 제어 // 주문번호 조회 List<String> orderNums =
+		 * orderService.getOrderNum(membersDTO); // 주문번호 size mv.addObject("len",
+		 * orderNums.size());
+		 */
+		
+		// 주문 번호로 주문한 상품 목록 조회
+		List<OrderDTO> ar = orderService.getListByOrderNum(orderNum);
+		mv.addObject("list", ar);
+		mv.setViewName("review/selectResult");
 		return mv;
 	}
 	

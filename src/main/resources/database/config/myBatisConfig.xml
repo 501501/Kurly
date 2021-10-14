@@ -15,7 +15,9 @@
 		<typeAlias type="e.market.kurly.board.list.ListDTO" alias="ListDTO"/>
 		<typeAlias type="e.market.kurly.service.faq.FaqDTO" alias="FaqDTO"/>
 		<typeAlias type="e.market.kurly.mypage.destination.DestinationDTO" alias="DestinationDTO"/>
+		<typeAlias type="e.market.kurly.mypage.order.OrderDTO" alias="OrderDTO"/>
 		
 		<typeAlias type="java.lang.Long" alias="Long"/>
+		<typeAlias type="java.lang.String" alias="String"/>
 	</typeAliases>
 </configuration>
