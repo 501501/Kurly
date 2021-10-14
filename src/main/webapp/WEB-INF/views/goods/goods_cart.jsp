@@ -93,15 +93,17 @@ $(function(){
             </c:forEach>
                 <tr>
                     <td colspan="5" align="right">
-                        장바구니 금액 합계 :
+                        상품금액 :
                         <fmt:formatNumber value="${map.sumMoney}"
                             pattern="#,###,###" /><br>
-                        배송료 : ${map.fee}<br>
-                        총합계 : <fmt:formatNumber value="${map.sum}"
+                        배송비 : ${map.fee}<br>
+                        결제예정금액 : <fmt:formatNumber value="${map.sum}"
                             pattern="#,###,###" />
                     </td>
                 </tr>
             </table>
+            
+            
             <button id="btnUpdate">수정</button>
             <button type="button" id="btnDelete">장바구니 비우기</button>
         </form>
