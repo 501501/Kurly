@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,6 +86,29 @@ public class GoodsCartController {
 		return "redirect: ./";
 	}
 	
+	@PostMapping("deleteSelect")
+	public ModelAndView deleteSelect(HttpServletRequest request) throws Exception {		
+		ModelAndView mv = new ModelAndView();		
+		
+		String[] valueArr = request.getParameterValues("valueArr[]");		
+		String userId = request.getParameter("userId");
+		
+		int result = 0;
+		int size =  valueArr.length;
+		
+		for(int i=0; i<size; i++) {
+			GoodsCartDTO cartDTO = new GoodsCartDTO();
+			cartDTO.setCart_id(Integer.parseInt(valueArr[i]));
+			cartDTO.setUserId(userId);
+			result = cartService.deleteOne(cartDTO);
+		}
+		
+		mv.addObject("result", result);
+		mv.setViewName("common/ajaxResult");
+		
+		return mv;
+	}
+	
 	@PostMapping("update/plus_amount")
 	public ModelAndView updatePlus(GoodsCartDTO cartDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
@@ -102,6 +126,7 @@ public class GoodsCartController {
 		mv.setViewName("common/ajaxResult");
 		return mv;
 	}
+	
 	
 	
 }

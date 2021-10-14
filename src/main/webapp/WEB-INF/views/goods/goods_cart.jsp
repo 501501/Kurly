@@ -28,11 +28,12 @@ $(function(){
     });
 });
 </script>
+
 </head>
 <body>
 <h2>장바구니</h2>
 <c:choose>
-    <c:when test="${map.count == 0 }">
+    <c:when test="${map.count == 0}">
         장바구니에 담긴 상품이 없습니다
     </c:when>
     
@@ -41,7 +42,7 @@ $(function(){
 		<div>
 			<input type="checkbox" id="cbxAll" name="cbxAll" class="cbxSelect"/>
 			<label for="cbxAll">전체선택</label> 
-			<span>&nbsp;&nbsp;</span> <a href="#none" class="btn_delete">선택삭제</a>
+			<span>&nbsp;&nbsp;</span> <input type="button" value="선택삭제" onclick="deleteCbx()" class="btn_delete" />
 		</div>
 		<hr/>
 		
@@ -63,7 +64,8 @@ $(function(){
             <c:forEach var="row" items="${map.list}" varStatus="status">
                 <tr align="center">
                 	<td>
-                		<input type="checkbox" id="cbx_${status.index}" class="cbxSelect cbxMinor" />
+                		<input type="checkbox" id="cbx_${status.index}" name="cbx_minor" class="cbxSelect cbxMinor" checked="checked"
+                		value="${row.cart_id}"/>
                 	</td>
                 
                     <td>${row.product_name}</td>
@@ -87,7 +89,7 @@ $(function(){
                     </td>
                     <td><fmt:formatNumber value="${row.money}"
                             pattern="#,###,###" /></td>
-                    <td><a href="./deleteOne?cart_id=${row.cart_id}">[삭제]</a>
+                    <td><a href="./deleteOne?cart_id=${row.cart_id}">X</a>
                     </td>
                 </tr>
             </c:forEach>
@@ -103,6 +105,11 @@ $(function(){
                 </tr>
             </table>
             
+            <div>
+            	<div id="price" class="finalPay"></div>
+            	<div id="fee" class="finalPay"></div>
+            	<div id="pay" class="finalPay"></div>
+            </div>
             
             <button id="btnUpdate">수정</button>
             <button type="button" id="btnDelete">장바구니 비우기</button>
@@ -112,7 +119,6 @@ $(function(){
 <button type="button" id="btnList">상품목록</button>
 
 <script type="text/javascript">
-
 	$(document).ready(function(){
 		// 전체 체크박스 클릭 시 작동
 		$('#cbxAll').click(function(){
@@ -134,7 +140,11 @@ $(function(){
 	});
 
 </script>
-
+<script type="text/javascript">
+if($('#cbxMinor').prop('checked', true)){
+	$('#cbxAll').prop('checked', true);
+}
+</script>
 <script type="text/javascript" src="../../resources/js/goods_cart.js"></script>
 </body>
 </html>
