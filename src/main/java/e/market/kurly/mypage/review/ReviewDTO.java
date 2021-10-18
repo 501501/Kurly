@@ -11,7 +11,7 @@ public class ReviewDTO {
 	private Long goodsNo;
 	private String title;
 	private String contents;
-	private Date regData;
+	private Date regDate;
 	private String id;
 	
 	private List<BoardFilesDTO> files;
@@ -46,11 +46,11 @@ public class ReviewDTO {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-	public Date getRegData() {
-		return regData;
+	public Date getRegDate() {
+		return regDate;
 	}
-	public void setRegData(Date regData) {
-		this.regData = regData;
+	public void setRegData(Date regDate) {
+		this.regDate = regDate;
 	}
 	public String getId() {
 		return id;

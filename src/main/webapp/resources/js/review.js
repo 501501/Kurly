@@ -15,7 +15,7 @@ view = sessionStorage.getItem('view');
 if (view == 'beforeView') {
 	/* 작성가능 후기 주문번호 */
 	sessionStorage.setItem('view', 'beforeView');
-	$("#viewAftereList").html("");
+	$("#viewAfterList").html("");
 	
 	$.ajax({
 		type: "GET",
@@ -26,7 +26,6 @@ if (view == 'beforeView') {
 			$("#viewBeforeList").html(data);
 		}
 	});
-	
 	selectResultBefore();
 }
 
@@ -41,7 +40,7 @@ else if (view == 'afterView') {
 		async: false,
 		success: function(data){
 			data = data.trim();
-			$("#viewAftereList").html(data);
+			$("#viewAfterList").html(data);
 		}
 	});
 }
@@ -49,7 +48,7 @@ else if (view == 'afterView') {
 /* 작성가능 후기 주문번호 */
 $("#viewBefore").click(function(){
 	sessionStorage.setItem('view', 'beforeView');
-	$("#viewAftereList").html("");
+	$("#viewAfterList").html("");
 	
 	$.ajax({
 		type: "GET",
@@ -60,7 +59,6 @@ $("#viewBefore").click(function(){
 			$("#viewBeforeList").html(data);
 		}
 	});
-	
 	selectResultBefore();
 });
 
@@ -75,7 +73,7 @@ $("#viewAfter").click(function(){
 		async: false,
 		success: function(data){
 			data = data.trim();
-			$("#viewAftereList").html(data);
+			$("#viewAfterList").html(data);
 		}
 	});
 });
@@ -96,27 +94,6 @@ function selectResultBefore() {
 			success: function(data) {
 				data = data.trim();
 				$('#selectResultBefore' + orderNum).html(data);
-			}
-		});
-	}
-}
-
-/* afterView : selectResultAfter 요청 함수 */
-function selectResultAfter() {
-	orderNums = $('.orderList');
-	
-	for (let orderNum of orderNums) {
-		// 주문번호
-		orderNum = (orderNum.getAttribute('data-order-num'));
-		//console.log(orderNum);
-		$.ajax({
-			type: "GET",
-			url: "../ajax/order_select",
-			data: { orderNum: orderNum },
-			async: false,
-			success: function(data) {
-				data = data.trim();
-				$('#selectResultAfter' + orderNum).html(data);
 			}
 		});
 	}

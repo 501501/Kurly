@@ -32,7 +32,9 @@
 	<div id="viewBeforeList" class="before_view">
 	</div>
 	
-	<div id="viewAftereList" class="after_view">
+	<div id="viewAfterList" class="after_view">
+		<ul class="list_after">
+		</ul>
 	</div>
 </body>
 <script type="text/javascript" src="../resources/js/review.js"></script>
