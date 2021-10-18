@@ -22,6 +22,8 @@ import e.market.kurly.mypage.order.OrderDTO;
 import e.market.kurly.mypage.order.OrderService;
 import e.market.kurly.mypage.qna.QnaDTO;
 import e.market.kurly.mypage.qna.QnaService;
+import e.market.kurly.mypage.review.ReviewDTO;
+import e.market.kurly.mypage.review.ReviewService;
 import e.market.kurly.service.faq.FaqDAO;
 import e.market.kurly.service.faq.FaqDTO;
 
@@ -41,6 +43,8 @@ public class AjaxController {
 	private DestinationService destinationService;
 	@Autowired
 	private OrderService orderService;
+	@Autowired
+	private ReviewService reviewService;
 	
 	@GetMapping("qna_select")
 	public ModelAndView qna_select(Long num) throws Exception {
@@ -160,21 +164,41 @@ public class AjaxController {
 		return mv;
 	}
 	
-	@GetMapping("order_select")
-	public ModelAndView order_select(String orderNum, HttpSession session) throws Exception {
+	
+	@GetMapping("order_select") 
+	public ModelAndView order_select(String orderNum, HttpSession session) throws Exception { 
 		ModelAndView mv = new ModelAndView();
 		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
-		/*
-		 * // script 파일 제어 // 주문번호 조회 List<String> orderNums =
-		 * orderService.getOrderNum(membersDTO); // 주문번호 size mv.addObject("len",
-		 * orderNums.size());
-		 */
-		
-		// 주문 번호로 주문한 상품 목록 조회
-		List<OrderDTO> ar = orderService.getListByOrderNum(orderNum);
+	  
+		// 주문 번호로 주문한 상품 목록 조회 
+		List<OrderDTO> ar = orderService.getListByOrderNum(orderNum); 
 		mv.addObject("list", ar);
-		mv.setViewName("review/selectResult");
+		mv.setViewName("review/selectResultBefore"); 
+		return mv; 
+	}
+	 
+	
+	@GetMapping("beforeView")
+	public ModelAndView beforeView(HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		// session에서 사용자 정보 꺼내오기
+		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
+		// 리뷰를 작성하지 않은 주문번호 조회
+		List<String> orderNums = orderService.getBeforeOrderNum(membersDTO);
+		mv.addObject("orderNums", orderNums);
+		mv.setViewName("review/beforeView");
 		return mv;
 	}
 	
+	@GetMapping("afterView")
+	public ModelAndView afterView(HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		// session에서 사용자 정보 꺼내오기
+		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
+		// 사용자 id로 리뷰 조회 
+		List<ReviewDTO> reviews = reviewService.getList(membersDTO);
+		mv.addObject("reviews", reviews);
+		mv.setViewName("review/afterView");
+		return mv;
+	}
 }

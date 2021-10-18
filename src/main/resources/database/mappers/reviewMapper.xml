@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="e.market.kurly.mypage.review.ReviewDAO">
+ 	<insert id="setInsert" parameterType="ReviewDTO">
+		<selectKey order="BEFORE" resultType="Long" keyProperty="num">
+			SELECT REVIEW_SEQ.nextval FROM dual
+		</selectKey>
+		INSERT INTO REVIEW
+		VALUES (#{num}, #{orderNum}, #{goodsNo}, #{title}, #{contents}, sysdate, #{id})
+	</insert>
+	
+	<insert id="setFile" parameterType="BoardFilesDTO">
+		INSERT INTO REVIEWFILES
+		VALUES (REVIEW_SEQ.nextval, #{num}, #{fileName}, #{oriName})
+	</insert>
+	
+	<update id="setReviewCk" parameterType="ReviewDTO">
+		UPDATE ORDERLIST SET REVIEWCK = 'y'
+		WHERE GOODSNO = #{goodsNo}
+	</update>
+	
+	<select id="getList" parameterType="MembersDTO" resultType="ReviewDTO">
+		SELECT * FROM REVIEW WHERE ID = #{id}
+		ORDER BY NUM DESC
+	</select>
+ </mapper>

@@ -20,6 +20,16 @@ public class OrderDAO {
 		return sqlSession.selectList(NAMESPACE+"getOrderNum", membersDTO);
 	}
 	
+	// 리뷰를 작성하지 않은 주문번호 조회
+	public List<String> getBeforeOrderNum(MembersDTO membersDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getBeforeOrderNum", membersDTO);
+	}
+	
+	// 리뷰를 작성한 주문번호 조회
+	public List<String> getAfterOrderNum(MembersDTO membersDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getAfterOrderNum", membersDTO);
+	}
+	
 	// 주문번호로 주문 목록 조회
 	public List<OrderDTO> getListByOrderNum(String orderNum) throws Exception {
 		return sqlSession.selectList(NAMESPACE+"getListByOrderNum", orderNum);

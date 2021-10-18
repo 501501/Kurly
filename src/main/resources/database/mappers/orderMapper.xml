@@ -8,6 +8,14 @@
 		SELECT DISTINCT ORDERNUM FROM ORDERLIST WHERE ID = #{id}
 	</select>
 	
+	<select id="getBeforeOrderNum" parameterType="MembersDTO" resultType="String">
+		SELECT DISTINCT ORDERNUM FROM ORDERLIST WHERE ID = #{id} AND REVIEWCK = 'n'
+	</select>
+	
+	<select id="getAfterOrderNum" parameterType="MembersDTO" resultType="String">
+		SELECT DISTINCT ORDERNUM FROM ORDERLIST WHERE ID = #{id} AND REVIEWCK = 'y'
+	</select>
+	
 	<select id="getListByOrderNum" parameterType="String" resultType="OrderDTO">
 		SELECT * FROM ORDERLIST
 		WHERE ORDERNUM = #{orderNum}

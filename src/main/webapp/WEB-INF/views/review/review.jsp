@@ -20,16 +20,19 @@
 	
 	<div>
 		<ul>
-			<li id="viewBefore">작성가능 후기</li>
-			<li id="viewAfter">작성 완료 후기</li>
+			<li>
+				<a id="viewBefore">작성가능 후기</a>
+			</li>
+			<li>
+				<a id="viewAfter">작성 완료 후기</a>
+			</li>
 		</ul>
 	</div>
 	
-	<div>
-		<c:forEach items="${orderNums}" var="orderNum">
-			<div class="orderList" data-order-num="${orderNum}">주문번호 ${orderNum}</div>
-			<div id="selectResult${orderNum}"></div>
-		</c:forEach>
+	<div id="viewBeforeList" class="before_view">
+	</div>
+	
+	<div id="viewAftereList" class="after_view">
 	</div>
 </body>
 <script type="text/javascript" src="../resources/js/review.js"></script>
