@@ -2,8 +2,6 @@ package e.market.kurly.mypage.review;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import e.market.kurly.members.MembersDTO;
+import e.market.kurly.board.BoardFilesDTO;
 import e.market.kurly.mypage.order.OrderDTO;
 import e.market.kurly.mypage.order.OrderService;
 
@@ -53,6 +51,44 @@ public class ReviewController {
 		// 리뷰 작성 (insert)
 		int result = reviewService.setInsert(reviewDTO, files2);
 		mv.setViewName("redirect:./mypage_review");
+		return mv;
+	}
+	
+	// file 다운로드
+	@GetMapping("review_down")
+	public ModelAndView fileDown(BoardFilesDTO boardFilesDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("dto", boardFilesDTO);
+		mv.setViewName("fileDown");
+		return mv;
+	}
+	
+	@GetMapping("mypage_review/delete")
+	public ModelAndView delete(Long num) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		// 리뷰 삭제 (delete)
+		int result = reviewService.setDelete(num);
+		mv.setViewName("redirect:../mypage_review");
+		return mv;
+	}
+	
+	@GetMapping("mypage_review/update")
+	public ModelAndView update(Long num) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		ReviewDTO reviewDTO = reviewService.getOne(num);
+		List<BoardFilesDTO> ar = reviewService.getFiles(reviewDTO);
+		reviewDTO.setFiles(ar);
+		
+		mv.addObject("dto", reviewDTO);
+		mv.setViewName("review/review_update");
+		return mv;
+	}
+	
+	@PostMapping("mypage_review/update")
+	public ModelAndView update(ReviewDTO reviewDTO, MultipartFile [] files2) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
 		return mv;
 	}
 }

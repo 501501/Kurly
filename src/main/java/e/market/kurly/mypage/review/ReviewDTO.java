@@ -9,6 +9,7 @@ public class ReviewDTO {
 	private Long num;
 	private Long orderNum;
 	private Long goodsNo;
+	private String productName;
 	private String title;
 	private String contents;
 	private Date regDate;
@@ -34,6 +35,12 @@ public class ReviewDTO {
 	public void setGoodsNo(Long goodsNo) {
 		this.goodsNo = goodsNo;
 	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -49,7 +56,7 @@ public class ReviewDTO {
 	public Date getRegDate() {
 		return regDate;
 	}
-	public void setRegData(Date regDate) {
+	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
 	public String getId() {

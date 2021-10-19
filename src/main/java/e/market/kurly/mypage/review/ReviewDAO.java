@@ -33,4 +33,21 @@ public class ReviewDAO {
 	public List<ReviewDTO> getList(MembersDTO membersDTO) throws Exception {
 		return sqlSession.selectList(NAMESPACE+"getList", membersDTO);
 	}
+	
+	// file select
+	public List<BoardFilesDTO> getFiles(ReviewDTO reviewDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getFiles", reviewDTO);
+	}
+	
+	public ReviewDTO getOne(Long num) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getOne", num);
+	}
+	
+	public int setDelete(Long num) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setDelete", num);
+	}
+	
+	public int setFileDelete(BoardFilesDTO boardFilesDTO) throws Exception {
+		return sqlSession.delete(NAMESPACE+"setFileDelete", boardFilesDTO);
+	}
 }

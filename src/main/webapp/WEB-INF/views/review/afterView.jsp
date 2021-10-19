@@ -2,11 +2,27 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-	<c:forEach items="${reviews}" var="review">
-		<li>
-			<div>상품 번호 ${review.goodsNo}</div>
-			<div>${review.title}</div>
-			<div>${review.contents}</div>
-			<div>${review.regDate} 작성</div>
-		</li>
-	</c:forEach>
+<c:forEach items="${reviews}" var="review">
+	<li>
+		<div>
+			<!-- 상세페이지 주소 추가 -->
+			<a href="#">${review.productName}</a>
+		</div>
+		<hr>
+		<div class="detailView" data-review-num="${review.num}">
+			<span>${review.title}</span>
+			<span>${review.regDate}작성</span>
+			
+			<!-- 클릭 전 -->
+			<div id="before${review.num}">
+				<span class="review_image" id="review_image${review.num}" data-review-num="${review.num}">이미지</span>
+				<span>${review.contents}</span>
+			</div>
+			
+			<!-- 클릭 후 -->
+			<div id="select${review.num}">
+			</div>
+		</div>
+		<hr>
+	</li>
+</c:forEach>

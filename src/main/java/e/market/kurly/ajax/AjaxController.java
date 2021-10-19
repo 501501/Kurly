@@ -1,5 +1,6 @@
 package e.market.kurly.ajax;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -199,6 +200,32 @@ public class AjaxController {
 		List<ReviewDTO> reviews = reviewService.getList(membersDTO);
 		mv.addObject("reviews", reviews);
 		mv.setViewName("review/afterView");
+		return mv;
+	}
+	
+	@GetMapping("review_image")
+	public ModelAndView review_image(Long num) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		ReviewDTO reviewDTO = new ReviewDTO();
+		reviewDTO.setNum(num);
+		List<BoardFilesDTO> ar = reviewService.getFiles(reviewDTO);
+		mv.addObject("dto", ar);
+		mv.setViewName("review/imageView");
+		return mv;
+	}
+	
+	@GetMapping("review_select")
+	public ModelAndView review_select(Long num) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		// num으로 리뷰 조회
+		ReviewDTO reviewDTO = reviewService.getOne(num);
+		// num으로 리뷰 파일 조회
+		List<BoardFilesDTO> ar = reviewService.getFiles(reviewDTO);
+		// 리뷰에 리뷰 파일 넣기
+		reviewDTO.setFiles(ar);
+		
+		mv.addObject("dto", reviewDTO);
+		mv.setViewName("review/selectResultAfter");
 		return mv;
 	}
 }

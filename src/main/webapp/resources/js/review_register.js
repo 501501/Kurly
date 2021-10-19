@@ -17,6 +17,9 @@ $("#fieldCmt").keyup(function(){
 let count = 1;
 let files = '<span class="btn_upload">';
 files += '<input type="file" name="files2" class="file_upload">';
+files += '<span>';
+files += 'x';
+files += '</span>';
 files += '</span>';
 
 $(".photo_add").change(function(){

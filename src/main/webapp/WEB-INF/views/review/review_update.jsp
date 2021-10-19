@@ -11,9 +11,9 @@
 	<div>
 		<h2>후기 작성</h2>
 	</div>
-	<form id="frm" action="./review_register" method="post" enctype="multipart/form-data">
-	<input type="text" value="${param.orderNum}" name="orderNum" hidden="hidden">
-	<input type="text" value="${param.goodsNo}" name="goodsNo" hidden="hidden">
+	<form id="frm" action="./update" method="post" enctype="multipart/form-data">
+	<input type="text" value="${dto.orderNum}" name="orderNum" hidden="hidden">
+	<input type="text" value="${dto.goodsNo}" name="goodsNo" hidden="hidden">
 	<input type="text" value="${member.id}" name="id" hidden="hidden">
 	
 	<div>
@@ -31,7 +31,7 @@
 			<tr>
 				<th>제목</th>
 				<td>
-					<input type="text" placeholder="제목을 입력해주세요." name="title">
+					<input type="text" placeholder="제목을 입력해주세요." name="title" value="${dto.title}">
 				</td>
 			</tr>
 			
@@ -39,7 +39,7 @@
 				<th>후기작성</th>
 				<td>
 					<div>
-					<textarea id="fieldCmt" rows="15" cols="60" name="contents" placeholder="자세한 후기는 다른 고객의 구매에 많은 도움이 되며, 일반식품의 효능이나 효과 등에 오해의 소지가 있는 내용을 작성 시 검토 후 비공개 조치될 수 있습니다. 반품/환불 문의는 1:1문의로 가능합니다."></textarea>
+					<textarea id="fieldCmt" rows="15" cols="60" name="contents" placeholder="자세한 후기는 다른 고객의 구매에 많은 도움이 되며, 일반식품의 효능이나 효과 등에 오해의 소지가 있는 내용을 작성 시 검토 후 비공개 조치될 수 있습니다. 반품/환불 문의는 1:1문의로 가능합니다.">${dto.contents}</textarea>
 					<p class="txt_count">
 						<span class="num">0</span>
 						자 / 최소 10자
@@ -54,7 +54,6 @@
 					<div class="photo_add">
 						<span class="btn_upload">
 							<input type="file" name="files2" class="file_upload">
-							<span>x</span>
 						</span>
 					</div>
 					

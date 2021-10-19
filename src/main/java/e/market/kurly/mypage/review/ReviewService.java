@@ -52,4 +52,36 @@ public class ReviewService {
 	public List<ReviewDTO> getList(MembersDTO membersDTO) throws Exception {
 		return reviewDAO.getList(membersDTO);
 	}
+	
+	public List<BoardFilesDTO> getFiles(ReviewDTO reviewDTO) throws Exception {
+		return reviewDAO.getFiles(reviewDTO);
+	}
+	
+	public ReviewDTO getOne(Long num) throws Exception {
+		return reviewDAO.getOne(num);
+	}
+	
+	public int setDelete(Long num) throws Exception {
+		ReviewDTO reviewDTO = new ReviewDTO();
+		reviewDTO.setNum(num);
+		List<BoardFilesDTO> ar = reviewDAO.getFiles(reviewDTO);
+		
+		String realPath = servletContext.getRealPath("/resources/upload/review/");
+		for(BoardFilesDTO bDTO : ar) {
+			File file = new File(realPath, bDTO.getFileName());
+			fileManager.fileDelete(file);
+		}
+		
+		return reviewDAO.setDelete(num);
+	}
+	
+	public int setFileDelete(BoardFilesDTO boardFilesDTO) throws Exception {
+		// 폴더에서 파일 삭제
+		String realPath = servletContext.getRealPath("/resources/upload/review/");
+
+		// File file = new File(realPath, boardFilesDTO.getFileName());
+		// fileManager.fileDelete(file);
+		
+		return reviewDAO.setFileDelete(boardFilesDTO);
+	}
 }
