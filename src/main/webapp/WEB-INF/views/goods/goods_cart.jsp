@@ -65,7 +65,7 @@ $(function(){
                 <tr align="center">
                 	<td>
                 		<input type="checkbox" id="cbx_${status.index}" name="cbx_minor" class="cbxSelect cbxMinor" checked="checked"
-                		value="${row.cart_id}"/>
+                		value="${row.cart_id}" data-productId="${row.product_id}"/>
                 	</td>
                 
                     <td>${row.product_name}</td>
@@ -105,12 +105,42 @@ $(function(){
                 </tr>
             </table>
             
-            <div>
-            	<div id="price" class="finalPay"></div>
-            	<div id="fee" class="finalPay"></div>
-            	<div id="pay" class="finalPay"></div>
-            </div>
-            
+			<div class="inner_result">
+				<div class="cart_delivery">
+					<h3>배송지</h3>
+					<div class="address">
+						<p class="addr">
+						</p>
+						<button type="button" class="btn default">배송지 변경</button>
+					</div>
+				</div>
+			
+				<div class="amount_view">
+					<table>
+						<tr>
+							<td>상품금액&nbsp;&nbsp;
+								<span class="price"></span>
+							</td>
+						</tr>
+						<tr>
+							<td>배송비&nbsp;&nbsp;
+								<span class="fee"></span>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>결제예정금액&nbsp;&nbsp;
+								<span class="totalPay"></span>
+							</td>
+						</tr>
+					</table>
+				</div>
+				
+				<button type="button" class="btn active">주문하기</button>
+			</div>
+
+			<br>
+			
             <button id="btnUpdate">수정</button>
             <button type="button" id="btnDelete">장바구니 비우기</button>
         </form>
@@ -146,5 +176,7 @@ if($('#cbxMinor').prop('checked', true)){
 }
 </script>
 <script type="text/javascript" src="../../resources/js/goods_cart.js"></script>
+<script type="text/javascript" src="../../resources/js/cart_result.js"></script>
+
 </body>
 </html>

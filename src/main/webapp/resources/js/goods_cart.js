@@ -45,14 +45,15 @@ function minusAmount(cartId){
 }
 
 
+/** 장바구니품목 선택삭제 */
 function deleteCbx(){
 	var valueArr = new Array();
 	var list = $("input[name='cbx_minor']");
 	var userId = $('.userIdVal').val();
-	console.log(list[0].value);
+
 	for(var i=0; i<list.length;i++){
 		if(list[i].checked){
-			valueArr.push(list[i].value); //val() 안되면 value로 수정해볼 것
+			valueArr.push(list[i].value);
 		}
 	}
 	if(valueArr.length ==0){
