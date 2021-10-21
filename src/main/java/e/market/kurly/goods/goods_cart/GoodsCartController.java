@@ -10,11 +10,14 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import e.market.kurly.members.MembersDTO;
+import e.market.kurly.mypage.destination.DestinationDTO;
+import e.market.kurly.mypage.destination.DestinationService;
 
 @Controller
 @RequestMapping("goods/goods_cart/*")
@@ -22,6 +25,8 @@ public class GoodsCartController {
 	
 	@Autowired
 	private GoodsCartService cartService;
+	@Autowired
+	private DestinationService destinationService;
 	
 	@GetMapping("insert")
 	public String insert(GoodsCartDTO cartDTO, HttpSession session) throws Exception {
@@ -126,7 +131,32 @@ public class GoodsCartController {
 		mv.setViewName("common/ajaxResult");
 		return mv;
 	}
+
+	/* 장바구니 배송지 변경 */
+	@GetMapping("change_destination")
+	public ModelAndView change_destination(HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		MembersDTO membersDTO = (MembersDTO)session.getAttribute("member");
+		List<DestinationDTO> ar = destinationService.getList(membersDTO);
+		mv.addObject("list", ar);
+		mv.setViewName("goods/cart_destination");
+		
+		return mv;
+	}
 	
-	
+	@ModelAttribute("destination")
+	public String getBoard(HttpSession session) throws Exception {
+		MembersDTO membersDTO = (MembersDTO)session.getAttribute("member");
+		List<DestinationDTO> ar = destinationService.getList(membersDTO);
+		String yy = "";
+		
+		for(int i=0;i<ar.size();i++) {
+			if(ar.get(i).getCheck_type().equals("y")) {
+				yy = ar.get(i).getAddress_loca();
+			}
+		}
+		
+		return yy;
+	}
 	
 }

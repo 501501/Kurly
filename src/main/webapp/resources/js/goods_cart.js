@@ -80,3 +80,12 @@ function deleteCbx(){
 	}
 }
 
+$(document).ready(function(){
+	$('.default').click(function(){
+		var popAddress = './change_destination';
+		var popSize = 'width=700px,height=800px';
+		window.open(popAddress, "_blank", popSize);
+	});
+});
+
+

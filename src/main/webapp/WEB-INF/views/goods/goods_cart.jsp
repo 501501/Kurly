@@ -65,7 +65,7 @@ $(function(){
                 <tr align="center">
                 	<td>
                 		<input type="checkbox" id="cbx_${status.index}" name="cbx_minor" class="cbxSelect cbxMinor" checked="checked"
-                		value="${row.cart_id}" data-productId="${row.product_id}"/>
+                		value="${row.cart_id}" data-productId="${row.product_id}" data-item-price="${row.money}"/>
                 	</td>
                 
                     <td>${row.product_name}</td>
@@ -108,32 +108,14 @@ $(function(){
 			<div class="inner_result">
 				<div class="cart_delivery">
 					<h3>배송지</h3>
+					<div id="finalDes">
+						${destination}			
+					</div>
 					<div class="address">
 						<p class="addr">
 						</p>
 						<button type="button" class="btn default">배송지 변경</button>
 					</div>
-				</div>
-			
-				<div class="amount_view">
-					<table>
-						<tr>
-							<td>상품금액&nbsp;&nbsp;
-								<span class="price"></span>
-							</td>
-						</tr>
-						<tr>
-							<td>배송비&nbsp;&nbsp;
-								<span class="fee"></span>
-							</td>
-						</tr>
-						
-						<tr>
-							<td>결제예정금액&nbsp;&nbsp;
-								<span class="totalPay"></span>
-							</td>
-						</tr>
-					</table>
 				</div>
 				
 				<button type="button" class="btn active">주문하기</button>
