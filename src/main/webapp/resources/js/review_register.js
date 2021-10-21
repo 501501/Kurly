@@ -13,50 +13,72 @@ $("#fieldCmt").keyup(function(){
 	document.getElementsByClassName("num")[0].innerHTML = content.length;
 });
 
-//var a = document.getElementById('input_imgs').files[0].name;
-//console.log(a);
-
-
+/* 이미지 태그 추가 */
 var count = 1;
-$(".photo_add").click(function(){
+$(".photo_add").change(function(){
+	var flag = true;
+	console.log(flag);
 	
-	if(count > 1) {
-		var length = $(".input_imgs").length;
-		
-		for(var len=1; len<=length; len++) {
-			target = document.getElementsByClassName('input_imgs');
-			console.log(target);
-			//console.log(target.value);
+	var length = $(".input_imgs").length;
+	console.log("len1: "+length);
+	
+	for(var len=0; len<length; len++) {
+		target = document.getElementsByClassName('input_imgs')[len];
+		console.log(target.value);
+		// 공백 체크
+		if(target.value == "") {
+			flag = false;
+			break;
 		}
 	}
-
-/*	if (count > 1) {
-		for(var len=1; len<=length; len++) {
-		target = document.getElementsByClassName('input_imgs');
-		console.log(target.input_img[len]);
-		}
-	}*/
 	
-	
-	if (count < 8) {
+	if (flag == true && count < 8) {
 		var files = '<span class="inner_photo">';
 		files += '<input type="file" name="files2" class="input_imgs" id="input_img';
-		files += count+1;
+		files += count + 1;
 		files += '">';
 		files += '<span class="del_btn">x</span>';
 		files += '</span>';
-		
 		$("#fileAddResult").append(files);
-		//document.getElementsByClassName("num")[1].innerHTML = count;
-		count += 1;
+		count++;
 	}
 	
+	length = $(".input_imgs").length;
+	console.log("len2: "+length);
+	
+	console.log(flag);
 });
 
-
+/* 이미지 삭제 버튼 */
 $(".photo_add").on('click', '.del_btn', function(){
 	$(this).parent().remove();
-	count -= 1;
+	count--;
+	
+	var flag = true;
+	var length = $(".input_imgs").length;
+
+	for(var len=0; len<length; len++) {
+		target = document.getElementsByClassName('input_imgs')[len];
+		console.log(target.value);
+		// 공백 체크
+		if(target.value == "") {
+			flag = false;
+			break;
+		}
+	}
+	
+	if (flag == true && count < 8) {
+		var files = '<span class="inner_photo">';
+		files += '<input type="file" name="files2" class="input_imgs" id="input_img';
+		files += count + 1;
+		files += '">';
+		files += '<span class="del_btn">x</span>';
+		files += '</span>';
+		$("#fileAddResult").append(files);
+		count++;
+	}
+	
+	length = $(".input_imgs").length;
 });
 
 
