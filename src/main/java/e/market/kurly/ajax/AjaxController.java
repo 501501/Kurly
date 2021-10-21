@@ -228,4 +228,15 @@ public class AjaxController {
 		mv.setViewName("review/selectResultAfter");
 		return mv;
 	}
+	
+	@GetMapping("review_file_delete")
+	public ModelAndView review_file_delete(Long fileNum) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		BoardFilesDTO boardFilesDTO = new BoardFilesDTO();
+		boardFilesDTO.setFileNum(fileNum);
+		int result = reviewService.setFileDelete(boardFilesDTO);
+		mv.addObject("result", result);
+		mv.setViewName("common/ajaxResult");
+		return mv;
+	}
 }

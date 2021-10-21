@@ -84,4 +84,31 @@ public class ReviewService {
 		
 		return reviewDAO.setFileDelete(boardFilesDTO);
 	}
+	
+	public int setUpdate(ReviewDTO reviewDTO, MultipartFile [] files) throws Exception {
+		// 글 업데이트
+		int result = reviewDAO.setUpdate(reviewDTO);
+		
+		// 파일 insert
+		// 1. 어느 폴더 /resources/upload/review/
+		String realPath = servletContext.getRealPath("/resources/upload/review/");
+		System.out.println(realPath);
+		File file = new File(realPath);
+		
+		if (files.length > 0) {
+			for (MultipartFile multipartFile : files) {
+				String fileName = fileManager.fileSave(multipartFile, file);
+				System.out.println(fileName);
+				BoardFilesDTO boardFilesDTO = new BoardFilesDTO();
+				boardFilesDTO.setFileName(fileName);
+				boardFilesDTO.setOriName(multipartFile.getOriginalFilename());
+				boardFilesDTO.setNum(reviewDTO.getNum());
+
+				// if (boardFilesDTO.getOriName().equals(""))
+				result = reviewDAO.setFile(boardFilesDTO);
+			}
+		}
+
+		return result;
+	}
 }

@@ -26,3 +26,5 @@
 		<hr>
 	</li>
 </c:forEach>
+
+<script type="text/javascript" src="../resources/js/afterView.js"></script>

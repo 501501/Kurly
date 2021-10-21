@@ -50,4 +50,8 @@ public class ReviewDAO {
 	public int setFileDelete(BoardFilesDTO boardFilesDTO) throws Exception {
 		return sqlSession.delete(NAMESPACE+"setFileDelete", boardFilesDTO);
 	}
+	
+	public int setUpdate(ReviewDTO reviewDTO) throws Exception {
+		return sqlSession.update(NAMESPACE+"setUpdate", reviewDTO);
+	}
 }

@@ -88,7 +88,9 @@ public class ReviewController {
 	@PostMapping("mypage_review/update")
 	public ModelAndView update(ReviewDTO reviewDTO, MultipartFile [] files2) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		
+		// 글 업데이트, 사진 등록
+		int result = reviewService.setUpdate(reviewDTO, files2);
+		mv.setViewName("redirect:../mypage_review");
 		return mv;
 	}
 }
