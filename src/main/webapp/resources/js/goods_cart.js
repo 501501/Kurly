@@ -80,3 +80,8 @@ function deleteCbx(){
 	}
 }
 
+function changeDesti(){
+		var popUrl = '../../mypage/destination/list';		
+		window.open(popUrl);
+}
+
