@@ -13,22 +13,27 @@ $("#fieldCmt").keyup(function(){
 	document.getElementsByClassName("num")[0].innerHTML = content.length;
 });
 
+//초기 input file 삭제 버튼 숨기기
+window.onload = function(){
+	$("#del_btn1").hide();
+}
+
 /* 이미지 태그 추가 */
 var count = 1;
 $(".photo_add").change(function(){
 	var flag = true;
-	console.log(flag);
-	
 	var length = $(".input_imgs").length;
-	console.log("len1: "+length);
-	
+	// 이미지 수 count
+	var img_count = 0;
+
 	for(var len=0; len<length; len++) {
 		target = document.getElementsByClassName('input_imgs')[len];
-		console.log(target.value);
+		//console.log(target.value);
 		// 공백 체크
 		if(target.value == "") {
 			flag = false;
-			break;
+		} else {
+			img_count += 1;
 		}
 	}
 	
@@ -37,16 +42,26 @@ $(".photo_add").change(function(){
 		files += '<input type="file" name="files2" class="input_imgs" id="input_img';
 		files += count + 1;
 		files += '">';
-		files += '<span class="del_btn">x</span>';
+		files += '<span class="del_btn" id="del_btn';
+		files += count + 1;
+		files += '">x</span>';
 		files += '</span>';
 		$("#fileAddResult").append(files);
 		count++;
 	}
 	
-	length = $(".input_imgs").length;
-	console.log("len2: "+length);
+	// 이미지 수 삽입
+	document.getElementsByClassName("num")[1].innerHTML = img_count;
 	
-	console.log(flag);
+	/* 이미지 삭제 버튼 show, hide */
+	var del_length = $(".del_btn").length;	
+	for(var i=0;i<del_length;i++) {
+		$(".del_btn").eq(i).show();
+		
+		if (i == del_length-1) {
+			$(".del_btn").eq(i).hide();
+		}
+	}
 });
 
 /* 이미지 삭제 버튼 */
@@ -56,14 +71,17 @@ $(".photo_add").on('click', '.del_btn', function(){
 	
 	var flag = true;
 	var length = $(".input_imgs").length;
+	// 이미지 수 count
+	var img_count = 0;
 
 	for(var len=0; len<length; len++) {
 		target = document.getElementsByClassName('input_imgs')[len];
-		console.log(target.value);
+		//console.log(target.value);
 		// 공백 체크
 		if(target.value == "") {
 			flag = false;
-			break;
+		} else {
+			img_count += 1;
 		}
 	}
 	
@@ -77,8 +95,8 @@ $(".photo_add").on('click', '.del_btn', function(){
 		$("#fileAddResult").append(files);
 		count++;
 	}
-	
-	length = $(".input_imgs").length;
+	// 이미지 수 삽입
+	document.getElementsByClassName("num")[1].innerHTML = img_count;
 });
 
 

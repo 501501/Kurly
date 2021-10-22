@@ -66,7 +66,7 @@
 						<div class="photo_add">
 							<span class="inner_photo">
 								<input type="file" class="input_imgs" id="input_img1" name="files2" /> 
-								<span class="del_btn">x</span>
+								<span class="del_btn" id="del_btn1">x</span>
 							</span>
 							
 							<span id="fileAddResult">
