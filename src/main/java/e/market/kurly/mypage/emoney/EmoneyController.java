@@ -41,23 +41,48 @@ public class EmoneyController {
 	}
 	
 	@PostMapping("review_emoney")
-	public void review_emoney() throws Exception {
+	public ModelAndView review_emoney(BuyingDTO buyingDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = emoneyService.setReviewPoint(buyingDTO);
 		
+		mv.addObject("result", result);
+		mv.setViewName("common/ajaxResult");
+		
+		return mv;
 	}
 	
 	@PostMapping("purchase_emoney")
-	public void purchase_emoney() throws Exception {
+	public ModelAndView purchase_emoney(BuyingDTO buyingDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = emoneyService.setReviewPoint(buyingDTO);
 		
+		mv.addObject("result", result);
+		mv.setViewName("common/ajaxResult");
+		
+		return mv;
 	}
 	
 	@PostMapping("use_emoney")
-	public void use_emoney() throws Exception {
+	public ModelAndView use_emoney(BuyingDTO buyingDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = emoneyService.usePoint(buyingDTO);
 		
+		mv.addObject("result", result);
+		mv.setViewName("common/ajaxResult");
+		
+		return mv;
 	}
 	
-	@PostMapping("expire_emoney")
-	public void expire_emoney() throws Exception {
+	@PostMapping("getEmoney")
+	public ModelAndView getEmoney(HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		String userId = (String)session.getAttribute("member");
+		int emoney = emoneyService.getTotalPoint(userId);
 		
+		mv.addObject("emoney", emoney);
+		mv.setViewName("common/ajaxResult");
+		
+		return mv;
 	}
 
 }
