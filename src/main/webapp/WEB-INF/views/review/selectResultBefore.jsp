@@ -8,7 +8,7 @@
 		<li>
 			<div>${dto.productName}</div>
 			<div>${dto.productNum}개 구매</div>
-			<div>${dto.shippingDate}배송완료</div>
+			<div class="ship">${dto.shippingDate}</div>
 			<div>
 				<a href="./review_register?goodsNo=${dto.goodsNo}&orderNum=${dto.orderNum}">후기쓰기</a>
 			</div>

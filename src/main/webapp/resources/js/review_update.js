@@ -80,7 +80,20 @@ $("#fieldCmt").keyup(function(){
 var img_count = $(".del_ck").length;
 document.getElementsByClassName("num")[1].innerHTML = img_count;
 
+/* 첫 번째 이미지 삭제 버튼 */
+$("#del_btn1").hide();
 $(".photo_add").change(function(){
+	let val = $("#input_img1").val();
+	console.log(val);
+	
+	if (val != "") {
+		$("#del_btn1").show();
+	}
+});
+
+/* 이미지 삭제 버튼 */
+$(".photo_add").change(function(){
+	
 	var flag = true;
 	var length = $(".input_imgs").length;
 	
@@ -117,11 +130,9 @@ $(".photo_add").change(function(){
 	var del_length = $(".del_btn").length;	
 	
 	for(var i=1; i<=del_length; i++) {
-		console.log("show: "+i);
 		$(".del_btn").eq(i).show();
 		
 		if (i == del_length-1) {
-			console.log("hide: "+i);
 			$(".del_btn").eq(i).hide();
 		}
 	}

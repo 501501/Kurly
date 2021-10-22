@@ -11,7 +11,7 @@
 		<hr>
 		<div class="detailView" data-review-num="${review.num}">
 			<span>${review.title}</span>
-			<span>${review.regDate}작성</span>
+			<span class="regDate">${review.regDate}</span>
 			
 			<!-- 클릭 전 -->
 			<div id="before${review.num}">

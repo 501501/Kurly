@@ -73,3 +73,21 @@ $("#viewAfter").click(function(){
 		}
 	});
 });
+
+/* 배송완료 문자열 슬라이싱 */
+var ships = $(".ship");
+for(ship of ships) {	
+	let strArray = ship.innerText.split('-');
+	let shippingDate = strArray[1]+"월"+strArray[2]+"일"+" 배송완료";
+	ship.innerText = shippingDate;
+}
+
+/* 작성일 문자열 슬라이싱 */
+$("#viewAfter").click(function(){
+	var regDates = $(".regDate");
+	for(regDate of regDates){
+		let strArray = regDate.innerText.split('-');
+		let registerDate = strArray[0].substring(2,4) + "." + strArray[1] + "." + strArray[2] + " 작성";
+		regDate.innerText = registerDate;
+	}	
+});
