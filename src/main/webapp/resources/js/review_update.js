@@ -34,7 +34,7 @@ $(".del_ck").click(function(){
 	
 	if (flag == true) {
 		var files = '<span class="inner_photo">';
-		files += '<input type="file" name="files2" class="input_imgs" id="input_img';
+		files += '<input type="file" name="files2" accept="image/*" class="input_imgs" id="input_img';
 		files += count + 1;
 		files += '">';
 		files += '<span class="del_btn" id="del_btn';
@@ -112,7 +112,7 @@ $(".photo_add").change(function(){
 	
 	if (flag == true && img_count < 8) {
 		var files = '<span class="inner_photo">';
-		files += '<input type="file" name="files2" class="input_imgs" id="input_img';
+		files += '<input type="file" name="files2" accept="image/*" class="input_imgs" id="input_img';
 		files += count + 1;
 		files += '">';
 		files += '<span class="del_btn" id="del_btn';
@@ -161,7 +161,7 @@ $(".photo_add").on('click', '.del_btn', function(){
 	
 	if (flag == true && count < 8) {
 		var files = '<span class="inner_photo">';
-		files += '<input type="file" name="files2" class="input_imgs" id="input_img';
+		files += '<input type="file" name="files2" accept="image/*" class="input_imgs" id="input_img';
 		files += count + 1;
 		files += '">';
 		files += '<span class="del_btn">x</span>';

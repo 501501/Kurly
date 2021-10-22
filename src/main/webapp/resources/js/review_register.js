@@ -20,7 +20,7 @@ window.onload = function(){
 
 /* 이미지 태그 추가 */
 var count = 1;
-$(".photo_add").change(function(){
+$(".photo_add").change(function(){	
 	var flag = true;
 	var length = $(".input_imgs").length;
 	// 이미지 수 count
@@ -39,7 +39,7 @@ $(".photo_add").change(function(){
 	
 	if (flag == true && count < 8) {
 		var files = '<span class="inner_photo">';
-		files += '<input type="file" name="files2" class="input_imgs" id="input_img';
+		files += '<input type="file" name="files2" accept="image/*" onchange="setThumbnail(event);" class="input_imgs" id="input_img';
 		files += count + 1;
 		files += '">';
 		files += '<span class="del_btn" id="del_btn';
@@ -87,7 +87,7 @@ $(".photo_add").on('click', '.del_btn', function(){
 	
 	if (flag == true && count < 8) {
 		var files = '<span class="inner_photo">';
-		files += '<input type="file" name="files2" class="input_imgs" id="input_img';
+		files += '<input type="file" name="files2" accept="image/*" class="input_imgs" id="input_img';
 		files += count + 1;
 		files += '">';
 		files += '<span class="del_btn">x</span>';
@@ -99,31 +99,14 @@ $(".photo_add").on('click', '.del_btn', function(){
 	document.getElementsByClassName("num")[1].innerHTML = img_count;
 });
 
-
 /* 이미지 미리보기 */
-/*var sel_files = [];
-
-$(document).ready(function() {
-	$(".input_imgs").on("change", handleImgsFilesSelect);
-});
-
-function handleImgsFilesSelect(e) {
-	var files = e.target.files;
-	var filesArr = Array.prototype.slice.call(files);
-
-	filesArr.forEach(function(f) {
-		if (!f.type.match("image.*")) {
-			alert("확장자는 이미지 확장자만 가능합니다.");
-			return;
-		}
-
-		sel_files.push(f);
-
-		var reader = new FileReader();
-		reader.onload = function(e) {
-			var img_html = "<img src=\"" + e.target.result + "\" />";
-			$(".imgs_wrap").append(img_html);
-		}
-		reader.readAsDataURL(f);
-	});
-}*/
+function setThumbnail(event) {
+	var reader = new FileReader();
+	reader.onload = function(event) {
+		var img = document.createElement("img");
+		img.setAttribute("src", event.target.result);
+		//document.getElementById('image_container').innerHTML = "";
+		document.querySelector("div#image_container").appendChild(img);
+	};
+	reader.readAsDataURL(event.target.files[0]);
+}
