@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+    <defs>
+        <filter id="ss8helusia">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.200000 0 0 0 0 0.200000 0 0 0 0 0.200000 0 0 0 1.000000 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="#333" stroke-width="2" d="M22.636 15.818c0 7.637-9.818 14.182-9.818 14.182S3 23.455 3 15.818C3 10.396 7.396 6 12.818 6c5.423 0 9.818 4.396 9.818 9.818h0z"/>
+        </g>
+        <circle cx="12.818" cy="15.818" r="3.273" stroke="#333" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <rect width="18" height="18" x="17" y="1" fill="#5F0080" stroke="#FFF" stroke-width="2" rx="9"/>
+        <path fill="#FFF" d="M27.1 12.1v1.7h-1.8v-1.7h1.8zm0-6.1v4.7h-1.8V6h1.8z"/>
+    </g>
+</svg>
