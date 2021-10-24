@@ -50,4 +50,9 @@
 		UPDATE DESTINATION SET CHECK_TYPE = 'y'
 		WHERE ADDRESS_POST = (SELECT ADDRESS_POST FROM DESTINATION WHERE DEFAULT_TYPE = 'y')
 	</update>
+	
+	<select id="getCheck" parameterType="MembersDTO" resultType="DestinationDTO">
+		SELECT * FROM DESTINATION 
+		WHERE ID = #{id} AND CHECK_TYPE = 'y'
+	</select>
  </mapper>

@@ -52,4 +52,8 @@ public class DestinationDAO {
 	public int setDefaultToCheck() throws Exception {
 		return sqlSession.update(NAMESPACE+"setDefaultToCheck");
 	}
+	
+	public DestinationDTO getCheck(MembersDTO membersDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getCheck", membersDTO);
+	}
 } 

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html lang="ko">
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,8 +27,20 @@
     <script src="/jq/bxslider-4-4.2.12/dist/jquery.bxslider.min.js"></script>
     <script src="/jq/bx.js"></script>
     <script src="/jq/index.js" type="text/javascript" text="javascript"></script>
-    
-
+    <script type="text/javascript">
+		$(function(){
+		
+		    $("#btnList").click(function(){
+		        location.href="../goods_list";
+		    });
+		
+		    $("#btnDelete").click(function(){
+		        if(confirm("장바구니를 비우시겠습니까?")){
+		            location.href="./deleteAll?userId=${map.userId}";
+		        }
+		    });
+		});
+	</script>
 </head>
 
 <body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
@@ -78,7 +89,8 @@
                         
                         <!-- 로그인 후 -->
                         <c:if test="${not empty member}">
-                        	<li>${member.name}</li>
+                        	<li>${member.name}</li>                        	
+                        	<li id="destination">배송지</li>
                         	
                         </c:if>
                         <!-- 로그인 후 -->
@@ -204,7 +216,7 @@
                             <!-- 장바구니 -->
                             <div class="cart_count">
                                 <div class="inner_cartcount">
-                                    <a href="#" class="btn_cart">
+                                    <a href="./goods/goods_cart/" class="btn_cart">
                                         <span class="screen_out">장바구니</span>
                                         <span id="cart_item_count" class="num realtime_cartcount"
                                             style="display: none;"></span>
@@ -225,6 +237,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
 
                             <!-- 배송지 설정 -->
                             <div class="location_set">

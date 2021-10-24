@@ -53,4 +53,8 @@ public class DestinationService {
 	public int setDefaultToCheck() throws Exception {
 		return destinationDAO.setDefaultToCheck();
 	}
+	
+	public DestinationDTO getCheck(MembersDTO membersDTO) throws Exception {
+		return destinationDAO.getCheck(membersDTO);
+	}
 }
