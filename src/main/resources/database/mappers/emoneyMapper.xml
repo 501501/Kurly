@@ -17,12 +17,12 @@
  	
  	
  	<!-- 후기적립금 500원 적립 트랜잭션 START -->
- 	<insert id="insertRvPoint" parameterType="BuyingDTO">
+ 	<insert id="insertRvPoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
  		INSERT INTO EMONEY (EMONEY_SEQ, USER_ID, EMONEY, MEMO, STATUS)
 		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, 500, '[후기적립금]'+#{product_name}, 'N')
  	</insert>
  	
- 	<update id="updateRvPoint" parameterType="BuyingDTO">
+ 	<update id="updateRvPoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
  		UPDATE EMONEY SET BALANCE=
 		    (SELECT BALANCE FROM EMONEY
 		    WHERE USER_ID=#{userId} AND EMONEY_SEQ=
@@ -37,12 +37,12 @@
  	
  	
  	<!-- 구매적립금 총구매액*5% 적립 트랜잭셕 START -->
- 	<insert id="insertBuyPoint" parameterType="BuyingDTO">
+ 	<insert id="insertBuyPoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
  		INSERT INTO EMONEY (EMONEY_SEQ, USER_ID, EMONEY, MEMO, STATUS)
 		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, #{totalPay}*0.05, '[구매적립] 주문('+#{order_number}+') 5% 적립', 'N')
  	</insert>
  	
- 	<update id="updateBuyPoint" parameterType="BuyingDTO">
+ 	<update id="updateBuyPoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
  		UPDATE EMONEY SET BALANCE=
 		    (SELECT BALANCE FROM EMONEY
 		    WHERE USER_ID=#{userId} AND EMONEY_SEQ=
@@ -57,12 +57,12 @@
  	
  	
  	<!-- 적립금 사용시 적립금 차감 트랜잭션 START -->
- 	<insert id="insertUsePoint" parameterType="BuyingDTO">
+ 	<insert id="insertUsePoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
  		INSERT INTO EMONEY (EMONEY_SEQ, USER_ID, EMONEY, MEMO, STATUS)
 		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, '-'+#{use_point}, '[사용] 주문('+#{order_number}+') 결제 시 사용', 'Y')
  	</insert>
  	
- 	<update id="UpdateUsePoint" parameterType="BuyingDTO">
+ 	<update id="UpdateUsePoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
  		UPDATE EMONEY SET BALANCE=
 		    (SELECT BALANCE FROM EMONEY
 		    WHERE USER_ID=#{userId} AND EMONEY_SEQ=

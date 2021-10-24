@@ -73,7 +73,7 @@ public class EmoneyController {
 		return mv;
 	}
 	
-	@PostMapping("getEmoney")
+	@PostMapping("getEmoney")	
 	public ModelAndView getEmoney(HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		String userId = (String)session.getAttribute("member");
