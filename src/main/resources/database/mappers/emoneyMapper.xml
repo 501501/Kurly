@@ -19,7 +19,7 @@
  	<!-- 후기적립금 500원 적립 트랜잭션 START -->
  	<insert id="insertRvPoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
  		INSERT INTO EMONEY (EMONEY_SEQ, USER_ID, EMONEY, MEMO, STATUS)
-		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, 500, '[후기적립금]'+#{product_name}, 'N')
+		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, 500, #{product_name}, 'N')
  	</insert>
  	
  	<update id="updateRvPoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
@@ -39,7 +39,7 @@
  	<!-- 구매적립금 총구매액*5% 적립 트랜잭셕 START -->
  	<insert id="insertBuyPoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
  		INSERT INTO EMONEY (EMONEY_SEQ, USER_ID, EMONEY, MEMO, STATUS)
-		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, #{totalPay}*0.05, '[구매적립] 주문('+#{order_number}+') 5% 적립', 'N')
+		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, #{totalPay}*0.05, #{order_number}, 'N')
  	</insert>
  	
  	<update id="updateBuyPoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
@@ -48,7 +48,7 @@
 		    WHERE USER_ID=#{userId} AND EMONEY_SEQ=
 		    (SELECT MAX(EMONEY_SEQ) FROM EMONEY
 		    WHERE USER_ID=#{userId} AND EMONEY_SEQ NOT IN 
-		    (SELECT MAX(EMONEY_SEQ) FROM EMONEY WHERE USER_ID=#{userId})))+50000*0.05    
+		    (SELECT MAX(EMONEY_SEQ) FROM EMONEY WHERE USER_ID=#{userId})))+#{totalPay}*0.05    
 		WHERE EMONEY_SEQ=
 		    (SELECT MAX(EMONEY_SEQ) FROM EMONEY
 		    WHERE USER_ID=#{userId})

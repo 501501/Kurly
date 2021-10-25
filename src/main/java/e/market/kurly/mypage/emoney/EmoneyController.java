@@ -29,12 +29,14 @@ public class EmoneyController {
 		String userId = membersDTO.getId();		
 		
 		List<EmoneyDTO> list = emoneyService.getEmoneyList(userId, pager);
+		int emoney = emoneyService.getTotalPoint(userId);
 		
 		System.out.println("list: "+list);
 		System.out.println("one: "+list.get(0).getReg_date()+"/"+list.get(0).getEmoney());
 		
 		mv.addObject("pager", pager);
 		mv.addObject("list", list);
+		mv.addObject("emoney", emoney);
 		mv.setViewName("emoney/emoney");
 		
 		return mv;
@@ -54,7 +56,7 @@ public class EmoneyController {
 	@PostMapping("purchase_emoney")
 	public ModelAndView purchase_emoney(BuyingDTO buyingDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		int result = emoneyService.setReviewPoint(buyingDTO);
+		int result = emoneyService.setBuyingPoint(buyingDTO);
 		
 		mv.addObject("result", result);
 		mv.setViewName("common/ajaxResult");
@@ -74,13 +76,12 @@ public class EmoneyController {
 	}
 	
 	@PostMapping("getEmoney")	
-	public ModelAndView getEmoney(HttpSession session) throws Exception {
+	public ModelAndView getTotalPoint(String userId) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		String userId = (String)session.getAttribute("member");
 		int emoney = emoneyService.getTotalPoint(userId);
 		
 		mv.addObject("emoney", emoney);
-		mv.setViewName("common/ajaxResult");
+		mv.setViewName("emoney/emoney");
 		
 		return mv;
 	}

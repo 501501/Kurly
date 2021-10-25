@@ -11,6 +11,12 @@
 <body>
 	<h1>적립금</h1>
 	
+	<div>
+		<button type="button" id="test_review">리뷰포인트적립테스트</button>
+		<button type="button" id="test_purchase">구매포인트적립테스트</button>
+		<div id="test_totalPoint">${emoney}</div>
+	</div>
+	
 	<table>
 		<thead>
 			<tr>
@@ -32,5 +38,52 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<script type="text/javascript">
+		$('#test_review').click(function(){
+			$.ajax({
+				url : './review_emoney',
+				type : 'POST',
+				data : {
+					userId : 't1',
+					product_name : '냉장고'
+				},
+				success : function(result){
+					var rs = result.trim();
+					if(rs != 2){
+						alert('실패용');
+					} else {
+						alert('성공');
+						location.reload();
+					}
+				}
+			});
+			});
+		
+		$('#test_purchase').click(function(){
+			$.ajax({
+				url : './purchase_emoney',
+				type : 'POST',
+				data : {
+					userId : 't1',
+					totalPay : 70000,
+					order_number : 10,
+					product_name : '선풍기'
+				},
+				success : function(result){
+					var rs = result.trim();
+					if(rs != 2){
+						alert('실패용');
+					} else {
+						alert('성공');
+						location.reload();
+					}
+				}
+			});
+			});
+
+
+	</script>
+	
 </body>
 </html>

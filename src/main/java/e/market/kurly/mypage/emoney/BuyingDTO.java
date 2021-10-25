@@ -8,7 +8,14 @@ public class BuyingDTO {
 	private String product_name; //상품명(후기적립금용)
 	private int use_point; //사용 적립금
 	private int order_number; //주문번호
+	private int totalPay;
 	
+	public int getTotalPay() {
+		return totalPay;
+	}
+	public void setTotalPay(int totalPay) {
+		this.totalPay = totalPay;
+	}
 	public String getUserId() {
 		return userId;
 	}
