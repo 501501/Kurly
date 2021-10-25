@@ -12,6 +12,11 @@
 		width: 80px;
 		height: 80px;
 	}
+	
+	#image_container > img {
+		width: 80px;
+		height: 80px;
+	}
 </style>
 </head>
 <body>
@@ -65,7 +70,7 @@
 
 						<div class="photo_add">
 							<span class="inner_photo">
-								<input type="file" class="input_imgs" id="input_img1" name="files2" /> 
+								<input type="file" class="input_imgs input_img1" name="files2" /> 
 								<span class="del_btn" id="del_btn1">x</span>
 							</span>
 							
@@ -83,7 +88,9 @@
 									</span>
 								</c:if>
 							</c:forEach>
-
+							
+							<!-- 이미지 미리보기 -->
+							<span id="image_container"></span>
 
 						<div class="file_count">
 							<p class="txt_count">

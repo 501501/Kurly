@@ -59,22 +59,17 @@
 				<tr>
 					<th>사진등록</th>
 					<td>
-						<!-- 다중 이미지 미리보기 -->
-						<div>
-							<div class="imgs_wrap"></div>
-						</div>
-						
-						<div id="image_container"></div>
-
 						<div class="photo_add">
 							<span class="inner_photo">
-								<input type="file" class="input_imgs" id="input_img1" name="files2" accept="image/*" onchange="setThumbnail(event);" /> 
+								<input type="file" class="input_imgs input_img1" name="files2" accept="image/*" /> 
 								<span class="del_btn" id="del_btn1">x</span>
 							</span>
 							
 							<span id="fileAddResult">
 							</span>
 						</div>
+						
+						<div id="image_container"></div>
 
 						<div class="file_count">
 							<p class="txt_count">
