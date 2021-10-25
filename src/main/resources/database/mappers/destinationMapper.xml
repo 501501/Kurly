@@ -9,6 +9,11 @@
 		VALUES (#{id}, #{address_loca}, #{address_post}, #{name}, #{phone_num}, #{shipping_type}, #{default_type}, #{check_type})
 	</insert>
 	
+	<select id="getMainAddress" parameterType="MembersDTO" resultType="DestinationDTO">
+		SELECT * FROM DESTINATION 
+		WHERE id=#{id} and check_type='y'
+	</select>
+	
 	<select id="getList" parameterType="MembersDTO" resultType="DestinationDTO">
 		SELECT * FROM DESTINATION 
 		WHERE ID = #{id}

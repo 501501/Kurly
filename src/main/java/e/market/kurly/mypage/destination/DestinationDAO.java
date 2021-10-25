@@ -56,4 +56,8 @@ public class DestinationDAO {
 	public DestinationDTO getCheck(MembersDTO membersDTO) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"getCheck", membersDTO);
 	}
+	
+	public DestinationDTO getMainAddress(MembersDTO membersDTO) throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getMainAddress", membersDTO);
+	}
 } 

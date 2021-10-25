@@ -61,6 +61,8 @@ $(function(){
             <input type="text" id="hiddenVal" value="${fn:length(map.list)}" hidden="hidden" />
             <input type="text" id="userIdVal" value="${map.userId}" hidden="hidden" />  
             
+            <c:set var="sum" value="0" />
+            
             <c:forEach var="row" items="${map.list}" varStatus="status">
                 <tr align="center">
                 	<td>
@@ -93,6 +95,8 @@ $(function(){
                     </td>
                 </tr>
             </c:forEach>
+            <c:set var="sum" value="${sum + (row.rice * row.amount)}" />
+            
                 <tr>
                     <td colspan="5" align="right">
                         상품금액 :

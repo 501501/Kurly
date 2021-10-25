@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import e.market.kurly.members.MembersDTO;
+
 @Repository
 public class GoodsCartDAO {
 
@@ -57,7 +59,9 @@ public class GoodsCartDAO {
 		return sqlSession.update(NAMESPACE+"updateMinus", cartDTO);
 	}
 	
-	
+	public List<GoodsCartDTO> getCartItems(MembersDTO membersDTO) throws Exception {
+		return sqlSession.selectList(NAMESPACE+"getCartItems", membersDTO);
+	}
 	
 	
 }

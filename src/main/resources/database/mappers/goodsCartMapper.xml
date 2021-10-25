@@ -40,4 +40,12 @@
 			update GoodsCart set amount=amount-1
 			where cart_id=#{cart_id} and userId=#{userId}
 		</update>
+		
+		<select id="getCartItems" parameterType="MembersDTO" resultType="e.market.kurly.goods.goods_cart.GoodsCartDTO">
+			SELECT C.*, G.PRODUCT_NAME 
+			FROM GOODSCART C inner JOIN GOODS G
+			ON (C.PRODUCT_ID=G.PRODUCT_ID)
+			WHERE USERID=#{id}
+		</select>
+		
 	</mapper>

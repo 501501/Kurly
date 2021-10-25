@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="e.market.kurly.mypage.order.OrderDAO">
+	<insert id="orderInfo">
+		INSERT INTO TBL_ORDER(orderId, userId, orderRec, address_post, address_loca, orderPhone, amount)
+		VALUES (#{orderId}, #{userId}, #{orderRec}, #{address_post}, #{address_loca}, #{orderPhone}, #{amount})
+	</insert>
+	
+	<insert id="orderInfo_Details">
+		INSERT INTO TBL_ORDER_DETAILS(orderDetailsNum, orderId, pruduct_id, cartStock)
+		SELECT TBL_ORDER_DETAILS_SEQ.NEXTVAL, #{orderId}, product_id, cartStock
+		from TBL_CART
+	</insert>
+ </mapper>
