@@ -46,6 +46,8 @@ public class AjaxController {
 	@Autowired
 	private ReviewService reviewService;
 	
+	private List<OrderDTO> orderDTOs;
+	
 	@GetMapping("qna_select")
 	public ModelAndView qna_select(Long num) throws Exception {
 		ModelAndView mv = new ModelAndView();

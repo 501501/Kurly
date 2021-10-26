@@ -115,11 +115,22 @@
 	</div>
 	
 	<div>
-		<button type="button" style="margin:auto; display:block">결제하기</button>
+		<button type="button" class="btn_payment" style="margin:auto; display:block">결제하기</button>
 	</div>
+	
+	<form id = "frm" action="./order_end" method="post">
+	<div hidden="hidden">
+		<c:forEach items="${name}" var="n1">
+			<input type="text" name="productName" value="${n1}">
+        </c:forEach>
+        
+		<c:forEach items="${num}" var="n2">
+			<input type="text" name="productNum" value="${n2}">
+        </c:forEach>
+	</div>
+	</form>
 
-
-<script type="text/javascript">
+	<script type="text/javascript">
 	var arr = new Array();
 
 	<c:forEach var="goods" items="${cartList}" varStatus="i">
@@ -131,7 +142,10 @@
 	var firstItem = arr[0].name;
 	var length = arr.length;
 		$('#ordProducts').html(firstItem + '외 '+(length-1)+'개상품을 주문합니다.');
-
+	
+	$(".btn_payment").click(function(){
+		$("#frm").submit();
+	});
 </script>
 </body>
 </html>

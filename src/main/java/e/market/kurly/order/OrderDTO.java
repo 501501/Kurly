@@ -1,21 +1,22 @@
 package e.market.kurly.order;
 
 import java.sql.Date;
+import java.util.List;
 
 public class OrderDTO {
-	private String orderNum;
+	private Long orderNum;
 	private Long goodsNo;
 	private String productName;
 	private Long productNum;
 	private Date shippingDate;
 	private String reviewCk;
 	private String id;
-
-	public String getOrderNum() {
+	
+	public Long getOrderNum() {
 		return orderNum;
 	}
 
-	public void setOrderNum(String orderNum) {
+	public void setOrderNum(Long orderNum) {
 		this.orderNum = orderNum;
 	}
 
@@ -65,5 +66,9 @@ public class OrderDTO {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public void setGoodsNo(Long goodsNo) {
+		this.goodsNo = goodsNo;
 	}
 }

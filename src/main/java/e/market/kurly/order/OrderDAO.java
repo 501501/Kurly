@@ -2,11 +2,14 @@ package e.market.kurly.order;
 
 import java.util.List;
 
+import javax.sound.midi.Sequence;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import e.market.kurly.members.MembersDTO;
+import e.market.kurly.util.SequenceDTO;
 
 @Repository
 public class OrderDAO {
@@ -38,5 +41,15 @@ public class OrderDAO {
 	// 상품 번호로 특정 상품 정보 1개 조회
 	public OrderDTO getOne(Long goodsNo) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"getOne", goodsNo);
+	}
+	
+	// 주문 목록 추가
+	public int setInsert(OrderDTO orderDTO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"setInsert", orderDTO);
+	}
+	
+	// 현재 시퀀스 값
+	public SequenceDTO getSeq() throws Exception {
+		return sqlSession.selectOne(NAMESPACE+"getSeq");
 	}
 }

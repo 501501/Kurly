@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import e.market.kurly.members.MembersDTO;
 import e.market.kurly.mypage.destination.DestinationDTO;
 import e.market.kurly.mypage.destination.DestinationService;
+import e.market.kurly.order.OrderService;
 
 @Controller
 @RequestMapping("goods/goods_cart/*")
@@ -27,6 +28,8 @@ public class GoodsCartController {
 	private GoodsCartService cartService;
 	@Autowired
 	private DestinationService destinationService;
+	@Autowired
+	private OrderService orderService;
 	
 	@GetMapping("insert")
 	public String insert(GoodsCartDTO cartDTO, HttpSession session) throws Exception {
@@ -44,6 +47,10 @@ public class GoodsCartController {
 	@GetMapping("/")
 	public ModelAndView list(HttpSession session, GoodsCartDTO cartDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
+		
+		// payment table 초기화
+		// orderService.setPaymentInit();
+		
 		Map<String, Object> map = new HashMap<String, Object>();
 		MembersDTO membersDTO = new MembersDTO();
 		membersDTO = (MembersDTO)session.getAttribute("member");
@@ -157,10 +164,6 @@ public class GoodsCartController {
 		}
 		
 		return yy;
-	}
-	
-	public void go_order() throws Exception {
-		
 	}
 	
 }

@@ -2,6 +2,8 @@ package e.market.kurly.members;
 
 import java.sql.Date;
 
+import e.market.kurly.order.OrderDTO;
+
 public class MembersDTO {
 
 	private String id;
@@ -12,7 +14,7 @@ public class MembersDTO {
 	private String gender;
 	private String birth_date;
 	private String recommender;
-
+	
 	/** 이용약관 선택 동의*/
 	private int clause_private;
 	private int clause_sms;
@@ -84,5 +86,4 @@ public class MembersDTO {
 	public void setClause_email(int clause_email) {
 		this.clause_email = clause_email;
 	}
-
 }

@@ -24,4 +24,13 @@
 	<select id="getOne" parameterType="Long" resultType="OrderDTO">
 		SELECT * FROM ORDERLIST WHERE GOODSNO = #{goodsNo}
 	</select>
+	
+	<insert id="setInsert" parameterType="OrderDTO">
+		INSERT INTO ORDERLIST
+		VALUES (#{orderNum}, #{goodsNo}, #{productName}, #{productNum}, sysdate+1, 'n', #{id})
+	</insert>
+	
+	<select id="getSeq" resultType="SequenceDTO">
+		select ORDERLIST_SEQ.nextval, ORDERLIST_SEQ.currval from dual
+	</select>
  </mapper>

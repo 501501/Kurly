@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import e.market.kurly.members.MembersDAO;
 import e.market.kurly.members.MembersDTO;
 import e.market.kurly.mypage.destination.DestinationDAO;
 import e.market.kurly.mypage.destination.DestinationDTO;
+import e.market.kurly.util.SequenceDTO;
 
 @Service
 public class OrderService {
@@ -62,5 +64,15 @@ public class OrderService {
 		map.put("cartList", list);
 		
 		return map;
+	}
+	
+	// 주문 목록 추가
+	public int setInsert(OrderDTO orderDTO) throws Exception {
+		return orderDAO.setInsert(orderDTO);
+	}
+	
+	// 현재 시퀀스 값
+	public SequenceDTO getSeq() throws Exception {
+		return orderDAO.getSeq();
 	}
 }

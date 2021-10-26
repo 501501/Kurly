@@ -1,4 +1,3 @@
 /**
- *  cart_result.js
+ * cart_result.js
  */
- 
