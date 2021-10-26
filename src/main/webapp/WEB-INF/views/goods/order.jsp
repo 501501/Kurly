@@ -60,6 +60,32 @@
 		</table>
 	</div>
 
+	<br><br>
+
+	<div>
+		<div>쿠폰 / 적립금</div>
+		<hr>
+	</div>
+
+	<br><br>
+	
+	<div>
+		<div>결제 수단</div>
+		<hr>
+	</div>
+	
+	<br><br>
+	
+	<div>
+		<div>개인정보 수집/제공</div>
+		<hr>
+	</div>
+	
+	<div>
+		<button type="button" style="margin:auto; display:block">결제하기</button>
+	</div>
+
+
 <script type="text/javascript">
 	var arr = new Array();
 
