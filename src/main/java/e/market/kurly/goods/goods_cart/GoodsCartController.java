@@ -159,4 +159,8 @@ public class GoodsCartController {
 		return yy;
 	}
 	
+	public void go_order() throws Exception {
+		
+	}
+	
 }

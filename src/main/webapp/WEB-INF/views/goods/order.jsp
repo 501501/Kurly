@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>      
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,12 +67,41 @@
 	<div>
 		<div>쿠폰 / 적립금</div>
 		<hr>
+		<table>
+			<tr>
+				<td>적립금 적용</td>
+				<td>
+					<input type="text" value="" id="emoneyBox" />
+				</td>
+			</tr>
+		</table>
 	</div>
 
+	<br><br>
+
+	<div>
+		<div>결제금액</div>
+		<hr>
+		 <tr>
+         	<td colspan="5" align="right">
+            	<div id="sumMoney">
+	               상품금액 :
+	               <fmt:formatNumber value="${sumMoney}"
+	               pattern="#,###,###" />
+                </div><br>
+                    배송비 : ${fee}<br>
+                   	결제예정금액 : <fmt:formatNumber value="${sum}"
+                    pattern="#,###,###" />
+           	</td>
+       	</tr>
+	</div>
+	
 	<br><br>
 	
 	<div>
 		<div>결제 수단</div>
+		<input type="radio" name="kakao-pay" />
+		<label for="kakao-pay">카카오페이(임시버튼)</label>
 		<hr>
 	</div>
 	
@@ -78,6 +109,8 @@
 	
 	<div>
 		<div>개인정보 수집/제공</div>
+		<input type="checkbox" name="clause_necessary" value="1"/>
+		<label for="clause_necessary">결제 진행 필수 동의</label>
 		<hr>
 	</div>
 	
@@ -98,6 +131,7 @@
 	var firstItem = arr[0].name;
 	var length = arr.length;
 		$('#ordProducts').html(firstItem + '외 '+(length-1)+'개상품을 주문합니다.');
+
 </script>
 </body>
 </html>

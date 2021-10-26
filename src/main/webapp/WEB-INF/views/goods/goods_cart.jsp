@@ -47,7 +47,7 @@ $(function(){
 		<hr/>
 		
         <form id="form1" name="form1" method="post"
-        action="#">
+        action="../order/order">
             <table border="1" width="400px">
                 <tr>
                 	<th>선택</th>
@@ -60,8 +60,6 @@ $(function(){
 
             <input type="text" id="hiddenVal" value="${fn:length(map.list)}" hidden="hidden" />
             <input type="text" id="userIdVal" value="${map.userId}" hidden="hidden" />  
-            
-            <c:set var="sum" value="0" />
             
             <c:forEach var="row" items="${map.list}" varStatus="status">
                 <tr align="center">
@@ -95,13 +93,14 @@ $(function(){
                     </td>
                 </tr>
             </c:forEach>
-            <c:set var="sum" value="${sum + (row.rice * row.amount)}" />
             
                 <tr>
                     <td colspan="5" align="right">
-                        상품금액 :
-                        <fmt:formatNumber value="${map.sumMoney}"
-                            pattern="#,###,###" /><br>
+                    	<div id="sumMoney">
+	                        상품금액 :
+	                        <fmt:formatNumber value="${map.sumMoney}"
+	                            pattern="#,###,###" />
+                        </div><br>
                         배송비 : ${map.fee}<br>
                         결제예정금액 : <fmt:formatNumber value="${map.sum}"
                             pattern="#,###,###" />
@@ -122,7 +121,7 @@ $(function(){
 					</div>
 				</div>
 				
-				<button type="button" class="btn active">주문하기</button>
+				<button type="button" id="btn_order" class="btn active">주문하기</button>
 			</div>
 
 			<br>
@@ -160,6 +159,11 @@ $(function(){
 if($('#cbxMinor').prop('checked', true)){
 	$('#cbxAll').prop('checked', true);
 }
+
+$('#btn_order').click(function(){
+	$(location).attr('href', '../../order/order?id=${map.userId}')
+});
+
 </script>
 <script type="text/javascript" src="../../resources/js/goods_cart.js"></script>
 <script type="text/javascript" src="../../resources/js/cart_result.js"></script>
