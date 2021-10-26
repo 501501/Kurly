@@ -18,12 +18,12 @@ import e.market.kurly.mypage.echo.EchoDTO;
 import e.market.kurly.mypage.echo.EchoService;
 import e.market.kurly.mypage.offer.OfferDTO;
 import e.market.kurly.mypage.offer.OfferService;
-import e.market.kurly.mypage.order.OrderDTO;
-import e.market.kurly.mypage.order.OrderService;
 import e.market.kurly.mypage.qna.QnaDTO;
 import e.market.kurly.mypage.qna.QnaService;
 import e.market.kurly.mypage.review.ReviewDTO;
 import e.market.kurly.mypage.review.ReviewService;
+import e.market.kurly.order.OrderDTO;
+import e.market.kurly.order.OrderService;
 import e.market.kurly.service.faq.FaqDAO;
 import e.market.kurly.service.faq.FaqDTO;
 
@@ -192,7 +192,7 @@ public class AjaxController {
 		// session에서 사용자 정보 꺼내오기
 		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
 		// 리뷰를 작성하지 않은 주문번호 조회
-		List<String> orderNums = orderService.getBeforeOrderNum(membersDTO);
+		List<String> orderNums = orderService.getBeforeOrderNum(membersDTO);	
 		mv.addObject("orderNums", orderNums);
 		mv.setViewName("review/beforeView");
 		return mv;

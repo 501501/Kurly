@@ -12,8 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import e.market.kurly.board.BoardFilesDTO;
-import e.market.kurly.mypage.order.OrderDTO;
-import e.market.kurly.mypage.order.OrderService;
+import e.market.kurly.order.OrderDTO;
+import e.market.kurly.order.OrderService;
 
 @Controller
 @RequestMapping("/mypage/*")

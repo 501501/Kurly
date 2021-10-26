@@ -16,7 +16,6 @@ import e.market.kurly.mypage.destination.DestinationDTO;
 
 @Service
 public class OrderService {
-
 	@Autowired
 	private OrderDAO orderDAO;
 	@Autowired
@@ -25,6 +24,31 @@ public class OrderService {
 	private DestinationDAO destinationDAO;
 	@Autowired
 	private GoodsCartDAO goodsCartDAO;
+	
+	// 사용자 아이디로 주문번호 조회
+	public List<String> getOrderNum(MembersDTO membersDTO) throws Exception {
+		return orderDAO.getOrderNum(membersDTO);
+	}
+	
+	// 리뷰를 작성하지 않은 주문번호 조회
+	public List<String> getBeforeOrderNum(MembersDTO membersDTO) throws Exception {
+		return orderDAO.getBeforeOrderNum(membersDTO);
+	}
+	
+	// 리뷰를 작성한 주문번호 조회
+	public List<String> getAfterOrderNum(MembersDTO membersDTO) throws Exception {
+		return orderDAO.getAfterOrderNum(membersDTO);
+	}
+	
+	// 주문번호로 주문 목록 조회
+	public List<OrderDTO> getListByOrderNum(String orderNum) throws Exception {
+		return orderDAO.getListByOrderNum(orderNum);
+	}
+	
+	// 상품 번호로 특정 상품 정보 1개 조회
+	public OrderDTO getOne(Long goodsNo) throws Exception {
+		return orderDAO.getOne(goodsNo);
+	}
 	
 	public Map<String, Object> orderSheet(MembersDTO membersDTO) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();

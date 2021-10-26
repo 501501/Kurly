@@ -1,60 +1,69 @@
 package e.market.kurly.order;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class OrderDTO {
-	
-	private String orderId;
-	private String userId;
-	private String address_post;
-	private String address_loca;
-	private String orderPhone;
-	private int amount;
-	private Date orderDate;
-	
-	
-	public String getOrderId() {
-		return orderId;
+	private String orderNum;
+	private Long goodsNo;
+	private String productName;
+	private Long productNum;
+	private Date shippingDate;
+	private String reviewCk;
+	private String id;
+
+	public String getOrderNum() {
+		return orderNum;
 	}
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+
+	public void setOrderNum(String orderNum) {
+		this.orderNum = orderNum;
 	}
-	public String getUserId() {
-		return userId;
+
+	public Long getGoodsNo() {
+		return goodsNo;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+
+	public void setGoodsNum(Long goodsNo) {
+		this.goodsNo = goodsNo;
 	}
-	public String getAddress_post() {
-		return address_post;
+
+	public String getProductName() {
+		return productName;
 	}
-	public void setAddress_post(String address_post) {
-		this.address_post = address_post;
+
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
-	public String getAddress_loca() {
-		return address_loca;
+
+	public Long getProductNum() {
+		return productNum;
 	}
-	public void setAddress_loca(String address_loca) {
-		this.address_loca = address_loca;
+
+	public void setProductNum(Long productNum) {
+		this.productNum = productNum;
 	}
-	public String getOrderPhone() {
-		return orderPhone;
+
+	public Date getShippingDate() {
+		return shippingDate;
 	}
-	public void setOrderPhone(String orderPhone) {
-		this.orderPhone = orderPhone;
+
+	public void setShippingDate(Date shippingDate) {
+		this.shippingDate = shippingDate;
 	}
-	public int getAmount() {
-		return amount;
+
+	public String getReviewCk() {
+		return reviewCk;
 	}
-	public void setAmount(int amount) {
-		this.amount = amount;
+
+	public void setReviewCk(String reviewCk) {
+		this.reviewCk = reviewCk;
 	}
-	public Date getOrderDate() {
-		return orderDate;
+
+	public String getId() {
+		return id;
 	}
-	public void setOrderDate(Date orderDate) {
-		this.orderDate = orderDate;
+
+	public void setId(String id) {
+		this.id = id;
 	}
-	
-	
 }
