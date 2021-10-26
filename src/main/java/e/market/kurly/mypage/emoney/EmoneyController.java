@@ -74,16 +74,5 @@ public class EmoneyController {
 		
 		return mv;
 	}
-	
-	@PostMapping("getEmoney")	
-	public ModelAndView getTotalPoint(String userId) throws Exception {
-		ModelAndView mv = new ModelAndView();
-		int emoney = emoneyService.getTotalPoint(userId);
-		
-		mv.addObject("emoney", emoney);
-		mv.setViewName("emoney/emoney");
-		
-		return mv;
-	}
 
 }

@@ -14,7 +14,8 @@
 	<div>
 		<button type="button" id="test_review">리뷰포인트적립테스트</button>
 		<button type="button" id="test_purchase">구매포인트적립테스트</button>
-		<div id="test_totalPoint">${emoney}</div>
+		<button type="button" id="test_usePoint" value="">적립금사용하기테스트</button>
+		<div id="test_totalPoint" style="margin: 15px;">${emoney}</div>
 	</div>
 	
 	<table>
@@ -33,7 +34,12 @@
 					<td>${list.reg_date}</td>
 					<td>${list.memo}</td>
 					<td>${list.exp_date}</td>
-					<td><span>+</span>${list.emoney}</td>			
+					<c:if test="${list.status eq 'Y'}">
+						<td>${list.emoney}</td>
+					</c:if>	
+					<c:if test="${list.status eq 'N'}">
+						<td>+${list.emoney}</td>
+					</c:if>	
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -58,7 +64,7 @@
 					}
 				}
 			});
-			});
+		});
 		
 		$('#test_purchase').click(function(){
 			$.ajax({
@@ -80,10 +86,29 @@
 					}
 				}
 			});
+		});
+		
+		$('#test_usePoint').click(function(){
+			$.ajax({
+				url : './use_emoney',
+				type : 'POST',
+				data : {
+					userId : 't1',
+					use_point : 1300,
+					order_number : 10,
+				},
+				success : function(result){
+					var rs = result.trim();
+					if(rs != 2){
+						alert('실패용');
+					} else {
+						alert('성공');
+						location.reload();
+					}
+				}
 			});
-
+		});
 
 	</script>
-	
 </body>
 </html>
