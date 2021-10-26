@@ -29,11 +29,11 @@
     <script src="/jq/index.js" type="text/javascript" text="javascript"></script>
     <script type="text/javascript">
 		$(function(){
-		
+
 		    $("#btnList").click(function(){
 		        location.href="../goods_list";
 		    });
-		
+
 		    $("#btnDelete").click(function(){
 		        if(confirm("장바구니를 비우시겠습니까?")){
 		            location.href="./deleteAll?userId=${map.userId}";
@@ -74,27 +74,27 @@
 
                 <div id="userMenu">
                     <ul class="list_menu">
-                    	
+
                     	<!-- 로그인 전 -->
                     	<c:if test="${empty member}">
 	                        <li class="menu none_sub menu_join">
 	                            <a href="./members/join" class="link_menu">회원가입</a>
 	                        </li>
-	
+
 	                        <li class="menu none_sub menu_login">
 	                            <a href="./members/login" class="link_menu">로그인</a>
 	                        </li>
                         </c:if>
                         <!-- 로그인 전 -->
-                        
+
                         <!-- 로그인 후 -->
                         <c:if test="${not empty member}">
-                        	<li>${member.name}</li>                        	
+                        	<li>${member.name}</li>
                         	<li id="destination">배송지</li>
-                        	
+
                         </c:if>
                         <!-- 로그인 후 -->
-                        
+
                         <li class="menu lst"><a href="#" class="link_menu">고객센터</a>
                             <ul class="sub">
                                 <li>
@@ -128,7 +128,7 @@
 					<a href="./members/logout" class="btn_logout">로그아웃</a>
 					<a href="./goods/goods_cart/" class="btn_cart">장바구니</a>
 				</c:if>
-				
+
 				<c:if test="${empty member}">
 					<h2>Login하기 전 Page입니다</h2>
 					<a href="./members/login" class="btn_login">로그인</a>
@@ -237,7 +237,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
 
                             <!-- 배송지 설정 -->
                             <div class="location_set">
@@ -1630,7 +1630,7 @@
             </div>
         </article>
 
-        
+
         <article class="margin_wrap">
             <div class="ad_10">
                 <div class="ad_10_tit main_tit">
@@ -1686,7 +1686,7 @@
             </div>
             <div class="cc_view cc_qna">
                 <h3><a href="#none" class="tit" data-member-id="${member.id}" data-click-board="qna">1:1 문의</a></h3>
-                
+
                 <dl class="list">
                     <dt>24시간 접수 가능</dt>
                     <dd>고객센터 운영시간에 순차적으로 답변해드리겠습니다.</dd>

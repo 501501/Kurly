@@ -14,4 +14,25 @@
 		SELECT TBL_ORDER_DETAILS_SEQ.NEXTVAL, #{orderId}, product_id, cartStock
 		from TBL_CART
 	</insert>
+
+	<select id="getOrderNum" parameterType="MembersDTO" resultType="String">
+		SELECT DISTINCT ORDERNUM FROM ORDERLIST WHERE ID = #{id}
+	</select>
+	
+	<select id="getBeforeOrderNum" parameterType="MembersDTO" resultType="String">
+		SELECT DISTINCT ORDERNUM FROM ORDERLIST WHERE ID = #{id} AND REVIEWCK = 'n'
+	</select>
+	
+	<select id="getAfterOrderNum" parameterType="MembersDTO" resultType="String">
+		SELECT DISTINCT ORDERNUM FROM ORDERLIST WHERE ID = #{id} AND REVIEWCK = 'y'
+	</select>
+	
+	<select id="getListByOrderNum" parameterType="String" resultType="OrderDTO">
+		SELECT * FROM ORDERLIST
+		WHERE ORDERNUM = #{orderNum}
+	</select>
+	
+	<select id="getOne" parameterType="Long" resultType="OrderDTO">
+		SELECT * FROM ORDERLIST WHERE GOODSNO = #{goodsNo}
+	</select>
  </mapper>

@@ -24,7 +24,7 @@ public class QnaController {
 	private QnaService qnaService;
 	
 	@ModelAttribute("board")
-	public String  getBoard() {
+	public String getBoard() {
 		return "qna";
 	}
 	
