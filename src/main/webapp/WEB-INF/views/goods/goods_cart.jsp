@@ -118,7 +118,7 @@ $(function(){
 					<div class="address">
 						<p class="addr">
 						</p>
-						<button type="button" class="btn default">배송지 변경</button>
+						<button type="button" class="btn default" id="change-destin" onclick="changeDesti()">배송지 변경</button>
 					</div>
 				</div>
 				
