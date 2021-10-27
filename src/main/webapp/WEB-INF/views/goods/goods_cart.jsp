@@ -171,6 +171,5 @@ $('#btn_order').click(function(){
 </script>
 <script type="text/javascript" src="../../resources/js/goods_cart.js"></script>
 <script type="text/javascript" src="../../resources/js/cart_result.js"></script>
-
 </body>
 </html>

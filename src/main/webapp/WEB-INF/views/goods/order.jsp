@@ -43,6 +43,8 @@
 		</table>
 	</div>
 	
+	<div id="resultTest"></div>
+	
 	<br><br>
 	
 	<div>
@@ -71,7 +73,8 @@
 			<tr>
 				<td>적립금 적용</td>
 				<td>
-					<input type="text" value="" id="emoneyBox" />
+					<input type="text" value="" id="emoneyBox" placeholder="${total_emoney}"/>
+					<button type="button" id="useEmoney">적용</button>
 				</td>
 			</tr>
 		</table>
@@ -84,14 +87,20 @@
 		<hr>
 		 <tr>
          	<td colspan="5" align="right">
-            	<div id="sumMoney">
+            	<div>
 	               상품금액 :
-	               <fmt:formatNumber value="${sumMoney}"
-	               pattern="#,###,###" />
+	               <span id="sumMoneySpan">${sumMoney}</span>
+	               	<br>
                 </div><br>
+                <div>
                     배송비 : ${fee}<br>
-                   	결제예정금액 : <fmt:formatNumber value="${sum}"
-                    pattern="#,###,###" />
+                    적립금할인 : <span id="useEmoney_amount"></span>        
+        		</div>
+        		<div>
+                   	결제예정금액 :
+                   	<span id="sumSpan">${sum}</span>
+                 </div>  	
+                 <br>
            	</td>
        	</tr>
 	</div>
@@ -128,6 +137,7 @@
 			<input type="text" name="productNum" value="${n2}">
         </c:forEach>
         <input type="number" id="totalSum" name="price" value="${sum}" hidden="hidden">
+        <input type="hidden" name="use_point" id="use_point" value="" />
 	</div>
 	</form>
 
@@ -148,5 +158,6 @@
 		$("#frm").submit();
 	});
 </script>
+<script type="text/javascript" src="../resources/js/pay_description.js"></script>
 </body>
 </html>

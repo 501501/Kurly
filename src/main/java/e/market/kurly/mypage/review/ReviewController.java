@@ -12,6 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import e.market.kurly.board.BoardFilesDTO;
+import e.market.kurly.mypage.emoney.BuyingDTO;
+import e.market.kurly.mypage.emoney.EmoneyService;
 import e.market.kurly.order.OrderDTO;
 import e.market.kurly.order.OrderService;
 
@@ -22,6 +24,8 @@ public class ReviewController {
 	private OrderService orderService;
 	@Autowired
 	private ReviewService reviewService;
+	@Autowired
+	private EmoneyService emoneyService;
 	
 	@ModelAttribute("board")
 	public String getBoard() {
@@ -51,6 +55,13 @@ public class ReviewController {
 		// 리뷰 작성 (insert)
 		int result = reviewService.setInsert(reviewDTO, files2);
 		mv.setViewName("redirect:./mypage_review");
+		
+		// 리뷰 적립금 적립
+		BuyingDTO buyingDTO = new BuyingDTO();
+		buyingDTO.setUserId(reviewDTO.getId());
+		buyingDTO.setProduct_name(reviewDTO.getProductName());
+		emoneyService.setReviewPoint(buyingDTO);
+		
 		return mv;
 	}
 	

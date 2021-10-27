@@ -59,7 +59,7 @@
  	<!-- 적립금 사용시 적립금 차감 트랜잭션 START -->
  	<insert id="insertUsePoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
  		INSERT INTO EMONEY (EMONEY_SEQ, USER_ID, EMONEY, MEMO, STATUS)
-		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, '-${use_point}', '[사용] 주문(${order_number}) 결제 시 사용', 'Y')
+		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, ${use_point}, '[사용] 주문(${order_number}) 결제 시 사용', 'Y')
  	</insert>
  	
  	<update id="UpdateUsePoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
@@ -68,7 +68,7 @@
 		    WHERE USER_ID=#{userId} AND EMONEY_SEQ=
 		    (SELECT MAX(EMONEY_SEQ) FROM EMONEY
 		    WHERE user_ID=#{userId} AND EMONEY_SEQ NOT IN 
-		    (SELECT MAX(EMONEY_SEQ) FROM EMONEY WHERE USER_ID=#{userId})))-#{use_point}    
+		    (SELECT MAX(EMONEY_SEQ) FROM EMONEY WHERE USER_ID=#{userId})))-${use_point}    
 		WHERE EMONEY_SEQ=
 		    (SELECT MAX(EMONEY_SEQ) FROM EMONEY
 		    WHERE user_ID=#{userId})
