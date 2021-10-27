@@ -31,6 +31,7 @@
 	
 	<label for="orderNum"><h3>주문번호</h3></label>
 	<input type="text" id="orderNum" name="orderNum">
+	<button type="button" id="order_inquiry">주문조회</button>
 	
 	<label for="email"><h3>이메일</h3></label>
 	<input type="email" id="email" value="${member.email}" readonly="readonly">

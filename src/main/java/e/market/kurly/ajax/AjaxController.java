@@ -260,4 +260,16 @@ public class AjaxController {
 		mv.setViewName("goods/selectResult");
 		return mv;
 	}
+	
+	@GetMapping("order_num")
+	public ModelAndView order_select(String orderNum) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		// 주문 번호로 주문한 상품 목록 조회 
+		List<OrderDTO> ar = orderService.getListByOrderNum(orderNum);
+		mv.addObject("dto", ar.get(0));
+		mv.addObject("list", ar);
+		mv.setViewName("goods/orderSelect");
+		return mv;
+	}
 }

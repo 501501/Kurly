@@ -87,4 +87,14 @@ public class OrderController {
 		mv.setViewName("goods/order_list");
 		return mv;
 	}
+	
+	@GetMapping("orderNum")
+	public ModelAndView orderNum(HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		MembersDTO member = (MembersDTO) session.getAttribute("member");
+		List<String> orderNums = orderService.getOrderNum(member);
+		mv.addObject("orderNums", orderNums);
+		mv.setViewName("goods/orderNum");
+		return mv;
+	}
 }
