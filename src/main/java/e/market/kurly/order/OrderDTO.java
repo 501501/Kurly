@@ -8,6 +8,8 @@ public class OrderDTO {
 	private Long goodsNo;
 	private String productName;
 	private Long productNum;
+	private Long price;
+	private Date orderDate;
 	private Date shippingDate;
 	private String reviewCk;
 	private String id;
@@ -42,6 +44,22 @@ public class OrderDTO {
 
 	public void setProductNum(Long productNum) {
 		this.productNum = productNum;
+	}
+	
+	public Long getPrice() {
+		return price;
+	}
+
+	public void setPrice(Long price) {
+		this.price = price;
+	}
+
+	public Date getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
 	}
 
 	public Date getShippingDate() {

@@ -127,6 +127,7 @@
 		<c:forEach items="${num}" var="n2">
 			<input type="text" name="productNum" value="${n2}">
         </c:forEach>
+        <input type="number" id="totalSum" name="price" value="${sum}" hidden="hidden">
 	</div>
 	</form>
 

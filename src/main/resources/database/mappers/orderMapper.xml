@@ -27,7 +27,7 @@
 	
 	<insert id="setInsert" parameterType="OrderDTO">
 		INSERT INTO ORDERLIST
-		VALUES (#{orderNum}, #{goodsNo}, #{productName}, #{productNum}, sysdate+1, 'n', #{id})
+		VALUES (#{orderNum}, #{goodsNo}, #{productName}, #{productNum}, #{price}, sysdate, sysdate+1, 'n', #{id})
 	</insert>
 	
 	<select id="getSeq" resultType="SequenceDTO">

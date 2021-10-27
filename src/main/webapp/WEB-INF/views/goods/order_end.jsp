@@ -12,7 +12,7 @@
 	<h2>주문 완료</h2>
 	
 	<div>
-		<button type="button">주문 상세보기</button>
+		<button type="button" id="btn_order">주문 상세보기</button>
 	</div>
 	<div>
 		<button type="button" id="btn_home">쇼핑 계속하기</button>
@@ -23,5 +23,9 @@
 	$("#btn_home").click(function(){
 		location.href = "../"; 
 	});
+	
+	$("#btn_order").click(function(){
+		location.href = "./mypage_orderlist";
+	})
 </script>
 </html>

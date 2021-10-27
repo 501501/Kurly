@@ -55,7 +55,7 @@ public class OrderController {
 	}
 	
 	@PostMapping("order_end")
-	public ModelAndView order_end(String [] productName, String [] productNum, HttpSession session) throws Exception {
+	public ModelAndView order_end(String [] productName, String [] productNum, Long price, HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
 		
@@ -69,11 +69,22 @@ public class OrderController {
 			orderDTO.setGoodsNo(1L);
 			orderDTO.setProductName(productName[i]);
 			orderDTO.setProductNum(Long.parseLong(productNum[i]));
+			orderDTO.setPrice(price);
 			orderDTO.setId(membersDTO.getId());
 			
 			orderService.setInsert(orderDTO);
 		}
 		mv.setViewName("goods/order_end");
+		return mv;
+	}
+	
+	@GetMapping("mypage_orderlist")
+	public ModelAndView mypage_orderlist(HttpSession session) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
+		List<String> ar = orderService.getOrderNum(membersDTO);
+		mv.addObject("ar", ar);
+		mv.setViewName("goods/order_list");
 		return mv;
 	}
 }
