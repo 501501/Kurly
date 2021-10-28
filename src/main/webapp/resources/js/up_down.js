@@ -21,6 +21,8 @@ function downNumber(){
 	}
 }
 
-$("#goCart").click(function(){
-	console.log("click");
-});
+$('#goCart').click(function(){
+	
+		$('#cartForm').submit();
+	
+})

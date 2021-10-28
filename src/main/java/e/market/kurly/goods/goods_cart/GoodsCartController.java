@@ -45,9 +45,13 @@ public class GoodsCartController {
 	}
 	
 	@PostMapping("insert")
-	public ModelAndView insert(GoodsCartDTO cartDTO) throws Exception {
+	public ModelAndView insert(String userId, int amount, int product_id) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		
+		GoodsCartDTO cartDTO = new GoodsCartDTO();
+		cartDTO.setUserId(userId);
+		cartDTO.setAmount(amount);
+		cartDTO.setProduct_id(product_id);
 		cartService.insert(cartDTO);
 		
 		mv.setViewName("./");
