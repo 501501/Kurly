@@ -38,13 +38,17 @@ public class OrderController {
 		ModelAndView mv = new ModelAndView();
 		Map<String, Object> map = orderService.orderSheet(membersDTO);
 
+		int total_emoney = emoneyService.getTotalPoint(membersDTO.getId());
+		
 		int sumMoney = cartService.sumMoney(membersDTO.getId());
 		int fee = sumMoney >= 40000 ? 0 : 3000;
 
 		map.put("sumMoney", sumMoney);
 		map.put("fee", fee);
 		map.put("sum", sumMoney + fee);
-
+		map.put("total_emoney", total_emoney);
+		
+		mv.addObject("total_emoney", total_emoney);
 		mv.addObject("sumMoney", map.get("sumMoney"));
 		mv.addObject("fee", map.get("fee"));
 		mv.addObject("sum", map.get("sum"));
