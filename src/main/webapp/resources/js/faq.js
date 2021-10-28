@@ -2,23 +2,22 @@
  * faq.js
  */
 
-let count = 0;
+let len = $(".title").length;
+let titles = document.getElementsByClassName('title');
+
+for(i=0; i<len; i++){
+	let num = titles[i].getAttribute('data-faq-num');
+	$.get('../ajax/faq_select?num=' + num, function(data) {
+		data = data.trim();
+		$("#selectResult" + num).html(data);
+	});
+}
 
 $(".title").click(function(){
-	//클릭한 faq의 num 받아오기
 	let num = (this).getAttribute('data-faq-num');
-	//console.log(num);
-
-	if($("#td"+num).length == 0){
-		$.get('../ajax/faq_select?num='+num, function(data){
-		data = data.trim();
-		$("#selectResult"+num).html(data);
-		})
+	if ($("#selectResult" + num).is(":visible")) {
+		$("#selectResult" + num).hide();
 	} else {
-		$('td').remove('#td'+num);
+		$("#selectResult" + num).show();
 	}
-});
-
-$("#sel").change(function(){
-	$("#frm").submit();
-});
+})
