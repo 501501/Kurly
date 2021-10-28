@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import e.market.kurly.goods.goods_cart.GoodsCartDTO;
 import e.market.kurly.goods.goods_cart.GoodsCartService;
 import e.market.kurly.members.MembersDTO;
+import e.market.kurly.mypage.emoney.BuyingDTO;
+import e.market.kurly.mypage.emoney.EmoneyService;
 import e.market.kurly.order.OrderService;
 
 @Controller
@@ -26,6 +29,8 @@ public class OrderController {
 	private OrderService orderService;
 	@Autowired
 	private GoodsCartService cartService;
+	@Autowired
+	private EmoneyService emoneyService;
 	
 	
 	@PostMapping("order")
@@ -56,7 +61,7 @@ public class OrderController {
 	}
 	
 	@PostMapping("order_end")
-	public ModelAndView order_end(String [] productName, String [] productNum, Long price, Long [] goodsNo, HttpSession session) throws Exception {
+	public ModelAndView order_end(String [] productName, String [] productNum, Long price, Long [] goodsNo, HttpSession session, int use_point) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
 		
@@ -75,6 +80,24 @@ public class OrderController {
 			
 			orderService.setInsert(orderDTO);
 		}
+		// 구매 적립금 적립
+			BuyingDTO buyingDTO = new BuyingDTO();
+			buyingDTO.setOrder_number(orderDTO.getOrderNum().intValue());
+			buyingDTO.setUserId(orderDTO.getId());
+			buyingDTO.setTotalPay(orderDTO.getPrice().intValue());
+			emoneyService.setBuyingPoint(buyingDTO);
+				
+		// 적립금 차감
+			buyingDTO.setUse_point(use_point);
+			buyingDTO.setUse_point(buyingDTO.getUse_point());
+			emoneyService.usePoint(buyingDTO);
+				
+		// 구매완료 후 기존 장바구니 전체 삭제
+			GoodsCartDTO cartDTO = new GoodsCartDTO();
+			cartDTO.setUserId(orderDTO.getId());
+			cartService.deleteAll(cartDTO);
+
+		
 		mv.setViewName("goods/order_end");
 		return mv;
 	}
