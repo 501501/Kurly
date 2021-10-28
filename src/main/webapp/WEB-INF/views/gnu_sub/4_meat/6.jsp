@@ -35,37 +35,38 @@
     </header>
 
     <section>
-
         <article>
             <div class="ad margin_wrap">
-                <a href="#"><img src="../../resources/img/gnb_ad/8.webp" alt=""></a>
+                <a href="#"><img src="../../resources/img/gnb_ad/4.webp" alt=""></a>
             </div>
         </article>
 
         <article class="con margin_wrap">
             <div class="title">
-                <h3>생수·음료·우유·커피</h3>
+                <h3>정육·계란</h3>
             </div>
-
             <ul class="list">
-                <li><a href="">전체보기</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/1">생수·탄산수</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/2">음료·주스</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/3">우유·두유·요거트</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/4">커피</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/5">차</a></li>
+                <li><a>전체보기</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/1">국내산 소고기</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/2">수입산 소고기</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/3">돼지고기</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/4">계란류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/5">닭·오리고기</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/6">양념육·돈까스</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/7">양고기</a></li>
             </ul>
+
 
             <div class="goods">
                 <ul class="goods_list">
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/1.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/4/6/1.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>[산타니올]클래식 탄산수 500mlx9입(박스)</span>
+                            <span>바베큐 플래터</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>16,900원</span>
+                            <span>39,900원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -73,13 +74,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/2.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/4/6/2.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>클래식 탄산수 500ml</span>
+                            <span>체어맨스리저브 미국산 LA갈비 2.8kg</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>2,300원</span>
+                            <span>139,000원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -87,13 +88,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/3.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/4/6/3.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>스페인 클래식 탄산수 750ml 1박스 (6개입)</span>
+                            <span>노란상소갈비 LA갈비</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>14,980원</span>
+                            <span>110,000원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>

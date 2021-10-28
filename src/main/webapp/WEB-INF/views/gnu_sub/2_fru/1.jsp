@@ -47,13 +47,13 @@
             </div>
             <ul class="list">
                 <li><a href="">전체보기</a></li>
-                <li><a href="../../html/gnb_sub/2_fru/1.html">친환경</a></li>
-                <li><a href="../../html/gnb_sub/2_fru/2.html">제철과일</a></li>
-                <li><a href="../../html/gnb_sub/2_fru/3.html">국산과일</a></li>
-                <li><a href="../../html/gnb_sub/2_fru/4.html">수입과일</a></li>
-                <li><a href="../../html/gnb_sub/2_fru/5.html">간편과일</a></li>
-                <li><a href="../../html/gnb_sub/2_fru/6.html">냉동·건과일</a></li>
-                <li><a href="../../html/gnb_sub/2_fru/7.html">견과류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/1">친환경</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/2">제철과일</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/3">국산과일</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/4">수입과일</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/5">간편과일</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/6">냉동·건과일</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/7">견과류</a></li>
             </ul>
 
             <div class="goods">

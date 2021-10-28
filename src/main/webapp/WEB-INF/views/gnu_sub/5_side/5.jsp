@@ -35,37 +35,37 @@
     </header>
 
     <section>
-
         <article>
             <div class="ad margin_wrap">
-                <a href="#"><img src="../../resources/img/gnb_ad/8.webp" alt=""></a>
+                <a href="#"><img src="../../resources/img/gnb_ad/5.webp" alt=""></a>
             </div>
         </article>
 
         <article class="con margin_wrap">
             <div class="title">
-                <h3>생수·음료·우유·커피</h3>
+                <h3>국·반찬·메인요리</h3>
             </div>
-
             <ul class="list">
-                <li><a href="">전체보기</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/1">생수·탄산수</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/2">음료·주스</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/3">우유·두유·요거트</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/4">커피</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/5">차</a></li>
+            	<li><a href="">전체보기</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/5_side/1">국·탕·찌개</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/5_side/2" >밀키트·메인요리</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/5_side/3" >밑반찬</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/5_side/4" >김치·젓갈·장류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/5_side/5">두부·어묵·부침개</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/5_side/6">베이컨·햄·통조림</a></li>
             </ul>
+
 
             <div class="goods">
                 <ul class="goods_list">
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/1.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/5/5/1.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>[산타니올]클래식 탄산수 500mlx9입(박스)</span>
+                            <span>서귀포 은갈치 봉어목</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>16,900원</span>
+                            <span>5,900원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -73,13 +73,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/2.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/5/5/2.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>클래식 탄산수 500ml</span>
+                            <span>국산 청포 건조묵</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>2,300원</span>
+                            <span>4,100원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -87,13 +87,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/3.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/5/5/3.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>스페인 클래식 탄산수 750ml 1박스 (6개입)</span>
+                            <span>서귀포 은갈치 야채 어묵</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>14,980원</span>
+                            <span>1,900원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -105,7 +105,6 @@
         </article>
 
     </section>
-
     <footer id="footer" class="fixed-bottom">
         <script>
             loadHTML("/footer.html");

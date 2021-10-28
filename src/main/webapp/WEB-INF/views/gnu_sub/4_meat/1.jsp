@@ -48,13 +48,13 @@
 
             <ul class="list">
                 <li><a>전체보기</a></li>
-                <li><a href="../../html/gnb_sub/4_meat/1.html">국내산 소고기</a></li>
-                <li><a href="../../html/gnb_sub/4_meat/2.html">수입산 소고기</a></li>
-                <li><a href="../../html/gnb_sub/4_meat/3.html">돼지고기</a></li>
-                <li><a href="../../html/gnb_sub/4_meat/4.html">계란류</a></li>
-                <li><a href="../../html/gnb_sub/4_meat/5.html">닭·오리고기</a></li>
-                <li><a href="../../html/gnb_sub/4_meat/6.html">양념육·돈까스</a></li>
-                <li><a href="../../html/gnb_sub/4_meat/7.html">양고기</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/1">국내산 소고기</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/2">수입산 소고기</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/3">돼지고기</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/4">계란류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/5">닭·오리고기</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/6">양념육·돈까스</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/4_meat/7">양고기</a></li>
             </ul>
 
 

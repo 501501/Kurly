@@ -35,13 +35,11 @@
     </header>
 
     <section>
-
         <article>
             <div class="ad margin_wrap">
                 <a href="#"><img src="../../resources/img/gnb_ad/8.webp" alt=""></a>
             </div>
         </article>
-
         <article class="con margin_wrap">
             <div class="title">
                 <h3>생수·음료·우유·커피</h3>
@@ -59,13 +57,13 @@
             <div class="goods">
                 <ul class="goods_list">
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/1.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/8/4/1.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>[산타니올]클래식 탄산수 500mlx9입(박스)</span>
+                            <span>네스프레소 호환 캡슐 커피 (비터스윗라이프1 블랜드)</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>16,900원</span>
+                            <span>4,300원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -73,13 +71,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/2.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/8/4/2.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>클래식 탄산수 500ml</span>
+                            <span>인텔리젠시아 드립백 세트(마켓컬리 에디션)</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>2,300원</span>
+                            <span>31,100원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -87,13 +85,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/3.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/8/4/3.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>스페인 클래식 탄산수 750ml 1박스 (6개입)</span>
+                            <span>프렌치 발아 더치커피 500ml</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>14,980원</span>
+                            <span>40,000원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>

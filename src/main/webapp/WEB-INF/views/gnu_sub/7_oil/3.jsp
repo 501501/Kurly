@@ -36,36 +36,32 @@
 
     <section>
 
-        <article>
-            <div class="ad margin_wrap">
-                <a href="#"><img src="../../resources/img/gnb_ad/8.webp" alt=""></a>
-            </div>
-        </article>
-
         <article class="con margin_wrap">
             <div class="title">
-                <h3>생수·음료·우유·커피</h3>
+                <h3>면·양념·오일</h3>
             </div>
 
             <ul class="list">
                 <li><a href="">전체보기</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/1">생수·탄산수</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/2">음료·주스</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/3">우유·두유·요거트</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/4">커피</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/5">차</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/7_oil/1">파스타·면류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/7_oil/2">식초·소스·드레싱</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/7_oil/3">양념·액젓·장류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/7_oil/4">식용유·참기름·오일</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/7_oil/5">소금·설탕·향신료</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/7_oil/6">밀가루·가루·믹스</a></li>
             </ul>
+
 
             <div class="goods">
                 <ul class="goods_list">
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/1.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/7/3/1.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>[산타니올]클래식 탄산수 500mlx9입(박스)</span>
+                            <span>한국맥꾸룸 맥소담 2호</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>16,900원</span>
+                            <span>54,900원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -73,13 +69,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/2.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/7/3/2.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>클래식 탄산수 500ml</span>
+                            <span>한국맥꾸룸 맥소담 1호 세트</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>2,300원</span>
+                            <span>52,100원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -87,13 +83,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/3.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/7/3/3.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>스페인 클래식 탄산수 750ml 1박스 (6개입)</span>
+                            <span>기순도 고추장 4구 세트</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>14,980원</span>
+                            <span>39,990원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>

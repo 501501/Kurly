@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../../resources/css/gnb_sub/list/1.css">
     <script src="../../resources/js/jquery-3.4.1.js" type="text/javascript" text="javascript"></script>
     <script src="../../resources/js/add.js"></script>
-    <c:import url="../../temp/header.jsp"></c:import>
+    <c:import url="../../temp/header.jsp"></c:import><title>Insert title here</title>
 </head>
 <body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
 
@@ -35,37 +35,37 @@
     </header>
 
     <section>
-
         <article>
             <div class="ad margin_wrap">
-                <a href="#"><img src="../../resources/img/gnb_ad/8.webp" alt=""></a>
+                <a href="#"><img src="../../resources/img/gnb_ad/2.webp" alt=""></a>
             </div>
         </article>
 
         <article class="con margin_wrap">
             <div class="title">
-                <h3>생수·음료·우유·커피</h3>
+                <h3>과일·견과·쌀</h3>
             </div>
-
             <ul class="list">
                 <li><a href="">전체보기</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/1">생수·탄산수</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/2">음료·주스</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/3">우유·두유·요거트</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/4">커피</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/5">차</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/1">친환경</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/2">제철과일</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/3">국산과일</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/4">수입과일</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/5">간편과일</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/6">냉동·건과일</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/2_fru/7">견과류</a></li>
             </ul>
 
             <div class="goods">
                 <ul class="goods_list">
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/1.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/2/5/1.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>[산타니올]클래식 탄산수 500mlx9입(박스)</span>
+                            <span>[썬키스트]과일컵 100g X 4입 3종</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>16,900원</span>
+                            <span>5,200원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -73,13 +73,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/2.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/2/5/2.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>클래식 탄산수 500ml</span>
+                            <span>[Dole] 후룻컵 망고</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>2,300원</span>
+                            <span>2,080원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -87,13 +87,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/3.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/2/5/3.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>스페인 클래식 탄산수 750ml 1박스 (6개입)</span>
+                            <span>[dole]스위티오 파인애플 컵 160g</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>14,980원</span>
+                            <span>3,600원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>

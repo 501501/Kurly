@@ -35,37 +35,37 @@
     </header>
 
     <section>
-
         <article>
             <div class="ad margin_wrap">
-                <a href="#"><img src="../../resources/img/gnb_ad/8.webp" alt=""></a>
+                <a href="#"><img src="../../resources/img/gnb_ad/6.webp" alt=""></a>
             </div>
         </article>
 
         <article class="con margin_wrap">
             <div class="title">
-                <h3>생수·음료·우유·커피</h3>
+                <h3>샐러드·간편식</h3>
             </div>
 
             <ul class="list">
                 <li><a href="">전체보기</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/1">생수·탄산수</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/2">음료·주스</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/3">우유·두유·요거트</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/4">커피</a></li>
-                <li><a href="${pageContext.request.contextPath}/gnb_sub/8_drink/5">차</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/6_salad/1">샐러드·닭가슴살</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/6_salad/2">도시락·밥류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/6_salad/3">파스타·면류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/6_salad/4">떡볶이·튀김·순대</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/6_salad/5">피자·핫도그·만두</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/6_salad/6">폭립·떡갈비·안주</a></li>
             </ul>
 
             <div class="goods">
                 <ul class="goods_list">
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/1.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/6/5/1.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>[산타니올]클래식 탄산수 500mlx9입(박스)</span>
+                            <span>[오뚜기]떠먹는 컵피자 4종(냉동)]</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>16,900원</span>
+                            <span>2,470원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -73,13 +73,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/2.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/6/5/2.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>클래식 탄산수 500ml</span>
+                            <span>필리 크림치즈 피자</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>2,300원</span>
+                            <span>3,700원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
@@ -87,13 +87,13 @@
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../resources/img/gnb_list/8/1/3.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/6/5/3.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>스페인 클래식 탄산수 750ml 1박스 (6개입)</span>
+                            <span>[복만당]이북식 손만두]</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>14,980원</span>
+                            <span>11,000원</span>
                         </div>
                         <div class="cart_btn">
                             <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>

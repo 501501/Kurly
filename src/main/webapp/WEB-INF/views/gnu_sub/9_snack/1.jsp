@@ -48,10 +48,10 @@
 
             <ul class="list">
                 <li><a href="">전체보기</a></li>
-                <li><a href="../../html/gnb_sub/9_snack/1.html">과자·스낵·쿠키</a></li>
-                <li><a href="../../html/gnb_sub/9_snack/2.html">초콜릿·젤리·캔디</a></li>
-                <li><a href="../../html/gnb_sub/9_snack/3.html">떡·한과</a></li>
-                <li><a href="../../html/gnb_sub/9_snack/4.html">아이스크림</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/9_snack/1">과자·스낵·쿠키</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/9_snack/2">초콜릿·젤리·캔디</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/9_snack/3">떡·한과</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/9_snack/4">아이스크림</a></li>
             </ul>
 
             <div class="goods">

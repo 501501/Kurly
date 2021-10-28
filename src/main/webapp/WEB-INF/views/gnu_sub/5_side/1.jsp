@@ -48,12 +48,12 @@
 
             <ul class="list">
                 <li><a href="">전체보기</a></li>
-                <li><a href="../../html/gnb_sub/5_side/1.html">국·탕·찌개</a></li>
-                <li><a href="../../html/gnb_sub/5_side/2.html" >밀키트·메인요리</a></li>
-                <li><a href="../../html/gnb_sub/5_side/3.html" >밑반찬</a></li>
-                <li><a href="../../html/gnb_sub/5_side/4.html" >김치·젓갈·장류</a></li>
-                <li><a href="../../html/gnb_sub/5_side/5.html">두부·어묵·부침개</a></li>
-                <li><a href="../../html/gnb_sub/5_side/6.html">베이컨·햄·통조림</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/5_side/1">국·탕·찌개</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/5_side/2" >밀키트·메인요리</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/5_side/3" >밑반찬</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/5_side/4" >김치·젓갈·장류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/5_side/5">두부·어묵·부침개</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/5_side/6">베이컨·햄·통조림</a></li>
             </ul>
 
             <div class="goods">

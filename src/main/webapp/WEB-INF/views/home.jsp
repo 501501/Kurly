@@ -62,7 +62,7 @@
                     <ul class="ad_1_list_1">
 
                         <li>
-                            <a href="./goods/goods_view/ad_1_1"><img src="./resources/img/ad_1/1.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_1_1?goodsNo=1"><img src="./resources/img/ad_1/1.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>친환경 채 도라지 150g</span>
                             </div>

@@ -48,13 +48,13 @@
 
             <ul class="list">
                 <li><a href="">전체보기</a></li>
-                <li><a href="../../html/gnb_sub/3_fish/1.html">제철수산</a></li>
-                <li><a href="../../html/gnb_sub/3_fish/2.html">생선류</a></li>
-                <li><a href="../../html/gnb_sub/3_fish/3.html">굴비·반건류</a></li>
-                <li><a href="../../html/gnb_sub/3_fish/4.html">오징어·낙지·문어</a></li>
-                <li><a href="../../html/gnb_sub/3_fish/5.html">새우·게·랍스터</a></li>
-                <li><a href="../../html/gnb_sub/3_fish/6.html">해산물·조개류</a></li>
-                <li><a href="../../html/gnb_sub/3_fish/7.html">수산가공품</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/3_fish/1">제철수산</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/3_fish/2">생선류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/3_fish/3">굴비·반건류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/3_fish/4">오징어·낙지·문어</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/3_fish/5">새우·게·랍스터</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/3_fish/6">해산물·조개류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/3_fish/7">수산가공품</a></li>
             </ul>
 
             <div class="goods">
