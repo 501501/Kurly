@@ -1,0 +1,125 @@
+.ad {
+    padding: 20px 0 0 0;
+}
+
+.ad img {
+    width: 100%;
+}
+
+
+.title {
+    padding: 60px 0 20px 0;
+}
+
+.title h3 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    color: #222;
+}
+
+.con .list {
+    height: 120px;
+    margin-top: 23px;
+    padding: 12px 0 29px;
+    border: 1px solid #e2e2e2;
+}
+
+.con .list li {
+    float: left;
+    width: 263px;
+    padding: 16px 44px 16px 39px;
+}
+
+.con .list li a {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.con .list li a:hover {
+    color: #5c107a;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.con .list li:nth-child(4) a {
+    font-weight: 500;
+    color: #5c107a;
+}
+
+
+
+/* goods 시작 */
+
+
+.goods {
+    height: 650px;
+    padding: 40px 0 40px 0 ;
+}
+
+.goods_list {
+    height: 460px;
+    margin: 0 auto;
+}
+
+.goods_list li {
+    width: 348px;
+    margin-left: 18px;
+    float: left;
+    font-weight: 600;
+    padding-bottom: 50px;
+}
+
+.goods_list li:first-child {
+    margin-left: 0px;
+}
+
+.goods_list li a {
+    display: block;
+    overflow: hidden;
+}
+
+.goods_list li img {
+    width: 100%;
+}
+
+.goods_list li>img:hover {
+    transform: scale(1.05);
+    transition: transform .35s;
+}
+
+
+.pro_tit {
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -1px;
+}
+
+.pro_cou {
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #333;
+    float: left;
+}
+
+
+.pro_pri {
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: 400;
+    text-decoration-line: line-through;
+    color: rgb(175, 175, 175);
+}
+
+
+.cart_btn {
+    position: relative;
+    top: -100px;
+    right: 15px;
+    float: right;
+    width: 45px;
+    height: 45px;
+}

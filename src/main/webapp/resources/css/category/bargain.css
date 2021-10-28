@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+form {
+    display: block;
+}
+
+button {
+    cursor: pointer;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.header_warp,
+.margin_wrap {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+
+/* body 시작 */
+
+.main {
+    padding-top: 30px;
+}
+
+.main img {
+    width: 100%;
+}
+
+.text h3 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    color: rgb(22, 22, 22);
+    padding: 60px 0 40px 0;
+}
+
+/* goods 시작 */
+
+.pro_tit {
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -1px;
+}
+
+.pro_cou {
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+.pro_cou span:nth-child(1) {
+    color: #FA622F;
+}
+
+.pro_pri {
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: 400;
+    text-decoration-line: line-through;
+    color: rgb(175, 175, 175);
+}
+
+
+.goods {
+    height: 650px;
+}
+
+.goods_list {
+    height: 460px;
+    margin: 0 auto;
+}
+
+.goods_list li {
+    width: 342px;
+    margin-left: 18px;
+    float: left;
+    font-weight: 600;
+    padding-bottom: 50px;
+}
+
+.goods_list li:first-child {
+    margin-left: 0px;
+}
+
+.goods_list li a {
+    display: block;
+    overflow: hidden;
+}
+
+.goods_list li img {
+    width: 100%;
+}
+
+.goods_list li img:hover {
+    transform: scale(1.05);
+    transition: transform .35s;
+}
