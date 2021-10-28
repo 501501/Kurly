@@ -216,25 +216,25 @@
                                             </span>
                                         </a>
                                         <ul class="sub_menu">
-                                            <li><a class="sub" href="./html/gnb_sub/1_vag/1.html"><span class="name">친환경</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/1_vag/1"><span class="name">친환경</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/1_vag/2.html"><span class="name">고구마·감자·당근</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/1_vag/2"><span class="name">고구마·감자·당근</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/1_vag/3.html"><span class="name">시금치·쌈채소·나물</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/1_vag/3"><span class="name">시금치·쌈채소·나물</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/1_vag/4.html"><span class="name">브로콜리·파프리카·양배추</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/1_vag/4"><span class="name">브로콜리·파프리카·양배추</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/1_vag/5.html"><span class="name">양파·대파·마늘·배추</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/1_vag/5"><span class="name">양파·대파·마늘·배추</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/1_vag/6.html"><span class="name">오이·호박·고추</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/1_vag/6"><span class="name">오이·호박·고추</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/1_vag/7.html"><span class="name">냉동·이색·간편채소</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/1_vag/7"><span class="name">냉동·이색·간편채소</span></a>
                                                 <!---->
                                             </li>
                                         </ul>
@@ -251,25 +251,25 @@
                                             </span>
                                         </a>
                                         <ul class="sub_menu">
-                                            <li><a class="sub" href="./html/gnb_sub/2_fru/1.html"><span class="name">친환경</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/2_fru/1"><span class="name">친환경</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/2_fru/2.html"><span class="name">제철과일</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/2_fru/2"><span class="name">제철과일</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/2_fru/3.html"><span class="name">국산과일</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/2_fru/3"><span class="name">국산과일</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/2_fru/4.html"><span class="name">수입과일</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/2_fru/4"><span class="name">수입과일</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/2_fru/5.html"><span class="name">간편과일</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/2_fru/5"><span class="name">간편과일</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/2_fru/6.html"><span class="name">냉동·건과일</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/2_fru/6"><span class="name">냉동·건과일</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/2_fru/7.html"><span class="name">견과류</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/2_fru/7"><span class="name">견과류</span></a>
                                                 <!---->
                                             </li>
                                         </ul>
@@ -286,25 +286,25 @@
                                             </span>
                                         </a>
                                         <ul class="sub_menu">
-                                            <li><a class="sub" href="./html/gnb_sub/3_fish/1.html"><span class="name">제철수산</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/3_fish/1"><span class="name">제철수산</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/3_fish/2.html"><span class="name">생선류</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/3_fish/2"><span class="name">생선류</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/3_fish/3.html"><span class="name">굴비·반건류</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/3_fish/3"><span class="name">굴비·반건류</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/3_fish/4.html"><span class="name">오징어·낙지·문어</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/3_fish/4"><span class="name">오징어·낙지·문어</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/3_fish/5.html"><span class="name">새우·게·랍스터</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/3_fish/5"><span class="name">새우·게·랍스터</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/3_fish/6.html"><span class="name">해산물·조개류</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/3_fish/6"><span class="name">해산물·조개류</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/3_fish/7.html"><span class="name">수산가공품</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/3_fish/7"><span class="name">수산가공품</span></a>
                                                 <!---->
                                             </li>
                                         </ul>
@@ -320,26 +320,26 @@
                                                 <span class="txt">정육·계란</span>
                                             </span>
                                         </a>
-                                        <ul class="sub_menu">
-                                            <li><a class="sub" href="./html/gnb_sub/4_meat/1.html"><span class="name">국내산 소고기</span></a>
+                                        <ul class="sub_menu">                 
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/4_meat/1"><span class="name">국내산 소고기</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/4_meat/2.html"><span class="name">수입산 소고기</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/4_meat/2"><span class="name">수입산 소고기</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/4_meat/3.html"><span class="name">돼지고기</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/4_meat/3"><span class="name">돼지고기</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/4_meat/4.html"><span class="name">계란류</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/4_meat/4"><span class="name">계란류</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/4_meat/5.html"><span class="name">닭·오리고기</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/4_meat/5"><span class="name">닭·오리고기</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/4_meat/6.html"><span class="name">양념육·돈까스</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/4_meat/6"><span class="name">양념육·돈까스</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/4_meat/7.html"><span class="name">양고기</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/4_meat/7"><span class="name">양고기</span></a>
                                                 <!---->
                                             </li>
                                         </ul>
@@ -356,22 +356,22 @@
                                             </span>
                                         </a>
                                         <ul class="sub_menu">
-                                            <li><a class="sub" href="./html/gnb_sub/5_side/1.html" ><span class="name">국·탕·찌개</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/5_side/1" ><span class="name">국·탕·찌개</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/5_side/2.html" ><span class="name">밀키트·메인요리</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/5_side/2" ><span class="name">밀키트·메인요리</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/5_side/3.html" ><span class="name">밑반찬</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/5_side/3" ><span class="name">밑반찬</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/5_side/4.html" ><span class="name">김치·젓갈·장류</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/5_side/4" ><span class="name">김치·젓갈·장류</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/5_side/5.html" ><span class="name">두부·어묵·부침개</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/5_side/5" ><span class="name">두부·어묵·부침개</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/5_side/6.html" ><span class="name">베이컨·햄·통조림</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/5_side/6" ><span class="name">베이컨·햄·통조림</span></a>
                                                 <!---->
                                             </li>
                                         </ul>
@@ -388,22 +388,22 @@
                                             </span>
                                         </a>
                                         <ul class="sub_menu">
-                                            <li><a class="sub" href="./html/gnb_sub/6_salad/1.html"><span class="name">샐러드·닭가슴살</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/6_salad/1"><span class="name">샐러드·닭가슴살</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/6_salad/2.html"><span class="name">도시락·밥류</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/6_salad/2"><span class="name">도시락·밥류</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/6_salad/3.html"><span class="name">파스타·면류</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/6_salad/3"><span class="name">파스타·면류</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/6_salad/4.html"><span class="name">떡볶이·튀김·순대</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/6_salad/4"><span class="name">떡볶이·튀김·순대</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/6_salad/5.html"><span class="name">피자·핫도그·만두</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/6_salad/5"><span class="name">피자·핫도그·만두</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/6_salad/6.html"><span class="name">폭립·떡갈비·안주</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/6_salad/6"><span class="name">폭립·떡갈비·안주</span></a>
                                                 <!---->
                                             </li>
                                         </ul>
@@ -420,22 +420,22 @@
                                             </span>
                                         </a>
                                         <ul class="sub_menu">
-                                            <li><a class="sub" href="./html/gnb_sub/7_oil/1.html"><span class="name">파스타·면류</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/7_oil/1"><span class="name">파스타·면류</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/7_oil/2.html"><span class="name">식초·소스·드레싱</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/7_oil/2"><span class="name">식초·소스·드레싱</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/7_oil/3.html"><span class="name">양념·액젓·장류</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/7_oil/3"><span class="name">양념·액젓·장류</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/7_oil/4.html"><span class="name">식용유·참기름·오일</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/7_oil/4"><span class="name">식용유·참기름·오일</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/7_oil/5.html"><span class="name">소금·설탕·향신료</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/7_oil/5"><span class="name">소금·설탕·향신료</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/7_oil/6.html"><span class="name">밀가루·가루·믹스</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/7_oil/6"><span class="name">밀가루·가루·믹스</span></a>
                                                 <!---->
                                             </li>
                                         </ul>
@@ -452,19 +452,19 @@
                                             </span>
                                         </a>
                                         <ul class="sub_menu">
-                                            <li><a class="sub" href="./html/gnb_sub/8_drink/1.html"><span class="name">생수·탄산수</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/8_drink/1"><span class="name">생수·탄산수</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/8_drink/2.html"><span class="name">음료·주스</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/8_drink/2"><span class="name">음료·주스</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/8_drink/3.html"><span class="name">우유·두유·요거트</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/8_drink/3"><span class="name">우유·두유·요거트</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/8_drink/4.html"><span class="name">커피</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/8_drink/4"><span class="name">커피</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/8_drink/5.html"><span class="name">차</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/8_drink/5"><span class="name">차</span></a>
                                                 <!---->
                                             </li>
                                         </ul>
@@ -480,16 +480,16 @@
                                             </span>
                                         </a>
                                         <ul class="sub_menu">
-                                            <li><a class="sub" href="./html/gnb_sub/9_snack/1.html"><span class="name">과자·스낵·쿠키</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/9_snack/1"><span class="name">과자·스낵·쿠키</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/9_snack/2.html"><span class="name">초콜릿·젤리·캔디</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/9_snack/2"><span class="name">초콜릿·젤리·캔디</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/9_snack/3.html"><span class="name">떡·한과</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/9_snack/3"><span class="name">떡·한과</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/9_snack/4.html"><span class="name">아이스크림</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/9_snack/4"><span class="name">아이스크림</span></a>
                                                 <!---->
                                             </li>
                                         </ul>
@@ -506,19 +506,19 @@
                                             </span>
                                         </a>
                                         <ul class="sub_menu">
-                                            <li><a class="sub" href="./html/gnb_sub/10_bake/1.html"><span class="name">식빵·빵류</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/10_bake/1"><span class="name">식빵·빵류</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/10_bake/2.html"><span class="name">잼·버터·스프레드</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/10_bake/2"><span class="name">잼·버터·스프레드</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/10_bake/3.html"><span class="name">케이크·파이·디저트</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/10_bake/3"><span class="name">케이크·파이·디저트</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/10_bake/4.html"><span class="name">치즈</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/10_bake/4"><span class="name">치즈</span></a>
                                                 <!---->
                                             </li>
-                                            <li><a class="sub" href="./html/gnb_sub/10_bake/5.html"><span class="name">델리</span></a>
+                                            <li><a class="sub" href="${pageContext.request.contextPath}/gnb_sub/10_bake/5"><span class="name">델리</span></a>
                                                 <!---->
                                             </li>
                                         </ul>

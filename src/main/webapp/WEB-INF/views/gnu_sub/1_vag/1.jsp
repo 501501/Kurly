@@ -47,13 +47,13 @@
             </div>
             <ul class="list">
                 <li><a href="">전체보기</a></li>
-                <li><a href="../../../html/gnb_sub/1_vag/1.html">친환경</a></li>
-                <li><a href="../../../html/gnb_sub/1_vag/2.html">고구마·감자·당근</a></li>
-                <li><a href="../../../html/gnb_sub/1_vag/3.html">시금치·쌈채소·나물</a></li>
-                <li><a href="../../../html/gnb_sub/1_vag/4.html">브로콜리·파프리카·양배추</a></li>
-                <li><a href="../../../html/gnb_sub/1_vag/5.html">양파·대파·마늘·배추</a></li>
-                <li><a href="../../../html/gnb_sub/1_vag/6.html">오이·호박·고추</a></li>
-                <li><a href="../../../html/gnb_sub/1_vag/7.html">냉동·이색·간편채소</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/1_vag/1">친환경</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/1_vag/2">고구마·감자·당근</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/1_vag/3">시금치·쌈채소·나물</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/1_vag/4">브로콜리·파프리카·양배추</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/1_vag/5">양파·대파·마늘·배추</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/1_vag/6">오이·호박·고추</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/1_vag/7">냉동·이색·간편채소</a></li>
             </ul>
 
             <div class="goods">

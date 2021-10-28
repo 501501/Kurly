@@ -48,12 +48,12 @@
 
             <ul class="list">
                 <li><a href="">전체보기</a></li>
-                <li><a href="../../html/gnb_sub/6_salad/1.html">샐러드·닭가슴살</a></li>
-                <li><a href="../../html/gnb_sub/6_salad/2.html">도시락·밥류</a></li>
-                <li><a href="../../html/gnb_sub/6_salad/3.html">파스타·면류</a></li>
-                <li><a href="../../html/gnb_sub/6_salad/4.html">떡볶이·튀김·순대</a></li>
-                <li><a href="../../html/gnb_sub/6_salad/5.html">피자·핫도그·만두</a></li>
-                <li><a href="../../html/gnb_sub/6_salad/6.html">폭립·떡갈비·안주</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/6_salad/1">샐러드·닭가슴살</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/6_salad/2">도시락·밥류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/6_salad/3">파스타·면류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/6_salad/4">떡볶이·튀김·순대</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/6_salad/5">피자·핫도그·만두</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/6_salad/6">폭립·떡갈비·안주</a></li>
             </ul>
 
             <div class="goods">
