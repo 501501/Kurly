@@ -90,9 +90,5 @@ $(document).ready(function () {
 });
 
 
-function changeDesti() {
-	var popUrl = '../../mypage/destination/list';
-	window.open(popUrl);
-}
 
 

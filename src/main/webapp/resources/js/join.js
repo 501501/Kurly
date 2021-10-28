@@ -2,6 +2,7 @@
  * 회원가입(join) js
  */
  
+ 
  	/* 아이디 영어, 숫자만 입력가능 함수 */
 	function onlyAlphabet(e) {
 		  e.value = e.value.replace(/[^\\!-z]/gi,"");
@@ -38,8 +39,8 @@
 		$('#pwExplain3').html("• 동일한 숫자 3개 이상 연속 사용 불가");
 	})
 	.keyup(function(){
-		let content = $(this).val();	
-		if(content.length>9){
+		let contents = $(this).val();	
+		if(contents.length>9){
 			$('#pwExplain1').html("✓ 10자 이상 입력")
 			.css('color', 'green');
 		} else {
@@ -47,6 +48,16 @@
 			.css('color', 'red');
 		}
 		
+		// 영문/숫자/특수문자 조합 조건 설정 추가
+		let checkk = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{10,}$/;
+		if(!checkk.test($('#pw').val())){
+			$('#pwExplain2').html("✕ 영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합")
+    		.css('color', 'red');
+		} else {
+			$('#pwExplain2').html("✓ 영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합")
+    		.css('color', 'green');
+		}
+
 		
 		let pwd = $(this).val();
 		if(/(\w)\1\1/.test(pwd) || pwd == ''){
@@ -58,6 +69,7 @@
 		}
 			
 	});
+
 	
 /** -------------------------------------------------------------------------------- */
 	
@@ -123,7 +135,7 @@ $('.rem_ck').on('click', function(){
 $('#btn-join').click(function(){
 	if($('.check-necessary').prop('checked')){
 		$('#form').submit();
-		alert('회원가입 성공 ㅊㅋ');
+		alert('회원가입을 축하드립니다!');
 	} else {
 		alert('약관에 동의하셔야 합니다');
 	}

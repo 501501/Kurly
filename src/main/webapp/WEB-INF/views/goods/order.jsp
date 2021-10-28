@@ -119,7 +119,7 @@
 	<div>
 		<div>개인정보 수집/제공</div>
 		<input type="checkbox" name="clause_necessary" value="1"/>
-		<label for="clause_necessary">결제 진행 필수 동의</label>
+		<label for="clause_necessary">결제 진행 필수 동의</label><span style="color:gray;">(필수)</span>
 		<hr>
 	</div>
 	
