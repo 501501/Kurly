@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text./html; charset=UTF-8" 
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,18 +56,23 @@
                         <img src="${pageContext.request.contextPath}/resources/img/usermenu/delivery_210801.webp" alt="샛별, 택배 배송안내" width="121" height="22">
                     </a>
                 </div>
-
+                
+				<c:if test="${empty member}">
                 <div id="userMenu">
                     <ul class="list_menu">
                         <li class="menu none_sub menu_join">
                             <a href="${pageContext.request.contextPath}/members/join" class="link_menu">회원가입</a>
                         </li>
-
+						
                         <li class="menu none_sub menu_login">
                             <a href="${pageContext.request.contextPath}/members/login" class="link_menu">로그인</a>
-                        </li>
-
-                        <li class="menu lst"><a href="${pageContext.request.contextPath}/board/list" class="link_menu">고객센터</a>
+                        </li>          
+                    </ul>
+                </div>
+               
+                </c:if>
+                
+                <li class="menu lst"><a href="${pageContext.request.contextPath}/board/list" class="link_menu">고객센터</a>
                             <ul class="sub">
                                 <li>
                                     <a href="${pageContext.request.contextPath}/board/list" onclick="KurlyTrackerLink('#')">공지사항</a>
@@ -88,9 +94,20 @@
                                 </li>
                             </ul>
                         </li>
-                    </ul>
-                </div>
-
+                
+                <c:if test="${not empty member}">
+                <ul class="list_menu">
+   					 <li class="menu menu_user">
+        				<a class="link_menu grade_comm" onclick="KurlyTrackerLink('/shop/mypage/mypage_orderlist.php', 'select_my_kurly_tab')">
+	            			<span class="ico_grade grade6">웰컴</span>
+	            			<span class="txt">
+	                			<span class="name">${member.name}</span>
+	                 			<span class="sir">님</span>
+	           				 </span>
+				        </a>
+				    </li>
+				</ul>
+				</c:if>
             </div>
             <!-- usermenu 종료 -->
 
