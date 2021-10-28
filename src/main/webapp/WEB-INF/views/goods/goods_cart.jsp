@@ -163,7 +163,7 @@ $(function(){
                             <div class="inner_result" style="top: 60px;">
                                 <div class="cart_delivery">
                                     <h3 class="tit">배송지</h3>
-                                    <div class="no_address"><span class="emph" id="destination">배송지를 입력</span>하고<br>배송유형을 확인해 보세요!<a
+                                    <div class="no_address" id="destination"><class="emph">배송지를 입력</span>하고<br>배송유형을 확인해 보세요!<a
                                             href="#" class="btn default"><span class="ico"></span>주소 검색</a></div>
                                 </div>
                                 <div class="amount_view">
@@ -264,13 +264,6 @@ $(function(){
                 function reloadAction() {
                     location.reload();
                 }
-                
-                $.get('./ajax/get_checked_destination', function(result) {
-                	   result = result.trim();
-                	   //console.log(result);
-                	   $("#destination").html(result);   
-                	})
-                
             </script>
         </div>
     </section>
