@@ -4,6 +4,132 @@
 <!DOCTYPE html>
 <html lang="ko">
 
+
+<style>
+#main {
+    border-bottom: 1px solid #f7f7f7;
+}
+
+#content {
+    min-width: 1050px;
+    padding-bottom: 60px;
+}
+
+#header, #container, #content {
+    position: relative;
+}
+
+.section_login {
+    width: 340px;
+    margin: 0 auto;
+    padding-top: 90px;
+    letter-spacing: -.6px;
+}
+
+.section_login .tit_login {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.section_login * {
+    font-family: noto sans;
+    color: #333;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.section_login .write_form {
+    padding-top: 36px;
+}
+
+.section_login * {
+    font-family: noto sans;
+    color: #333;
+}
+
+.section_login input[type=number], .section_login input[type=text], .section_login input[type=password] {
+    width: 100%;
+    height: 54px;
+    padding: 0 19px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    outline: none;
+}
+
+.section_login [name=password], .section_login [name=ordno], .section_login .login_view [name=srch_mail], .section_login [name=srch_id] {
+    margin-top: 10px;
+}
+
+.section_login .login_search {
+    float: right;
+    padding-top: 13px;
+}
+
+.section_login .login_search .link {
+    float: left;
+    font-size: 13px;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+
+.section_login .login_search .bar {
+    float: left;
+    width: 1px;
+    height: 10px;
+    margin: 3px 6px 0;
+    background-color: #333;
+}
+
+.section_login .checkbox_save {
+    overflow: hidden;
+    padding-bottom: 28px;
+}
+
+.btn_type1 {
+    border: 1px solid #5f0081;
+    background-color: #5f0080;
+}
+
+.btn_type1, .btn_type2 {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 54px;
+    border-radius: 3px;
+    font-size: 0;
+    text-align: center;
+}
+
+.btn_type1 .txt_type {
+    color: #fff;
+}
+
+.btn_type1 .txt_type, .btn_type2 .txt_type {
+    display: inline-block;
+    height: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    line-height: 51px;
+    text-align: center;
+}
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,8 +147,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../resources/css/reset.css">
     <link rel="stylesheet" href="../resources/css/member/login.css">
+    <script src="../../resources/js/jquery-3.4.1.js"></script>
+    <script src="../../resources/js/add.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../resources/css/member/login.css">
+    <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" href="../resources/css/header.css">
     <script src="../../resources/js/jquery-3.4.1.js"></script>
     <script src="../../resources/js/add.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -43,8 +179,12 @@
                 <h3 class="tit_login">로그인</h3>
                 <div class="write_form">
                     <div class="write_view login_view">
+
                         <form method="post" name="form" id="form" onsubmit="return checkReCaptcha();"
                             action="login">
+
+                        <form method="post" name="form" id="form" action="login" onsubmit="return checkReCaptcha();">
+
                             <input type="hidden" name="returnUrl" value="https://www.kurly.com/shop/member/join.php">
                             <input type="hidden" name="return_url" value="">
                             <input type="hidden" name="close" value="">

@@ -23,6 +23,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../resources/css/reset.css">
     <link rel="stylesheet" href="../resources/css/member/id.css">
+
+    <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" href="../resources/css/header.css">
+
     <script src="../../resources/js/jquery-3.4.1.js"></script>
     <script src="../../resources/js/add.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

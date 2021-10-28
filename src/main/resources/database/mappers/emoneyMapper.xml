@@ -39,7 +39,7 @@
  	<!-- 구매적립금 총구매액*5% 적립 트랜잭셕 START -->
  	<insert id="insertBuyPoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
  		INSERT INTO EMONEY (EMONEY_SEQ, USER_ID, EMONEY, MEMO, STATUS)
-		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, +${totalPay}*0.05, '[구매적립] 주문(${order_number}) 5% 적립', 'N')
+		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, ${totalPay}*0.05, '[구매적립] 주문(${order_number}) 5% 적립', 'N')
  	</insert>
  	
  	<update id="updateBuyPoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
@@ -59,7 +59,7 @@
  	<!-- 적립금 사용시 적립금 차감 트랜잭션 START -->
  	<insert id="insertUsePoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
  		INSERT INTO EMONEY (EMONEY_SEQ, USER_ID, EMONEY, MEMO, STATUS)
-		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, '-${use_point}', '[사용] 주문(${order_number}) 결제 시 사용', 'Y')
+		VALUES (EMONEY_SEQ.NEXTVAL, #{userId}, ${use_point}, '[사용] 주문(${order_number}) 결제 시 사용', 'Y')
  	</insert>
  	
  	<update id="UpdateUsePoint" parameterType="e.market.kurly.mypage.emoney.BuyingDTO">
