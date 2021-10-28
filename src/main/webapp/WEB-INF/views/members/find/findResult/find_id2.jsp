@@ -4,16 +4,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+.findId {
+ 	width: 159px;
+    padding: 1878px 100 100 100px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: top;
+    text-align: left;
+}
+</style>
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>Insert title here</title>
+<c:import url="../../../temp/header.jsp"></c:import>
 </head>
 <body>
 	<h1>아이디찾기 결과 Page</h1>
 
 	<c:if test="${not empty member}">
 		<form id="frm" method="get" action="login">
-				<div>
+				<div class="findId">
 					아이디:${member.id}
 					<input type="text" name="id" hidden="hidden" value="${member.id}" />
 				</div>				
@@ -30,6 +42,6 @@
 		
 		<a href="./login">다시 아이디 찾기</button>
 	</c:if>
-		
+<c:import url="../../../temp/footer.jsp"></c:import>		
 </body>
 </html>

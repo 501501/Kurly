@@ -158,7 +158,7 @@
                             <!-- 장바구니 -->
                             <div class="cart_count">
                                 <div class="inner_cartcount">
-                                    <a href="#" class="btn_cart">
+                                    <a href="${pageContext.request.contextPath}/goods/goods_cart/" class="btn_cart">
                                         <span class="screen_out">장바구니</span>
                                         <span id="cart_item_count" class="num realtime_cartcount"
                                             style="display: none;"></span>

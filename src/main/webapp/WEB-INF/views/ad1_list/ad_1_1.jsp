@@ -31,9 +31,6 @@
             loadHTML("/header.html");
         </script>
     </header>
-    <input hidden="hidden" value="${member.id}" name="user_id">
-	<input hidden="hidden" value="${param.goodsNo}" name="product_id">
-	<input hidden="hidden" value="" name="amount" id="transferAmount">
 	
     <section>
         <article>
@@ -126,8 +123,12 @@
                                             <div class="option">
                                                 <span class="count">
                                                     <button type="button" class="btn down on" onclick="downNumber()">수량내리기</button>
-                                                    <input type="number" readonly="readonly" 
-                                                        class="inp" id="finalAmount">
+                                                    <form name="cartForm" method="post" action="../goods_cart/insert" id="cartForm">
+													    <input hidden="hidden" value="${member.id}" name="userId">
+														<input hidden="hidden" value="${param.goodsNo}" name="product_id">
+                                                    	<input type="number" readonly="readonly" 
+                                                        class="inp" id="finalAmount" name="amount">
+                                                  	</form>
                                                     <button type="button" class="btn up on" onclick="upNumber()">수량올리기</button>
                                                 </span>
                                                 <span class="price">
@@ -141,7 +142,7 @@
                                 <div class="total">
                                     <div class="price">
                                         <strong class="tit">총 상품금액 :</strong>
-                                        <span class="sum">
+                                        <span class="sum">  	
                                             <span class="num">4,990</span>
                                             <span class="won">원</span>
                                         </span>
@@ -239,12 +240,6 @@
 
         </article>
     </section>
-	
-	 <form name="cartForm" method="post" action="../goods_cart/insert" id="cartForm">
-	                                	<input hidden="hidden" value="${member.id}" name="userId">
-										<input hidden="hidden" value="${param.goodsNo}" name="product_id">
-										<input hidden="hidden" value="" name="amount" id="transferAmount">
-                               </form>
 
 
     <footer id="footer" class="fixed-bottom">

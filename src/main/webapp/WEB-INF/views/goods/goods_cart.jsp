@@ -163,7 +163,7 @@ $(function(){
                             <div class="inner_result" style="top: 60px;">
                                 <div class="cart_delivery">
                                     <h3 class="tit">배송지</h3>
-                                    <div class="no_address"><span class="emph">배송지를 입력</span>하고<br>배송유형을 확인해 보세요!<a
+                                    <div class="no_address"><span class="emph" id="destination">배송지를 입력</span>하고<br>배송유형을 확인해 보세요!<a
                                             href="#" class="btn default"><span class="ico"></span>주소 검색</a></div>
                                 </div>
                                 <div class="amount_view">
@@ -185,7 +185,7 @@ $(function(){
                                     </dl>
                                     <div class="reserve"></div>
                                 </div>
-                                <div class="btn_submit"><button type="submit" class="btn disabled">상품을 담아주세요</button>
+                                <div class="btn_submit"><button type="submit" class="btn disabled">주문하기</button>
                                 </div>
                                 <div class="notice"><span class="txt"><span class="ico">·</span>‘입금확인’ 상태일 때는 주문 내역 상세에서
                                         직접 주문취소가 가능합니다.</span><span class="txt"><span class="ico">·</span>‘입금확인’ 이후 상태에는
@@ -264,6 +264,13 @@ $(function(){
                 function reloadAction() {
                     location.reload();
                 }
+                
+                $.get('./ajax/get_checked_destination', function(result) {
+                	   result = result.trim();
+                	   //console.log(result);
+                	   $("#destination").html(result);   
+                	})
+                
             </script>
         </div>
     </section>
