@@ -127,17 +127,17 @@
                                     </a>
                                 </li>
                                 <li class="menu3">
-                                    <a href="./html/best/best.html" class="link best">
+                                    <a href="/kurly/goods/goods_list/best" class="link best">
                                         <span class="txt">베스트</span>
                                     </a>
                                 </li>
                                 <li class="menu4">
-                                    <a href="./html/bargain/bargain.html" class="link bargain">
+                                    <a href="/kurly/goods/goods_list/bargain" class="link bargain">
                                         <span class="txt">알뜰쇼핑</span>
                                     </a>
                                 </li>
                                 <li class="lst">
-                                    <a href="./html/event/event.html" class="link event">
+                                    <a href="/kurly/goods/event" class="link event">
                                         <span class="txt">특가/혜택</span>
                                     </a>
                                 </li>
