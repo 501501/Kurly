@@ -76,6 +76,10 @@ h3 {
     font-weight: bold;
 }
 
+.log {
+	margin: 5px 0;
+}
+
 a:active, a:hover {
     outline: 0;
 }

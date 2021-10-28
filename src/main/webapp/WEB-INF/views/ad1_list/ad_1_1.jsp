@@ -183,7 +183,9 @@
                                     <button type="button" class="btn btn_alarm">재입고 알림</button>
                                 </div>
                                 	<span class="btn_type1">
+
 	                                    <button type="button" class="txt_type" > 장바구니 담기</button>
+
                                		</span>
                             </div>
                         </div>
@@ -241,7 +243,7 @@
 	 <form name="cartForm" method="post" action="../goods_cart/insert" id="cartForm">
 	                                	<input hidden="hidden" value="${member.id}" name="userId">
 										<input hidden="hidden" value="${param.goodsNo}" name="product_id">
-										<input hidden="hidden" value="1" name="amount" id="transferAmount">
+										<input hidden="hidden" value="" name="amount" id="transferAmount">
                                </form>
 
 
@@ -252,6 +254,5 @@
     </footer>
 <c:import url="../temp/footer.jsp"></c:import>
 <script type="text/javascript" src="../../resources/js/up_down.js"></script>
-
 </body>
 </html>

@@ -73,7 +73,7 @@ button {
 }
 
 .bnr_header .btn_top_bnr {
-    background-image: url(../img/sub_header/ico_close_fff_42x42.webp);
+    background-image: url(/kurly/resources/img/sub_header/ico_close_fff_42x42.webp);
     width: 42px;
     height: 42px;
     background-color: transparent;
@@ -188,7 +188,7 @@ button {
     top: 16px;
     width: 8px;
     height: 5px;
-    background: url(/temp/img/usermenu/ico_down_8x5.webp) no-repeat 0 0;
+    background: url(/kurly/resources/img/usermenu/ico_down_8x5.webp) no-repeat 0 0;
 }
 
 #userMenu .lst .sub {
@@ -277,7 +277,7 @@ button {
     top: 55px;
     width: 100%;
     height: 9px;
-    background: url(/img/gnb/bg_1x9.webp) repeat-x 0 100%;
+    background: url(/kurly/resources/img/gnb/bg_1x9.webp) repeat-x 0 100%;
 }
 
 #gnb .inner_gnbkurly {
@@ -667,11 +667,11 @@ button {
     display: block;
     width: 36px;
     height: 36px;
-    background: url(/img/gnb/ico_cart.svg) no-repeat 50% 50%;
+    background: url(/kurly/resources/img/gnb/ico_cart.svg) no-repeat 50% 50%;
 }
 
 #gnb .cart_count .btn_cart:hover {
-    background: url(/img/gnb/ico_cart_on.svg) no-repeat 50% 50%;
+    background: url(/kurly/resources/img/gnb/ico_cart_on.svg) no-repeat 50% 50%;
 }
 
 #gnb .cart_count .num {
@@ -709,7 +709,7 @@ button {
     top: -14px;
     width: 20px;
     height: 14px;
-    background: url(/img/gnb/ico_layer_point.webp) no-repeat 0 0;
+    background: url(/kurly/resources/img/gnb/ico_layer_point.webp) no-repeat 0 0;
 }
 
 #gnb .cart_count .inner_msgcart {
@@ -756,12 +756,12 @@ button {
 /* 배송지 */
 
 #gnb .btn_location.on {
-    background-image: url(/img/gnb/ico_delivery_setting.svg);
+    background-image: url(/kurly/resources/img/gnb/ico_delivery_setting.svg);
     cursor: default;
 }
 
 #gnb .location_set:hover .btn_location.on {
-    background-image: url(/img/gnb/ico_delivery_setting_on.svg);
+    background-image: url(/kurly/resources/img/gnb/ico_delivery_setting_on.svg);
 }
 
 #gnb .layer_location::after {
@@ -771,7 +771,7 @@ button {
     top: -50px;
     width: 36px;
     height: 50px;
-    background: url(/img/gnb/ico_layer_point.webp) no-repeat 50% 100%;
+    background: url(/kurly/resources/img/gnb/ico_layer_point.webp) no-repeat 50% 100%;
 }
 
 #gnb .location_set:hover .layer_location {
@@ -814,7 +814,7 @@ button {
     width: 36px;
     height: 36px;
     border: 0 none;
-    background: url(/img/gnb/ico_delivery_setting_done.svg) no-repeat 50% 50%;
+    background: url(/kurly/resources/img/gnb/ico_delivery_setting_done.svg) no-repeat 50% 50%;
     font-size: 0;
     text-indent: -9999px;
 }
@@ -865,7 +865,7 @@ button {
     width: 20px;
     height: 20px;
     margin: 6px 0 0 -6px;
-    background: url(/img/gnb/ico_search_40x40.webp) no-repeat 50% 50%;
+    background: url(/kurly/resources/img/gnb/ico_search_40x40.webp) no-repeat 50% 50%;
     background-size: 20px 20px;
     vertical-align: top;
 }
