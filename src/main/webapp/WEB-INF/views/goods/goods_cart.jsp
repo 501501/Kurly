@@ -70,9 +70,8 @@ $(function(){
             <link rel="preload" as="script" href="/asset/js/cart/list.bundle.js?ver=1.41.1">
             <h3 class="screen_out">장바구니 상품 목록</h3>
 
-		            <form>
+		            	<form id="form1" method="post" action="../../order/order"> 
 		                <div id="cartItemList" class="only_pc" style="min-height: 563px;">
-		                
 		                <c:choose>
    							<c:when test="${map.count == 0}">
 		                
@@ -100,13 +99,14 @@ $(function(){
             				</c:when>
             				
             				<c:otherwise>
+            				<!--  -->
             					<div>
 									<input type="checkbox" id="cbxAll" name="cbxAll" class="cbxSelect"/>
 									<label for="cbxAll">전체선택</label> 
 									<span>&nbsp;&nbsp;</span> <input type="button" value="선택삭제" onclick="deleteCbx()" class="btn_delete" />
 								</div>
 								<hr/>
-
+								
 							    <table border="1" width="400px">
 							    	<tr>
 							        	<th>선택</th>
@@ -116,18 +116,19 @@ $(function(){
 							            <th>금액</th>
 							            <th>&nbsp;</th>
 							            </tr>
-							            <input type="text" id="hiddenVal" value="${fn:length(map.list)}" hidden="hidden" />
-							            <input type="text" id="userIdVal" value="${map.userId}" hidden="hidden" />  
+							            <input type="text" id="hiddenVal" name="len" value="${fn:length(map.list)}" hidden="hidden" />
+							            <input type="text" id="userIdVal" name="id" value="${map.userId}" hidden="hidden" />  
             				
             							<c:forEach var="row" items="${map.list}" varStatus="status">
 					              		  <tr align="center">
 						                	<td>
 						                		<input type="checkbox" id="cbx_${status.index}" name="cbx_minor" class="cbxSelect cbxMinor" checked="checked"
 						                		value="${row.cart_id}"/>
-
+						                		<input hidden="hidden" value="${row.product_id}" name="goodsNo">
 						                	</td>
 						                
 						                    <td>${row.product_name}</td>
+						                    <input type="text" name="productName" value="${row.product_name}" hidden="hidden">
 						                    
 						                    <td><fmt:formatNumber value="${row.price}"
 						                            pattern="#,###,###" /></td>
@@ -138,6 +139,7 @@ $(function(){
 													onclick="minusAmount(${row.cart_id})">-</button>
 													
 													<input type="number" style="width:20px;" value="${row.amount}" class="num" id="stepperCounter" />
+													<input type="text" value="${row.amount}" name="productNum" hidden="hidden">
 													
 													<button type="button" class="btn plus" data-item-id="${row.product_id}" data-opt="increase"
 													onclick="plusAmount(${row.cart_id})">+</button>
@@ -153,9 +155,10 @@ $(function(){
 					                	</tr>
                  					</c:forEach>
           						 </table>
+          						 <!--  -->
             					</c:otherwise>
             			</c:choose>
-            
+            			</form>
             
             
             
@@ -185,7 +188,7 @@ $(function(){
                                     </dl>
                                     <div class="reserve"></div>
                                 </div>
-                                <div class="btn_submit"><button type="submit" class="btn disabled">주문하기</button>
+                                <div class="btn_submit"><button type="submit" id="btn_order" class="btn disabled">주문하기</button>
                                 </div>
                                 <div class="notice"><span class="txt"><span class="ico">·</span>‘입금확인’ 상태일 때는 주문 내역 상세에서
                                         직접 주문취소가 가능합니다.</span><span class="txt"><span class="ico">·</span>‘입금확인’ 이후 상태에는

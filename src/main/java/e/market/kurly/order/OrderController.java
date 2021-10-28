@@ -29,7 +29,7 @@ public class OrderController {
 	
 	
 	@PostMapping("order")
-	public ModelAndView orderSheet(MembersDTO membersDTO, String [] productName, String [] productNum) throws Exception {
+	public ModelAndView orderSheet(MembersDTO membersDTO, String [] productName, String [] productNum, Long [] goodsNo) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		Map<String, Object> map = orderService.orderSheet(membersDTO);
 
@@ -50,12 +50,13 @@ public class OrderController {
 		
 		mv.addObject("name", productName);
 		mv.addObject("num", productNum);
+		mv.addObject("goodsNo", goodsNo);
 
 		return mv;
 	}
 	
 	@PostMapping("order_end")
-	public ModelAndView order_end(String [] productName, String [] productNum, Long price, HttpSession session) throws Exception {
+	public ModelAndView order_end(String [] productName, String [] productNum, Long price, Long [] goodsNo, HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
 		
@@ -66,7 +67,7 @@ public class OrderController {
 		for(int i=0; i<size; i++) {
 			orderDTO.setOrderNum(orderNum);
 			// 상품번호 (파라미터에서 받아오기)
-			orderDTO.setGoodsNo(1L);
+			orderDTO.setGoodsNo(goodsNo[i]);
 			orderDTO.setProductName(productName[i]);
 			orderDTO.setProductNum(Long.parseLong(productNum[i]));
 			orderDTO.setPrice(price);
