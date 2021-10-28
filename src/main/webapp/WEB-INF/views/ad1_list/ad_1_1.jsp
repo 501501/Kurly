@@ -187,7 +187,7 @@
                                     <button type="button" class="btn btn_alarm">재입고 알림</button>
                                 </div>
                                 	<span class="btn_type1">
-	                                    <button type="button" class="txt_type" id="goCart"> 장바구니 담기</button>
+	                                    <button type="button" class="txt_type"> 장바구니 담기</button>
                                		</span>
                             </div>
                         </div>
@@ -249,10 +249,5 @@
     </footer>
 <c:import url="../temp/footer.jsp"></c:import>
 <script type="text/javascript" src="../../resources/js/up_down.js"></script>
-<script type="text/javascript">
-	$("#goCart").click(function(){
-		alert("click");
-	});
-</script>
 </body>
 </html>
