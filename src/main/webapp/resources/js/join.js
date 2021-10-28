@@ -47,6 +47,14 @@
 			.css('color', 'red');
 		}
 		
+		let pwReg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{10,}$/;
+		if(pwReg.test($('#pw').val())){
+			$('#pwExplain2').html("✓ 영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합")
+			.css('color', 'green');
+		} else {
+			$('#pwExplain2').html("✕ 영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합")
+			.css('color', 'red');
+		}
 		
 		let pwd = $(this).val();
 		if(/(\w)\1\1/.test(pwd) || pwd == ''){
@@ -120,10 +128,17 @@ $('.rem_ck').on('click', function(){
 });
 
 
+$('#birth_day').blur(function(){
+	var byear = $('#birth_year').val();
+	var bmonth = $('#birth_month').val();
+	var bday = $('#birth_day').val();
+	$('#birthdate').val(byear+bmonth+bday);
+});
+
 $('#btn-join').click(function(){
-	if($('.check-necessary').prop('checked')){
+	if($('.check-necessary:checked').length == 3){
 		$('#form').submit();
-		alert('회원가입 성공 ㅊㅋ');
+		alert('회원가입 성공을 축하합니다');
 	} else {
 		alert('약관에 동의하셔야 합니다');
 	}

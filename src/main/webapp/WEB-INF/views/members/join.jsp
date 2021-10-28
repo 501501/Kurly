@@ -62,12 +62,15 @@
                         </tr>
                         <tr>
                             <th>
-                                <label for="pw2" class="form-label txt">비밀번호</label>
+                                <label for="pw" class="form-label txt">비밀번호</label>
                                 <span class="ico">*</span>
                             </th>
                             <td>
-                                <input type="password" name="pw2" class="form-control not pw" id="pw2"
+                                <input type="password" name="pw" class="form-control not pw" id="pw"
                                     placeholder="비밀번호를 입력해주세요">
+                                <div id="pwExplain1"></div>
+		 						<div id="pwExplain2"></div>
+		  						<div id="pwExplain3"></div>
                             </td>
                         </tr>
 
@@ -91,6 +94,7 @@
                             <td>
                                 <input type="text" name="name" class="form-control not name" id="name"
                                     placeholder="이름을 입력해주세요">
+                                <input type="hidden" name="phone_num" value="01015429988" />
                             </td>
                         </tr>
                         <tr>
@@ -168,6 +172,7 @@
                                     <span class="bar"></span>
                                     <input type="text" name="birth[]" id="birth_day" pattern="[0-9]*" value=""
                                         label="생년월일" size="2" maxlength="2" placeholder="DD">
+                                    <input type="hidden" name="birth_date" id="birthdate" />   
                                 </div>
                                 <p class="txt_guide">
                                     <span class="txt bad"></span>
@@ -245,7 +250,7 @@
 
                             <div class="check_view">
                                 <label class="check_agree label_all_check label_block agree">
-                                    <input type="checkbox" name="check-clause" class="check-view cbx check-necessary" />
+                                    <input type="checkbox" name="check-clause" class="check-view cbx" />
                                     <span class="ico"></span>
                                     개인정보 수집이용 동의
                                     <span class="sub">(선택)</span>
@@ -291,7 +296,7 @@
                             <label class="check_agree label_all_check label_block">
                                 <input type="checkbox" name="check-clause" class="check-view cbx check-necessary" />
                                 <span class="ico"></span>
-                                본인은 만 14세 이상입니다.
+                                본인은 만 14세 이상입니다.<span class="sub">(필수)</span>
                             </label>
                         </td>
                     </tr>
