@@ -52,24 +52,16 @@
                                     <a href="/kurly/service/faq">자주하는 질문</a>
                                 </li>
                                 <li>
-                                    <a href="#none"
-                                        onclick="KurlyTrackerLink('/shop/mypage/mypage_qna.php', 'select_service_personal_inquiry_history')">1:1
-                                        문의</a>
+                                    <a href="/kurly/mypage/mypage_qna">1:1 문의</a>
                                 </li>
                                 <li>
-                                    <a href="#none"
-                                        onclick="KurlyTrackerLink('/shop/main/html.php?htmid=mypage/bulk_order.htm', 'select_service_bulk_order')">대량주문
-                                        문의</a>
+                                    <a href="/kurly/mypage/bulk_order">대량주문 문의</a>
                                 </li>
                                 <li>
-                                    <a href="#none"
-                                        onclick="KurlyTrackerLink('/shop/mypage/offer.php', 'select_service_product_offer')">상품
-                                        제안</a>
+                                    <a href="/kurly/mypage/offer">상품 제안</a>
                                 </li>
                                 <li>
-                                    <a href="#none"
-                                        onclick="KurlyTrackerLink('/shop/mypage/echo_packing.php', 'select_service_eco_packing_feedback')">에코포장
-                                        피드백</a>
+                                    <a href="/kurly/mypage/echo_packing">에코포장 피드백</a>
                                 </li>
                             </ul>
                         </div>
