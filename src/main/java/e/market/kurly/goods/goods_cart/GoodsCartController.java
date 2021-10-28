@@ -30,19 +30,7 @@ public class GoodsCartController {
 	private DestinationService destinationService;
 	@Autowired
 	private OrderService orderService;
-	
-	@GetMapping("insert")
-	public String insert(GoodsCartDTO cartDTO, HttpSession session) throws Exception {
-		MembersDTO membersDTO = (MembersDTO)session.getAttribute("member");
-//		String userId = membersDTO.getId();
-		if(membersDTO == null) {
-			return "redirect: ../../members/login";			
-		}
-		cartDTO.setUserId(membersDTO.getId());
-		cartService.insert(cartDTO);
 
-		return "redirect: ./";	
-	}
 	
 	@PostMapping("insert")
 	public ModelAndView insert(String userId, int amount, int product_id) throws Exception {
@@ -54,7 +42,7 @@ public class GoodsCartController {
 		cartDTO.setProduct_id(product_id);
 		cartService.insert(cartDTO);
 		
-		mv.setViewName("./");
+		mv.setViewName("redirect: ./");
 		
 		return mv; 
 	}

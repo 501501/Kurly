@@ -191,7 +191,7 @@
                                         구매 가능한 상품을 확인하세요!
                                         <div class="group_button double">
                                             <button type="button" class="btn default login" onclick="location.href='${pageContext.request.contextPath}/members/login';">로그인</button>
-                                            <button type="button" class="btn active searchAddress">
+                                            <button type="button" class="btn active searchAddress" onclick="address_searching()">
                                                 <span class="ico"></span>
                                                 주소검색
                                             </button>
@@ -534,7 +534,8 @@
             <!-- gnb 종료 -->
         </div>
     </header>
-
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>	    
+<script src="/kurly/resources/js/addressSelect.js"></script>
 </body>
 
 </html>

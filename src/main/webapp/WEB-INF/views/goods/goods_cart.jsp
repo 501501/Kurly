@@ -69,26 +69,96 @@ $(function(){
             <link rel="stylesheet" type="text/css" href="/asset/css/cart/list.bundle.css?ver=1.41.1">
             <link rel="preload" as="script" href="/asset/js/cart/list.bundle.js?ver=1.41.1">
             <h3 class="screen_out">장바구니 상품 목록</h3>
-            <form>
-                <div id="cartItemList" class="only_pc" style="min-height: 563px;">
-                    <div class="empty">
-                        <div class="cart_item no_item">
-                            <div class="cart_select">
-                                <div class="inner_select"><label class="check"><input type="checkbox" name="checkAll"
-                                            disabled="" checked=""><span class="ico"></span>전체선택 (0/0)</label><a
-                                        href="#none" class="btn_delete">선택삭제</a></div>
-                            </div>
-                            <div class="inner_empty"><span class="bg"></span>
-                                <p class="txt">장바구니에 담긴 상품이 없습니다</p>
-                                <div class="btn_submit"><button type="button" class="btn disabled">상품을 담아주세요</button>
-                                </div>
-                            </div>
-                            <div class="cart_select">
-                                <div class="inner_select"><label class="check"><input type="checkbox" name="checkAll"
-                                            disabled="" checked=""><span class="ico"></span>전체선택 (0/0)</label><a
-                                        href="#none" class="btn_delete">선택삭제</a></div>
-                            </div>
-                        </div>
+
+		            <form>
+		                <div id="cartItemList" class="only_pc" style="min-height: 563px;">
+		                
+		                <c:choose>
+   							<c:when test="${map.count == 0}">
+		                
+		                    <div class="empty">
+		                        <div class="cart_item no_item">
+		                            <div class="cart_select">
+		                                <div class="inner_select"><label class="check"><input type="checkbox" name="checkAll"
+		                                            disabled="" checked=""><span class="ico"></span>전체선택 (0/0)</label><a
+		                                        href="#none" class="btn_delete">선택삭제</a></div>
+		                            </div>
+		                            <div class="inner_empty"><span class="bg"></span>
+		                                <p class="txt">장바구니에 담긴 상품이 없습니다</p>
+		                                <div class="btn_submit"><button type="button" class="btn disabled">상품을 담아주세요</button>
+		                                </div>
+		                            </div>
+		
+		                            
+		                            </div>
+		                            <div class="cart_select">
+		                                <div class="inner_select"><label class="check"><input type="checkbox" name="checkAll"
+		                                            disabled="" checked=""><span class="ico"></span>전체선택 (0/0)</label><a
+		                                        href="#none" class="btn_delete">선택삭제</a></div>
+		                            </div>
+		                        </div>
+            				</c:when>
+            				
+            				<c:otherwise>
+            					<div>
+									<input type="checkbox" id="cbxAll" name="cbxAll" class="cbxSelect"/>
+									<label for="cbxAll">전체선택</label> 
+									<span>&nbsp;&nbsp;</span> <input type="button" value="선택삭제" onclick="deleteCbx()" class="btn_delete" />
+								</div>
+								<hr/>
+
+							    <table border="1" width="400px">
+							    	<tr>
+							        	<th>선택</th>
+							            <th>상품명</th>
+							            <th>단가</th>
+							            <th>수량</th>
+							            <th>금액</th>
+							            <th>&nbsp;</th>
+							            </tr>
+							            <input type="text" id="hiddenVal" value="${fn:length(map.list)}" hidden="hidden" />
+							            <input type="text" id="userIdVal" value="${map.userId}" hidden="hidden" />  
+            				
+            							<c:forEach var="row" items="${map.list}" varStatus="status">
+					              		  <tr align="center">
+						                	<td>
+						                		<input type="checkbox" id="cbx_${status.index}" name="cbx_minor" class="cbxSelect cbxMinor" checked="checked"
+						                		value="${row.cart_id}"/>
+
+						                	</td>
+						                
+						                    <td>${row.product_name}</td>
+						                    
+						                    <td><fmt:formatNumber value="${row.price}"
+						                            pattern="#,###,###" /></td>
+						                            
+						                    <td>
+												<div>
+													<button type="button" class="btn minus off" data-item-id="${row.product_id}" data-opt="decrease"
+													onclick="minusAmount(${row.cart_id})">-</button>
+													
+													<input type="number" style="width:20px;" value="${row.amount}" class="num" id="stepperCounter" />
+													
+													<button type="button" class="btn plus" data-item-id="${row.product_id}" data-opt="increase"
+													onclick="plusAmount(${row.cart_id})">+</button>
+												</div>
+												
+						                            <input type="hidden" name="cart_id" id="cart_id${status.index}"
+						                            value="${row.cart_id}">                             
+						                    </td>
+						                    <td><fmt:formatNumber value="${row.money}"
+						                            pattern="#,###,###" /></td>
+						                    <td><a href="./deleteOne?cart_id=${row.cart_id}">X</a>
+						                    </td>
+					                	</tr>
+                 					</c:forEach>
+          						 </table>
+            					</c:otherwise>
+            			</c:choose>
+            
+            
+            
+            
                         <div class="cart_result">
                             <div class="inner_result" style="top: 60px;">
                                 <div class="cart_delivery">
@@ -99,7 +169,7 @@ $(function(){
                                 <div class="amount_view">
                                     <dl class="amount">
                                         <dt class="tit">상품금액</dt>
-                                        <dd class="price"><span class="num">0</span><span class="won">원</span></dd>
+                                        <dd class="price"><span class="num">${map.sumMoney}</span><span class="won">원</span></dd>
                                     </dl>
                                     <dl class="amount">
                                         <dt class="tit">상품할인금액</dt>
@@ -107,11 +177,11 @@ $(function(){
                                     </dl>
                                     <dl class="amount">
                                         <dt class="tit">배송비</dt>
-                                        <dd class="price"><span class="num">0</span><span class="won">원</span></dd>
+                                        <dd class="price"><span class="num">${map.fee}</span><span class="won">원</span></dd>
                                     </dl>
                                     <dl class="amount lst">
                                         <dt class="tit">결제예정금액</dt>
-                                        <dd class="price"><span class="num">0</span><span class="won">원</span></dd>
+                                        <dd class="price"><span class="num">${map.sum}</span><span class="won">원</span></dd>
                                     </dl>
                                     <div class="reserve"></div>
                                 </div>
