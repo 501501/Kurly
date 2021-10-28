@@ -123,6 +123,7 @@ public class MembersController {
 		ModelAndView mv = new ModelAndView();
 		
 		membersDTO = membersService.getLogin(membersDTO);
+		System.out.println(membersDTO.getId());
 		if(membersDTO != null) {
 			System.out.println("로그인 완료");
 			session.setAttribute("member", membersDTO);
