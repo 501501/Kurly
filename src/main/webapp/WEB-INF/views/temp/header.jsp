@@ -122,7 +122,7 @@
                                     </a>
                                 </li>
                                 <li class="menu2">
-                                    <a href="./html/new/new.html" class="link new">
+                                    <a href="/kurly/goods/goods_list/new" class="link new">
                                         <span class="txt">신상품</span>
                                     </a>
                                 </li>

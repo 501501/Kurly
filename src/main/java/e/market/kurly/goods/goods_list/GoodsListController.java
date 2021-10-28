@@ -1,6 +1,7 @@
 package e.market.kurly.goods.goods_list;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,6 +20,13 @@ public class GoodsListController {
 	public ModelAndView best() throws Exception {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("best/best");
+		return mv;
+	}
+	
+	@GetMapping("new")
+	public ModelAndView new_list() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("new/new");
 		return mv;
 	}
 }
