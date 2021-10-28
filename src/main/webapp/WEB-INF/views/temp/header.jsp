@@ -58,56 +58,98 @@
                 </div>
                 
 				<c:if test="${empty member}">
-                <div id="userMenu">
-                    <ul class="list_menu">
-                        <li class="menu none_sub menu_join">
-                            <a href="${pageContext.request.contextPath}/members/join" class="link_menu">회원가입</a>
-                        </li>
-						
-                        <li class="menu none_sub menu_login">
-                            <a href="${pageContext.request.contextPath}/members/login" class="link_menu">로그인</a>
-                        </li>          
-                    </ul>
-                </div>
-               
+                    <div id="userMenu">
+                        <ul class="list_menu">
+                            <li class="menu none_sub menu_join">
+                                <a href="${pageContext.request.contextPath}/members/join" class="link_menu">회원가입</a>
+                            </li>
+
+                            <li class="menu none_sub menu_login">
+                                <a href="${pageContext.request.contextPath}/members/login" class="link_menu">로그인</a>
+                            </li>
+
+                            <li class="menu lst"><a href="${pageContext.request.contextPath}/board/list"
+                                    class="link_menu">고객센터</a>
+                                <ul class="sub">
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/board/list"
+                                            onclick="KurlyTrackerLink('#')">공지사항</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/service/faq"
+                                            onclick="KurlyTrackerLink('#')">자주하는 질문</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/mypage/mypage_qna"
+                                            onclick="KurlyTrackerLink('#')">1:1 문의</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/mypage/bulk_order"
+                                            onclick="KurlyTrackerLink('#')">대량주문 문의</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/mypage/offer"
+                                            onclick="KurlyTrackerLink('#')">상품 제안</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/mypage/echo_packing"
+                                            onclick="KurlyTrackerLink('#')">에코포장 피드백</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
                 </c:if>
-                
-                <li class="menu lst"><a href="${pageContext.request.contextPath}/board/list" class="link_menu">고객센터</a>
-                            <ul class="sub">
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/board/list" onclick="KurlyTrackerLink('#')">공지사항</a>
-                                </li>
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/service/faq" onclick="KurlyTrackerLink('#')">자주하는 질문</a>
-                                </li>
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/mypage/mypage_qna" onclick="KurlyTrackerLink('#')">1:1 문의</a>
-                                </li>
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/mypage/bulk_order" onclick="KurlyTrackerLink('#')">대량주문 문의</a>
-                                </li>
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/mypage/offer" onclick="KurlyTrackerLink('#')">상품 제안</a>
-                                </li>
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/mypage/echo_packing" onclick="KurlyTrackerLink('#')">에코포장 피드백</a>
-                                </li>
-                            </ul>
-                        </li>
-                
+
+
+
+
                 <c:if test="${not empty member}">
-                <ul class="list_menu">
-   					 <li class="menu menu_user">
-        				<a class="link_menu grade_comm" onclick="KurlyTrackerLink('/shop/mypage/mypage_orderlist.php', 'select_my_kurly_tab')">
-	            			<span class="ico_grade grade6">웰컴</span>
-	            			<span class="txt">
-	                			<span class="name">${member.name}</span>
-	                 			<span class="sir">님</span>
-	           				 </span>
-				        </a>
-				    </li>
-				</ul>
-				</c:if>
+                    <div id="userMenu"></div>
+                        <ul class="list_menu">
+                            <li class="menu menu_user">
+                                <a class="link_menu grade_comm"
+                                    onclick="KurlyTrackerLink('/shop/mypage/mypage_orderlist.php', 'select_my_kurly_tab')">
+                                    <span class="ico_grade grade6">웰컴</span>
+                                    <span class="txt">
+                                        <span class="name">${member.name}</span>
+                                        <span class="sir">님</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="menu lst"><a href="${pageContext.request.contextPath}/board/list"
+                                    class="link_menu">고객센터</a>
+                                <ul class="sub">
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/board/list"
+                                            onclick="KurlyTrackerLink('#')">공지사항</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/service/faq"
+                                            onclick="KurlyTrackerLink('#')">자주하는 질문</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/mypage/mypage_qna"
+                                            onclick="KurlyTrackerLink('#')">1:1 문의</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/mypage/bulk_order"
+                                            onclick="KurlyTrackerLink('#')">대량주문 문의</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/mypage/offer"
+                                            onclick="KurlyTrackerLink('#')">상품 제안</a>
+                                    </li>
+                                    <li>
+                                        <a href="${pageContext.request.contextPath}/mypage/echo_packing"
+                                            onclick="KurlyTrackerLink('#')">에코포장 피드백</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </c:if>
             </div>
             <!-- usermenu 종료 -->
 
