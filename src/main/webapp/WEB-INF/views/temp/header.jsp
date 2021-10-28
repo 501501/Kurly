@@ -168,7 +168,7 @@
                                 <div id="addMsgCart" class="msg_cart">
                                     <span class="point"></span>
                                     <div class="inner_msgcart">
-                                        <img src="./resources/img/gnb/bg_1_1.webp" alt="" class="thumb">
+                                        <img src="/kurly/resources/img/gnb/bg_1_1.webp" alt="" class="thumb">
                                         <p id="msgReaddedItem" class="desc">
                                             <span class="tit"></span>
                                             <span class="txt">
@@ -190,7 +190,7 @@
                                         <br>
                                         구매 가능한 상품을 확인하세요!
                                         <div class="group_button double">
-                                            <button type="button" class="btn default login">로그인</button>
+                                            <button type="button" class="btn default login" onclick="location.href='${pageContext.request.contextPath}/members/login';">로그인</button>
                                             <button type="button" class="btn active searchAddress">
                                                 <span class="ico"></span>
                                                 주소검색
@@ -208,8 +208,8 @@
                                     <li class="">
                                         <a class="menu">
                                             <span class="ico">
-                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/1.png" alt="카테고리 아이콘" class="ico_off">
-                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/1-1.png" alt="카테고리 아이콘" class="ico_on">
+                                                <img src="/kurly/resources/img/gnb_sub/1.png" alt="카테고리 아이콘" class="ico_off">
+                                                <img src="/kurly/resources/img/gnb_sub/1-1.png" alt="카테고리 아이콘" class="ico_on">
                                             </span>
                                             <span class="tit">
                                                 <span class="txt">채소</span>

@@ -48,8 +48,8 @@
                             <input type="hidden" name="returnUrl" value="https://www.kurly.com/shop/member/join.php">
                             <input type="hidden" name="return_url" value="">
                             <input type="hidden" name="close" value="">
-                            <input type="text" name="id" size="20" tabindex="1" value="" placeholder="아이디를 입력해주세요">
-                            <input type="password" name="pw" size="20" tabindex="2" placeholder="비밀번호를 입력해주세요">
+                            <input class="log" type="text" name="id" size="20" tabindex="1" value="" placeholder="아이디를 입력해주세요">
+                            <input class="log" type="password" name="pw" size="20" tabindex="2" placeholder="비밀번호를 입력해주세요">
                             <div class="checkbox_save">
                                 <div class="login_search">      
                                     <a href="./find_id" class="link">아이디 찾기</a>
