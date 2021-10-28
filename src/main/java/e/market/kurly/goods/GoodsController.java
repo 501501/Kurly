@@ -38,5 +38,11 @@ public class GoodsController {
 		return mv;
 	}
 	
+	@GetMapping("event")
+	public ModelAndView event() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("event/event");
+		return mv;
+	}
 
 }

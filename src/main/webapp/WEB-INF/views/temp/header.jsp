@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text./html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text./html; charset=UTF-8" 
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +19,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./resources/css/reset.css">
-    <link rel="stylesheet" href="./resources/css/header.css">
+    <link rel="stylesheet" href="/kurly/resources/css/reset.css">
+    <link rel="stylesheet" href="/kurly/resources/css/header.css">
     <script src="/kurly/resources/js/jquery-3.4.1.js"></script>
     <script src="/kurly/resources/js/header.js"></script>
     <script src="/kurly/resources/js/bxslider-4-4.2.12/dist/jquery.bxslider.min.js"></script>
@@ -97,8 +97,8 @@
             <!-- logo 시작 -->
             <div id="logo">
                 <h1 class="logo">
-                    <a href="/index.html">
-                        <img src="./resources/img/logo/logo.svg" alt="로고" />
+                    <a href="/kurly">
+                        <img src="/kurly/resources/img/logo/logo.svg" alt="로고" />
                     </a>
                 </h1>
             </div>
@@ -148,7 +148,7 @@
                                 <form>
                                     <input type="text" id="sword" name="sword" value required="required" label="검색어"
                                         placeholder="검색어를 입력해주세요." class="inp_search">
-                                    <input type="image" src="./resources/img/gnb/search.jpg" class="btn_search">
+                                    <input type="image" src="/kurly/resources/img/gnb/search.jpg" class="btn_search">
                                     <div class="init">
                                         <button type="reset" id="searchInit" class="btn_delete">검색어 삭제하기</button>
                                     </div>
@@ -208,8 +208,8 @@
                                     <li class="">
                                         <a class="menu">
                                             <span class="ico">
-                                                <img src="./resources/img/gnb_sub/1.png" alt="카테고리 아이콘" class="ico_off">
-                                                <img src="./resources/img/gnb_sub/1-1.png" alt="카테고리 아이콘" class="ico_on">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/1.png" alt="카테고리 아이콘" class="ico_off">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/1-1.png" alt="카테고리 아이콘" class="ico_on">
                                             </span>
                                             <span class="tit">
                                                 <span class="txt">채소</span>
@@ -243,8 +243,8 @@
                                     <li class="">
                                         <a class="menu">
                                             <span class="ico">
-                                                <img src="./resources/img/gnb_sub/2.png" alt="카테고리 아이콘" class="ico_off">
-                                                <img src="./resources/img/gnb_sub/2-1.png" alt="카테고리 아이콘" class="ico_on">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/2.png" alt="카테고리 아이콘" class="ico_off">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/2-1.png" alt="카테고리 아이콘" class="ico_on">
                                             </span>
                                             <span class="tit">
                                                 <span class="txt">과일·견과·쌀</span>
@@ -278,8 +278,8 @@
                                     <li class="">
                                         <a class="menu">
                                             <span class="ico">
-                                                <img src="./resources/img/gnb_sub/3.png" alt="카테고리 아이콘" class="ico_off">
-                                                <img src="./resources/img/gnb_sub/3-1.png" alt="카테고리 아이콘" class="ico_on">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/3.png" alt="카테고리 아이콘" class="ico_off">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/3-1.png" alt="카테고리 아이콘" class="ico_on">
                                             </span>
                                             <span class="tit">
                                                 <span class="txt">수산·해산·건어물</span>
@@ -313,8 +313,8 @@
                                     <li class="">
                                         <a class="menu">
                                             <span class="ico">
-                                                <img src="./resources/img/gnb_sub/4.png" alt="카테고리 아이콘" class="ico_off">
-                                                <img src="./resources/img/gnb_sub/4-1.png" alt="카테고리 아이콘" class="ico_on">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/4.png" alt="카테고리 아이콘" class="ico_off">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/4-1.png" alt="카테고리 아이콘" class="ico_on">
                                             </span>
                                             <span class="tit">
                                                 <span class="txt">정육·계란</span>
@@ -348,8 +348,8 @@
                                     <li class="">
                                         <a class="menu">
                                             <span class="ico">
-                                                <img src="./resources/img/gnb_sub/5.png" alt="카테고리 아이콘" class="ico_off">
-                                                <img src="./resources/img/gnb_sub/5-1.png" alt="카테고리 아이콘" class="ico_on">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/5.png" alt="카테고리 아이콘" class="ico_off">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/5-1.png" alt="카테고리 아이콘" class="ico_on">
                                             </span>
                                             <span class="tit">
                                                 <span class="txt">국·반찬·메인요리</span>
@@ -380,8 +380,8 @@
                                     <li class="">
                                         <a class="menu">
                                             <span class="ico">
-                                                <img src="./resources/img/gnb_sub/6.png" alt="카테고리 아이콘" class="ico_off">
-                                                <img src="./resources/img/gnb_sub/6-1.png" alt="카테고리 아이콘" class="ico_on">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/6.png" alt="카테고리 아이콘" class="ico_off">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/6-1.png" alt="카테고리 아이콘" class="ico_on">
                                             </span>
                                             <span class="tit">
                                                 <span class="txt">샐러드·간편식</span>
@@ -412,8 +412,8 @@
                                     <li class="">
                                         <a class="menu">
                                             <span class="ico">
-                                                <img src="./resources/img/gnb_sub/7.png" alt="카테고리 아이콘" class="ico_off">
-                                                <img src="./resources/img/gnb_sub/7-1.png" alt=" 카테고리 아이콘" class="ico_on">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/7.png" alt="카테고리 아이콘" class="ico_off">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/7-1.png" alt=" 카테고리 아이콘" class="ico_on">
                                             </span>
                                             <span class="tit">
                                                 <span class="txt">면·양념·오일</span>
@@ -444,8 +444,8 @@
                                     <li class="">
                                         <a class="menu">
                                             <span class="ico">
-                                                <img src="./resources/img/gnb_sub/8.png" alt="카테고리 아이콘" class="ico_off">
-                                                <img src="./resources/img/gnb_sub/8-1.png" alt="카테고리 아이콘" class="ico_on">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/8.png" alt="카테고리 아이콘" class="ico_off">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/8-1.png" alt="카테고리 아이콘" class="ico_on">
                                             </span>
                                             <span class="tit">
                                                 <span class="txt">생수·음료·우유·커피</span>
@@ -473,8 +473,8 @@
                                     <li class="">
                                         <a class="menu">
                                             <span class="ico">
-                                                <img src="./resources/img/gnb_sub/9.png" alt="카테고리 아이콘" class="ico_off">
-                                                <img src="./resources/img/gnb_sub/9-1.png" alt="카테고리 아이콘" class="ico_on"></span>
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/9.png" alt="카테고리 아이콘" class="ico_off">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/9-1.png" alt="카테고리 아이콘" class="ico_on"></span>
                                             <span class="tit">
                                                 <span class="txt">간식·과자·떡</span>
                                             </span>
@@ -498,8 +498,8 @@
                                     <li class="">
                                         <a class="menu">
                                             <span class="ico">
-                                                <img src="./resources/img/gnb_sub/10.png" alt="카테고리 아이콘" class="ico_off">
-                                                <img src="./resources/img/gnb_sub/10-1.png" alt="카테고리 아이콘" class="ico_on">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/10.png" alt="카테고리 아이콘" class="ico_off">
+                                                <img src="${pageContext.request.contextPath}/resources/img/gnb_sub/10-1.png" alt="카테고리 아이콘" class="ico_on">
                                             </span>
                                             <span class="tit">
                                                 <span class="txt">베이커리·치즈·델리</span>

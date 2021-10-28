@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -63,7 +62,7 @@
                     <ul class="ad_1_list_1">
 
                         <li>
-                            <a href="/html/ad_1_list/ad_1_1.html"><img src="./resources/img/ad_1/1.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_1_1"><img src="./resources/img/ad_1/1.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>친환경 채 도라지 150g</span>
                             </div>
@@ -76,7 +75,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="/html/ad_1_list/ad_1_2.html"><img src="./resources/img/ad_1/2.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_1_2"><img src="./resources/img/ad_1/2.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>친환경 아욱 & 근대 2종</span>
                             </div>
@@ -89,7 +88,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="/html/ad_1_list/ad_1_3.html"><img src="./resources/img/ad_1/3.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_1_3"><img src="./resources/img/ad_1/3.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[Everyday] 야채죽</span>
                             </div>
@@ -103,7 +102,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_1_list/ad_1_4.html"><img src="./resources/img/ad_1/4.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_1_4"><img src="./resources/img/ad_1/4.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[라메종드아모린] 살레위드 솔티드 버터 캐러멜 2종</span>
                             </div>
@@ -131,22 +130,22 @@
         <article>
             <div class="ad_2">
                 <div class="ad_2_tit main_tit">
-                    <h3><a href="/html/event/event.html">특가/혜택 &#10095;</a></h3>
+                    <h3><a href="./goods/event">특가/혜택 &#10095;</a></h3>
                 </div>
                 <div class="ad_2_list">
                     <ul>
                         <li>
-                            <a href="/html/ad_2_list/ad_2_1.html"><img src="./resources/img/ad_2/1.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_2_1"><img src="./resources/img/ad_2/1.jpg" alt=""></a>
                             <p>소중한 식사 최대 15% 할인</p>
                             <span>판교에서 소문난 반찬가게</span>
                         </li>
                         <li>
-                            <a href="/html/ad_2_list/ad_2_2.html"><img src="./resources/img/ad_2/2.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_2_2"><img src="./resources/img/ad_2/2.jpg" alt=""></a>
                             <p>해밀 최대 16% 할인</p>
                             <span>바다가 담긴 간편식</span>
                         </li>
                         <li>
-                            <a href="/html/ad_2_list/ad_2_3.html"><img src="./resources/img/ad_2/3.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_2_3"><img src="./resources/img/ad_2/3.jpg" alt=""></a>
                             <p>풀무원다논 최대 15% 할인</p>
                             <span>맛있게 챙기는 유산균</span>
                         </li>
@@ -158,12 +157,12 @@
         <article class="margin_wrap">
             <div class="ad_3">
                 <div class="ad_3_tit main_tit">
-                    <h3><a href="/html/bargain/bargain.html">놓치면 후회할 가격 &#10095;</a></h3>
+                    <h3><a href="./goods/goods_list/bargain">놓치면 후회할 가격 &#10095;</a></h3>
                 </div>
                 <div class="ad_3_list">
                     <ul class="ad_3_list_1">
                         <li>
-                            <a href="/html/ad_3_list/ad_3_1.html"><img src="./resources/img/ad_3/1.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_3_1"><img src="./resources/img/ad_3/1.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[3분포차] 직화닭목살구이</span>
                             </div>
@@ -177,7 +176,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_3_list/ad_3_2.html"><img src="./resources/img/ad_3/2.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_3_2"><img src="./resources/img/ad_3/2.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[미소향] 국내산 소고기 견과육포 80g</span>
                             </div>
@@ -191,7 +190,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_3_list/ad_3_3.html"><img src="./resources/img/ad_3/3.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_3_3"><img src="./resources/img/ad_3/3.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[모노키친] 소고기 스키야키</span>
                             </div>
@@ -205,7 +204,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_3_list/ad_3_4.html"><img src="./resources/img/ad_3/4.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_3_4"><img src="./resources/img/ad_3/4.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[마이셰프] 소고기고추잡채 & 꽃빵</span>
                             </div>
@@ -231,56 +230,56 @@
         <article>
             <div class="ad_5">
                 <div class="ad_5_tit main_tit">
-                    <h3><a href="/html/best/best.html">MD의 추천</a></h3>
+                    <h3><a href="./goods/goods_list/best">MD의 추천</a></h3>
                 </div>
                 <div class="category">
                     <ul class="category_list">
                         <li>
-                            <a href="/html/gnb_sub/1_vag/1.html">
+                            <a href="./gnb_sub/1_vag/1">
                                 채소
                             </a>
                         </li>
                         <li>
-                            <a href="/html/gnb_sub/2_fru/1.html">
+                            <a href="./gnb_sub/2_fru/1">
                                 과일·견과·쌀
                             </a>
                         </li>
                         <li>
-                            <a href="/html/gnb_sub/3_fish/1.html">
+                            <a href="./gnb_sub/3_fish/1">
                                 수산·해산·건어물
                             </a>
                         </li>
                         <li>
-                            <a href="/html/gnb_sub/4_meat/1.html">
+                            <a href="./gnb_sub/4_meat/1">
                                 정육·계란
                             </a>
                         </li>
                         <li>
-                            <a href="/html/gnb_sub/5_side/1.html">
+                            <a href="./gnb_sub/5_side/1">
                                 국·반찬·메인요리
                             </a>
                         </li>
                         <li>
-                            <a href="/html/gnb_sub/6_salad/1.html">
+                            <a href="./gnb_sub/6_salad/1">
                                 샐러드·간편식
                             </a>
                         </li>
                         <li>
-                            <a href="/html/gnb_sub/7_oil/1.html">
+                            <a href="./gnb_sub/7_oil/1">
                                 면·양념·오일 </a>
                         </li>
                         <li>
-                            <a href="/html/gnb_sub/8_drink/1.html">
+                            <a href="./gnb_sub/8_drink/1">
                                 생수·음료·우유·커피
                             </a>
                         </li>
                         <li>
-                            <a href="/html/gnb_sub/9_snack/1.html">
+                            <a href="./gnb_sub/9_snack/1">
                                 간식·과자·떡
                             </a>
                         </li>
                         <li>
-                            <a href="/html/gnb_sub/10_bake/1.html">
+                            <a href="./gnb_sub/10_bake/1">
                                 베이커리·치즈·델리
                             </a>
                         </li>
@@ -290,7 +289,7 @@
                 <div class="ad_5_list margin_wrap">
                     <ul class="ad_5_list_1 clearfix">
                         <li>
-                            <a href="/html/ad_5_list/ad_5_1.html"><img src="./resources/img/ad_5/1.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_5_1"><img src="./resources/img/ad_5/1.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>GAP 햇사레 황도 복숭아 4kg (13내)</span>
                             </div>
@@ -304,7 +303,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_5_list/ad_5_2.html"><img src="./resources/img/ad_5/2.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_5_2"><img src="./resources/img/ad_5/2.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>GAP 햇사레 황도 복숭아 2.5kg (10내)</span>
                             </div>
@@ -318,7 +317,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_5_list/ad_5_3.html"><img src="./resources/img/ad_5/3.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_5_3"><img src="./resources/img/ad_5/3.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[타미나] 부드러운 황도 복숭아 1.8kg 5~6입</span>
                             </div>
@@ -332,7 +331,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_5_list/ad_5_4.html"><img src="./resources/img/ad_5/4.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_5_4"><img src="./resources/img/ad_5/4.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[에이플] GAP 샤인머스캣 포도 500g 1팩</span>
                             </div>
@@ -348,7 +347,7 @@
                 </div>
 
                 <div class="ad_5_sub_tit margin_wrap">
-                    <a href="/html/gnb_sub/2_fru/1.html">과일·견과·쌀 전체보기 &#10095;</a>
+                    <a href="./gnb_sub/2_fru/1">과일·견과·쌀 전체보기 &#10095;</a>
                 </div>
             </div>
         </article>
@@ -362,12 +361,12 @@
         <article class="margin_wrap">
             <div class="ad_6">
                 <div class="ad_6_tit main_tit">
-                    <h3><a href="/html/best/best.html">지금 가장 핫한 상품 ></a></h3>
+                    <h3><a href="./goods/goods_list/best">지금 가장 핫한 상품 ></a></h3>
                 </div>
                 <div class="ad_6_list">
                     <ul class="ad_6_list_1">
                         <li>
-                            <a href="/html/ad_6_list/ad_6_1.html"><img src="./resources/img/ad_6/1.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_6_1"><img src="./resources/img/ad_6/1.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[숭의가든] 한돈 목살 양념구이</span>
                             </div>
@@ -381,7 +380,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_6_list/ad_6_2.html"><img src="./resources/img/ad_6/2.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_6_2"><img src="./resources/img/ad_6/2.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[화오미] 마라샹궈</span>
                             </div>
@@ -395,7 +394,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_6_list/ad_6_3.html"><img src="./resources/img/ad_6/3.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_6_3"><img src="./resources/img/ad_6/3.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[진가] 진생용의 해물 누룽지탕</span>
                             </div>
@@ -409,7 +408,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_6_list/ad_6_4.html"><img src="./resources/img/ad_6/4.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_6_4"><img src="./resources/img/ad_6/4.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[존쿡 델리미트] 바베큐 백립 450g (냉동)</span>
                             </div>
@@ -435,7 +434,7 @@
                 <div class="ad_7_list">
                     <ul class="ad_7_list_1">
                         <li>
-                            <a href="/html/ad_7_list/ad_7_1.html"><img src="./resources/img/ad_7/1.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_7_1"><img src="./resources/img/ad_7/1.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[아이닉] 대용량 에어프라이어 16L (7종 조리도구 포함)</span>
                             </div>
@@ -449,7 +448,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_7_list/ad_7_2.html"><img src="./resources/img/ad_7/2.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_7_2"><img src="./resources/img/ad_7/2.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[닌자] 프로페셔널 초퍼 NJ1001KR</span>
                             </div>
@@ -463,7 +462,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_7_list/ad_7_3.html"><img src="./resources/img/ad_7/3.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_7_3"><img src="./resources/img/ad_7/3.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[드레텍] 요거트 메이커 YM-100</span>
                             </div>
@@ -477,7 +476,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_7_list/ad_7_4.html"><img src="./resources/img/ad_7/4.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_7_4"><img src="./resources/img/ad_7/4.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[제니퍼룸] 워킷블렌더 3종</span>
                             </div>
@@ -502,7 +501,7 @@
                 <div class="ad_8_list">
                     <ul class="ad_8_list_1">
                         <li>
-                            <a href="/html/ad_8_list/ad_8_1.html"><img src="./resources/img/ad_8/1.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_8_1"><img src="./resources/img/ad_8/1.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[쌜모네키친] 오로라 생연어 (냉장)</span>
                             </div>
@@ -516,7 +515,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_8_list/ad_8_2.html"><img src="./resources/img/ad_8/2.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_8_2"><img src="./resources/img/ad_8/2.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[더슬로우메이드] 쫀득 찰호팡 3종</span>
                             </div>
@@ -530,7 +529,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_8_list/ad_8_3.html"><img src="./resources/img/ad_8/3.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_8_3"><img src="./resources/img/ad_8/3.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[에이플] GAP 샤인머스캣 포도 500g 1팩</span>
                             </div>
@@ -544,7 +543,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_8_list/ad_8_4.html"><img src="./resources/img/ad_8/4.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_8_4"><img src="./resources/img/ad_8/4.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[성지농장] 동물복지 한돈 삼겹살 2종 (냉장)</span>
                             </div>
@@ -575,7 +574,7 @@
                 <div class="ad_9_list">
                     <ul class="ad_9_list_1">
                         <li>
-                            <a href="/html/ad_9_list/ad_9_1.html"><img src="./resources/img/ad_9/1.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_9_1"><img src="./resources/img/ad_9/1.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[삼립] 클래식 우유 식빵</span>
                             </div>
@@ -589,7 +588,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_9_list/ad_9_2.html"><img src="./resources/img/ad_9/2.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_9_2"><img src="./resources/img/ad_9/2.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[한트바커] 그릴드 냉장 닭가슴살 2종</span>
                             </div>
@@ -603,7 +602,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_9_list/ad_9_3.html"><img src="./resources/img/ad_9/3.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_9_3"><img src="./resources/img/ad_9/3.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[KF365] 깐마늘 200g</span>
                             </div>
@@ -617,7 +616,7 @@
                         </li>
 
                         <li>
-                            <a href="/html/ad_9_list/ad_9_4.html"><img src="./resources/img/ad_9/4.jpg" alt=""></a>
+                            <a href="./goods/goods_view/ad_9_4"><img src="./resources/img/ad_9/4.jpg" alt=""></a>
                             <div class="pro_tit">
                                 <span>[종가집] 국산콩 두부 반모 200g (부침/찌개 겸용)</span>
                             </div>
