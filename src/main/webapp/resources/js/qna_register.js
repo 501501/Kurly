@@ -1,12 +1,11 @@
 /**
  * qna_register.js
  */
- 
-let files = '<div>';
-files = files + '<input type="file" name="files2">';
-files = files + '<button type="button" class="del">';
-files = files + '업로드 삭제</button>';
-files = files + '</div>';
+
+let files = '<input type="file" name="files2" style="width:50%" class="linebg">';
+files += '<a href="javascript:add()">';
+files += '<img src="../resources/img/btn_upload_minus.webp" text-align="absmiddle">';
+files += '</a>';
 
 let count = 1;
 
@@ -42,6 +41,11 @@ $("#phone_ck_hidden").click(function(){
 
 $("#order_inquiry").click(function(){
 	openWin();
+});
+
+$("#submit").click(function(){
+	alert("click");
+	$("#fm").submit();
 });
 
 function openWin() {
