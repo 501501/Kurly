@@ -73,7 +73,7 @@ button {
 }
 
 .bnr_header .btn_top_bnr {
-    background-image: url(/img/sub_header/ico_close_fff_42x42.webp);
+    background-image: url(../img/sub_header/ico_close_fff_42x42.webp);
     width: 42px;
     height: 42px;
     background-color: transparent;
@@ -188,7 +188,7 @@ button {
     top: 16px;
     width: 8px;
     height: 5px;
-    background: url(/img/usermenu/ico_down_8x5.webp) no-repeat 0 0;
+    background: url(/temp/img/usermenu/ico_down_8x5.webp) no-repeat 0 0;
 }
 
 #userMenu .lst .sub {
