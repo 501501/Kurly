@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+form {
+    display: block;
+}
+
+button {
+    cursor: pointer;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+
+/* footer */
+
+
+
+footer #footer {
+    width: 1080px;
+    height: 300px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    font-weight: 400;
+    letter-spacing: -.2px;
+}
+
+footer .footer_cc {
+    float: left;
+    width: 540px;
+}
+
+footer .tit_cc {
+    padding: 29px 0 2px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #333;
+    line-height: 24px;
+}
+
+footer .cc_call {
+    padding-top: 20px;
+}
+
+footer .cc_view {
+    overflow: hidden;
+    padding-top: 16px;
+}
+
+footer .cc_call .tit {
+    padding-top: 4px;
+    font-weight: 800;
+    font-size: 28px;
+    color: #333;
+    line-height: 36px;
+    letter-spacing: -.5px;
+    white-space: nowrap;
+}
+
+footer .cc_view .tit {
+    float: left;
+    width: 140px;
+    margin-right: 16px;
+}
+
+footer .cc_bulkorder .txt,
+footer .footer_cc .list {
+    font-size: 14px;
+    color: #999;
+    line-height: 22px;
+    letter-spacing: -.2px;
+    margin-top: 12px;
+}
+
+footer .footer_cc .list dt {
+    display: block;
+    margin-top: -12px;
+    font-size: 13px;
+    line-height: 25px;
+}
+
+footer .footer_cc .list dd {
+    color: #999;
+    display: block;
+    margin-inline-start: 40px;
+    font-size: 13px;
+}
+
+footer .cc_bulkorder .tit,
+footer .cc_kakao .tit,
+footer .cc_qna .tit {
+    height: 40px;
+    padding-top: 7px;
+    margin-top: 3px;
+    border: 1px solid #e3e3e3;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #333;
+    line-height: 22px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
+/* company */
+
+footer .company {
+    width: 540px;
+    float: left;
+    padding-top: 29px;
+    font-size: 12px;
+    color: #999;
+    line-height: 20px;
+}
+
+footer .company a {
+    text-decoration: none;
+}
+
+footer .company .list {
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+footer .company .list li {
+    float: left;
+    padding-right: 16px;
+    font-size: 15px;
+}
+
+footer .company .bar {
+    padding: 0 4px 0 3px;
+}
+
+footer .company .link {
+    color: #5f0080;
+}
+
+footer .list_sns {
+    float: left;
+    padding-top: 16px;
+}
+
+footer .company .copy {
+    display: block;
+    padding-top: 16px;
+    font-style: normal;
+    font-size: 10px;
+    color: #949296;
+    line-height: 22px;
+    letter-spacing: 0;
+}
+
+footer .list_sns li {
+    float: left;
+}
+
+footer .list_sns .link_sns {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+footer .list_sns img {
+    width: 100%;
+}
