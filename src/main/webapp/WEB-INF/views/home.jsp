@@ -223,7 +223,7 @@
 
         <article class="margin_wrap">
             <div class="ad_4">
-                <img src="/resources/img/ad_4/ad.webp" alt="">
+                <img src="./resources/img/ad_4/ad.webp" alt="">
             </div>
         </article>
 
