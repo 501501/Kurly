@@ -31,12 +31,14 @@
             loadHTML("/header.html");
         </script>
     </header>
-
+    <input hidden="hidden" value="${member.id}" name="user_id">
+	<input hidden="hidden" value="${param.goodsNo}" name="product_id">
+	<input hidden="hidden" value="" name="amount">
+	
     <section>
         <article>
-
             <div class="section_view">
-
+				
                 <div id="shareLayer">
                     <div class="layer_share">
                         <div class="inner_layersns">

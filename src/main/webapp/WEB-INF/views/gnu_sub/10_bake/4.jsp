@@ -1,9 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="ko">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="마켓컬리 :: 내일의 장보기, 마켓컬리">
     <meta name="description" content="Love Food, Love Life. 마켓컬리! 당일 수확 채소, 과일, 맛집 음식까지 내일 아침 문 앞에서 만나요!">
@@ -18,14 +20,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../../resources/css/reset.css">
-    <link rel="stylesheet" href="../../../resources/css/gnb_sub/list/1.css">
-    <script src="../../../resources/js/jquery-3.4.1.js" type="text/javascript" text="javascript"></script>
-    <script src="../../../resources/js/add.js"></script>
-
-
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/gnb_sub/list/1.css">
+    <script src="../../resources/js/jquery-3.4.1.js" type="text/javascript" text="javascript"></script>
+    <script src="../../resources/js/add.js"></script>
+    <c:import url="../../temp/header.jsp"></c:import>
 </head>
-
 <body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
 
     <header id="header" class="fixed-top">
@@ -37,67 +37,65 @@
     <section>
         <article>
             <div class="ad margin_wrap">
-                <a href="#"><img src="../../../resources/img/gnb_ad/2.webp" alt=""></a>
+                <a href="#"><img src="../../resources/img/gnb_ad/10.webp" alt=""></a>
             </div>
         </article>
 
         <article class="con margin_wrap">
             <div class="title">
-                <h3>과일·견과·쌀</h3>
-            </div>
-            <ul class="list">
+                <h3>베이커리·치즈·델리</h3>
+            </div> 
+
+            <ul class="list on">
                 <li><a href="">전체보기</a></li>
-                <li><a href="../../../html/gnb_sub/2_fru/1.html">친환경</a></li>
-                <li><a href="../../../html/gnb_sub/2_fru/2.html">제철과일</a></li>
-                <li><a href="../../../html/gnb_sub/2_fru/3.html">국산과일</a></li>
-                <li><a href="../../../html/gnb_sub/2_fru/4.html">수입과일</a></li>
-                <li><a href="../../../html/gnb_sub/2_fru/5.html">간편과일</a></li>
-                <li><a href="../../../html/gnb_sub/2_fru/6.html">냉동·건과일</a></li>
-                <li><a href="../../../html/gnb_sub/2_fru/7.html">견과류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/10_bake/1">식빵·빵류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/10_bake/2">잼·버터·스프레드</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/10_bake/3">케이크·파이·디저트</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/10_bake/4">치즈</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/10_bake/5">델리</a></li>
             </ul>
 
             <div class="goods">
                 <ul class="goods_list">
                     <li>
-                        <a href="#"><img src="../../../resources/img/gnb_list/2/1/1.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/10/4/1.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>[유가원]유기농 스위트 코코넛칩 180g</span>
+                            <span>아구어 아르디가스나 2종</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>9,900원</span>
+                            <span>22,000원</span>
                         </div>
                         <div class="cart_btn">
-                            <a href="#"><img src="../../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
+                            <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
                         </div>
                     </li>
 
                     <li>
-                        <a href="#"><img src="../../../resources/img/gnb_list/2/1/2.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/10/4/2.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>[선물세트]유가원 데일리 믹스넛츠(더레드) 2종</span>
+                            <span>[본파이어]마리네이드 그릴 치즈]</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>48,100원</span>
+                            <span>8,800원</span>
                         </div>
                         <div class="cart_btn">
-                            <a href="#"><img src="../../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
+                            <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
                         </div>
                     </li>
 
-
                     <li>
-                        <a href="#"><img src="../../../resources/img/gnb_list/2/1/3.jpg" alt=""></a>
+                        <a href="#"><img src="../../resources/img/gnb_list/10/4/3.jpg" alt=""></a>
                         <div class="pro_tit">
-                            <span>[메이커스키친]유기농 피스타치오]</span>
+                            <span>[싱글톤]체더 치즈 2종</span>
                         </div>
                         <div class="pro_cou">
                             <span></span>
-                            <span>19,500원</span>
+                            <span>7,200원</span>
                         </div>
                         <div class="cart_btn">
-                            <a href="#"><img src="../../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
+                            <a href="#"><img src="../../resources/img/gnb_list/ico_cart.svg" alt=""></a>
                         </div>
                     </li>
                 </ul>
@@ -112,7 +110,6 @@
             loadHTML("/footer.html");
         </script>
     </footer>
-
+	<c:import url="../../temp/footer.jsp"></c:import>
 </body>
-
 </html>

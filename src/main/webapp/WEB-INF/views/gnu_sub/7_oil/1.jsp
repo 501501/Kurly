@@ -43,12 +43,12 @@
 
             <ul class="list">
                 <li><a href="">전체보기</a></li>
-                <li><a href="../../html/gnb_sub/7_oil/1.html">파스타·면류</a></li>
-                <li><a href="../../html/gnb_sub/7_oil/2.html">식초·소스·드레싱</a></li>
-                <li><a href="../../html/gnb_sub/7_oil/3.html">양념·액젓·장류</a></li>
-                <li><a href="../../html/gnb_sub/7_oil/4.html">식용유·참기름·오일</a></li>
-                <li><a href="../../html/gnb_sub/7_oil/5.html">소금·설탕·향신료</a></li>
-                <li><a href="../../html/gnb_sub/7_oil/6.html">밀가루·가루·믹스</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/7_oil/1">파스타·면류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/7_oil/2">식초·소스·드레싱</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/7_oil/3">양념·액젓·장류</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/7_oil/4">식용유·참기름·오일</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/7_oil/5">소금·설탕·향신료</a></li>
+                <li><a href="${pageContext.request.contextPath}/gnb_sub/7_oil/6">밀가루·가루·믹스</a></li>
             </ul>
 
             <div class="goods">
