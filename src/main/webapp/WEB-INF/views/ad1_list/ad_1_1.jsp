@@ -33,7 +33,7 @@
     </header>
     <input hidden="hidden" value="${member.id}" name="user_id">
 	<input hidden="hidden" value="${param.goodsNo}" name="product_id">
-	<input hidden="hidden" value="" name="amount">
+	<input hidden="hidden" value="" name="amount" id="transferAmount">
 	
     <section>
         <article>
@@ -125,10 +125,10 @@
                                             <span class="tit_item">구매수량</span>
                                             <div class="option">
                                                 <span class="count">
-                                                    <button type="button" class="btn down on">수량내리기</button>
-                                                    <input type="number" readonly="readonly" onfocus="this.blur()"
-                                                        class="inp">
-                                                    <button type="button" class="btn up on">수량올리기</button>
+                                                    <button type="button" class="btn down on" onclick="downNumber()">수량내리기</button>
+                                                    <input type="number" readonly="readonly" 
+                                                        class="inp" id="finalAmount">
+                                                    <button type="button" class="btn up on" onclick="upNumber()">수량올리기</button>
                                                 </span>
                                                 <span class="price">
                                                     <span class="dc_price">4,990원</span>
@@ -137,7 +137,7 @@
                                         </li>
                                     </ul>
                                 </div>
-
+<!--onfocus="this.blur()" -->
                                 <div class="total">
                                     <div class="price">
                                         <strong class="tit">총 상품금액 :</strong>
@@ -177,13 +177,18 @@
                                     </div>
                                 </div>
                             </div>
+                                <form name="cartForm" method="post" action="../goods_cart/insert" id="cartForm">
+	                                	<input hidden="hidden" value="${member.id}" name="userId">
+										<input hidden="hidden" value="${param.goodsNo}" name="product_id">
+										<input hidden="hidden" value="" name="amount" id="transferAmount">
+                               </form>
                             <div class="group_btn off">
                                 <div class="view_function">
                                     <button type="button" class="btn btn_alarm">재입고 알림</button>
                                 </div>
-                                <span class="btn_type1">
-                                    <button type="button" class="txt_type"> 장바구니 담기</button>
-                                </span>
+                                	<span class="btn_type1">
+	                                    <button type="button" class="txt_type" id="goCart" onclick="goCart();"> 장바구니 담기</button>
+                               		</span>
                             </div>
                         </div>
                     </div>
@@ -243,5 +248,7 @@
         </script>
     </footer>
 <c:import url="../temp/footer.jsp"></c:import>
+<script type="text/javascript" src="../../resources/js/up_down.js"></script>
+
 </body>
 </html>

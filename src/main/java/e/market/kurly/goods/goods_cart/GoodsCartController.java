@@ -44,6 +44,17 @@ public class GoodsCartController {
 		return "redirect: ./";	
 	}
 	
+	@PostMapping("insert")
+	public ModelAndView insert(GoodsCartDTO cartDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		cartService.insert(cartDTO);
+		
+		mv.setViewName("./");
+		
+		return mv; 
+	}
+	
 	@GetMapping("/")
 	public ModelAndView list(HttpSession session, GoodsCartDTO cartDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();

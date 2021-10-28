@@ -32,7 +32,9 @@
             loadHTML("/header.html");
         </script>
     </header>
-
+	<input hidden="hidden" value="${member.id}" name="user_id">
+	<input hidden="hidden" value="${param.goodsNo}" name="product_id">
+	<input hidden="hidden" value="" name="amount" id="transferAmount">
     <section>
         <article>
 
@@ -115,10 +117,10 @@
                                             <span class="tit_item">구매수량</span>
                                             <div class="option">
                                                 <span class="count">
-                                                    <button type="button" class="btn down on">수량내리기</button>
-                                                    <input type="number" readonly="readonly" onfocus="this.blur()"
-                                                        class="inp">
-                                                    <button type="button" class="btn up on">수량올리기</button>
+                                                    <button type="button" class="btn down on" onclick="downNumber()">수량내리기</button>
+                                                    <input type="number" readonly="readonly" 
+                                                        class="inp" id="finalAmount">
+                                                    <button type="button" class="btn up on" onclick="upNumber()">수량올리기</button>
                                                 </span>
                                                 <span class="price">
                                                     <span class="dc_price">4,290원</span>
@@ -232,5 +234,6 @@
         </script>
     </footer>
 <c:import url="../temp/footer.jsp"></c:import>
+<script type="text/javascript" src="../../resources/js/up_down.js"></script>
 </body>
 </html>
