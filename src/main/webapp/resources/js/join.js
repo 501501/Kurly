@@ -128,7 +128,7 @@ $('.rem_ck').on('click', function(){
 });
 
 
-$('#birth_day').blur(function(){
+$('.birth_day').change(function(){
 	var byear = $('#birth_year').val();
 	var bmonth = $('#birth_month').val();
 	var bday = $('#birth_day').val();
