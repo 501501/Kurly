@@ -108,22 +108,133 @@ button {
 }
 
 /* 메뉴 시작 */
+/* 유저 메뉴 시작 */
 
-#userMenu {
+#topMenu {
     width: 1080px;
+    height: 37px;
     margin: 0 auto;
 }
 
-#userMenu a {
-    text-decoration: none;
+/* 배송 안내 시작 */
+
+.delivery {
+    float: left;
+    padding-top: 10px;
 }
 
-#userMenu * {
+.bnr_delivery img {
+    width: 121px;
+    height: 22px;
+}
+
+/* 유저메뉴 로그아웃 상태 시작 */
+
+#userMenu_out * {
+    font-family: noto sans;
     font-weight: 400;
     letter-spacing: -.3px;
 }
 
-#userMenu:after {
+#userMenu_out {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+#userMenu_out .list_menu {
+    float: right;
+}
+
+#userMenu_out .menu {
+    position: relative;
+    z-index: 400;
+    float: left;
+}
+
+#userMenu_out .link_menu {
+    float: left;
+    height: 37px;
+    padding: 0 22px 0 10px;
+    color: #333;
+    line-height: 35px;
+    white-space: nowrap;
+}
+
+#userMenu_out .none_sub .link_menu {
+    padding-right: 11px;
+}
+
+#userMenu_out .menu_join .link_menu {
+    color: #5f0080;
+}
+
+#userMenu_out .menu:after {
+    content: "";
+    float: right;
+    width: 1px;
+    height: 13px;
+    margin-top: 12px;
+    background-color: #d8d8d8;
+}
+
+#userMenu_out .menu_login .link_menu {
+    padding: 0 16px 0 15px;
+}
+
+#userMenu_out .menu:before {
+    content: "";
+    position: absolute;
+    right: 11px;
+    top: 16px;
+    width: 8px;
+    height: 5px;
+    background: url(https://res.kurly.com/pc/ico/1908/ico_down_8x5.png) no-repeat 0 0;
+}
+
+#userMenu_out .menu.lst:before {
+    right: 0;
+}
+
+#userMenu_out .menu.lst .link_menu {
+    padding-right: 13px;
+}
+
+#userMenu_out .sub {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 34px;
+    width: 102px;
+    padding: 3px 9px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+#userMenu_out .lst .sub {
+    left: auto;
+    right: 0;
+}
+
+#userMenu_out .sub a {
+    font-size: 12px;
+    color: #404040;
+    line-height: 24px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+
+
+#userMenu_out a {
+    text-decoration: none;
+}
+
+#userMenu_out * {
+    font-weight: 400;
+    letter-spacing: -.3px;
+}
+
+#userMenu_out:after {
     content: "";
     display: block;
     overflow: hidden;
@@ -133,29 +244,29 @@ button {
     text-indent: -9999px;
 }
 
-#userMenu .list_menu {
+#userMenu_out .list_menu {
     float: right;
 }
 
-#userMenu .menu {
+#userMenu_out .menu {
     position: relative;
     z-index: 400;
     float: left;
 }
 
-#userMenu .menu_join .link_menu {
+#userMenu_out .menu_join .link_menu {
     color: #5f0080;
 }
 
-#userMenu .none_sub .link_menu {
+#userMenu_out .none_sub .link_menu {
     padding-right: 11px;
 }
 
-#userMenu .menu_login .link_menu {
+#userMenu_out .menu_login .link_menu {
     padding: 0 16px 0 15px;
 }
 
-#userMenu .link_menu {
+#userMenu_out .link_menu {
     float: left;
     height: 37px;
     padding: 0 22px 0 10px;
@@ -164,7 +275,7 @@ button {
     white-space: nowrap;
 }
 
-#userMenu .menu:after {
+#userMenu_out .menu:after {
     content: "";
     float: right;
     width: 1px;
@@ -173,30 +284,30 @@ button {
     background-color: #d8d8d8;
 }
 
-#userMenu .menu.lst:after {
+#userMenu_out .menu.lst:after {
     content: normal;
 }
 
-#userMenu .menu.lst:before {
+#userMenu_out .menu.lst:before {
     right: 0;
 }
 
-#userMenu .menu.lst:before {
+#userMenu_out .menu.lst:before {
     content: "";
     position: absolute;
     right: 11px;
     top: 16px;
     width: 8px;
     height: 5px;
-    background: url(/kurly/resources/img/usermenu/ico_down_8x5.webp) no-repeat 0 0;
+    background: url(/img/usermenu/ico_down_8x5.webp) no-repeat 0 0;
 }
 
-#userMenu .lst .sub {
+#userMenu_out .lst .sub {
     left: auto;
     right: 0;
 }
 
-#userMenu .sub {
+#userMenu_out .sub {    
     display: none;
     position: absolute;
     left: 0;
@@ -207,51 +318,11 @@ button {
     background-color: #fff;
 }
 
-#userMenu .menu:hover .sub {
+#userMenu_out .menu:hover .sub {
     display: block;
 }
 
-
-#userMenu .ico_grade {
-    float: left;
-    margin-top: 10px;
-}
-
-#userMenu .txt {
-    float: left;
-    padding-left: 4px;
-}
-
-#userMenu .name {
-    overflow: hidden;
-    float: left;
-    text-align: right;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-#userMenu .sir {
-    float: left;
-    padding: 0 1px 0 2px;
-}
-
-#userMenu .menu_user .sub {
-    left: auto;
-    right: 11px;
-}
-
-#userMenu .sub {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 34px;
-    width: 102px;
-    padding: 3px 9px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-}
-
-#userMenu .sub a {
+#userMenu_out .sub a {
     font-size: 12px;
     color: #404040;
     line-height: 24px;
@@ -259,9 +330,85 @@ button {
     cursor: pointer;
 }
 
-#userMenu .menu:hover .sub {
+
+/* 유저메뉴 로그아웃 종료 */
+
+
+/* 유저메뉴 로그인 상태 시작 */
+
+
+#userMenu_in .menu:before {
+    content: "";
+    position: absolute;
+    right: 11px;
+    top: 16px;
+    width: 8px;
+    height: 5px;
+    background: url(https://res.kurly.com/pc/ico/1908/ico_down_8x5.png) no-repeat 0 0;
+}
+
+#userMenu_in .grade_comm .ico_grade {
+    display: inline-block;
+    min-width: 38px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 30px;
+    font-size: 9px;
+    color: #fff;
+    line-height: 14px;
+    text-align: center;
+}
+
+#userMenu_in .grade_comm .grade6 {
+    border: 1px solid #949296;
+    background-color: #fff;
+    color: #949296;
+}
+
+#userMenu_in .ico_grade {
+    float: left;
+    margin-top: 10px;
+}
+
+#userMenu_in .txt {
+    float: left;
+    padding-left: 4px;
+}
+
+#userMenu_in .name {
+    overflow: hidden;
+    float: left;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#userMenu_in .sir {
+    float: left;
+    padding: 0 1px 0 2px;
+}
+
+#userMenu_in .menu_user .sub {
+    left: auto;
+    right: 11px;
+}
+ 
+#userMenu_in .menu:hover .sub {
     display: block;
 }
+
+#userMenu_in .menu:after {
+    content: "";
+    float: right;
+    width: 1px;
+    height: 13px;
+    margin-top: 12px;
+    background-color: #d8d8d8;
+}
+
+/* 유저메뉴 로
+그인 종료 */
+
 
 /* 로고 시작 */
 

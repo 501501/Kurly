@@ -58,7 +58,7 @@
                 </div>
                 
 				<c:if test="${empty member}">
-                    <div id="userMenu">
+                    <div id="userMenu_out">
                         <ul class="list_menu">
                             <li class="menu none_sub menu_join">
                                 <a href="${pageContext.request.contextPath}/members/join" class="link_menu">회원가입</a>
@@ -103,10 +103,8 @@
                 </c:if>
 
 
-
-
                 <c:if test="${not empty member}">
-                    <div id="userMenu"></div>
+                    <div id="userMenu_in"></div>
                         <ul class="list_menu">
                             <li class="menu menu_user">
                                 <a class="link_menu grade_comm"
