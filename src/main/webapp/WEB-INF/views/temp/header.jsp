@@ -58,96 +58,69 @@
                 </div>
                 
 				<c:if test="${empty member}">
-                    <div id="userMenu_out">
-                        <ul class="list_menu">
-                            <li class="menu none_sub menu_join">
-                                <a href="${pageContext.request.contextPath}/members/join" class="link_menu">회원가입</a>
-                            </li>
+        <div id="userMenu_out">
+            <ul class="list_menu">
+                <li class="menu none_sub menu_join">
+                    <a href="${pageContext.request.contextPath}/members/join" class="link_menu">회원가입</a>
+                </li>
+        
+                <li class="menu none_sub menu_login">
+                    <a href="${pageContext.request.contextPath}/members/login" class="link_menu">로그인</a>
+                </li>
+        
+                <li class="menu lst"><a href="/shop/board/list.php?id=notice" class="link_menu">고객센터</a>
+                    <ul class="sub">
+                        <li><a href="/kurly/board/list" onclick="KurlyTrackerLink('/shop/board/list.php?id=notice', 'select_my_kurly_notice_list')">공지사항</a></li>
+                        <li><a href="/kurly/service/faq" onclick="KurlyTrackerLink('/shop/service/faq.php', 'select_my_kurly_frequently_qna')">자주하는 질문</a></li>
+                        <li><a href="/kurly/mypage/mypage_qna" onclick="KurlyTrackerLink('/shop/mypage/mypage_qna.php', 'select_my_kurly_personal_inquiry_history')">1:1 문의</a></li>
+                        <li><a href="/kurly/mypage/bulk_order" onclick="KurlyTrackerLink('/shop/main/html.php?htmid=mypage/bulk_order.htm', 'select_my_kurly_bulk_order')">대량주문 문의</a></li>
+                        <li><a href="/kurly/mypage/offer" onclick="KurlyTrackerLink('/shop/mypage/offer.php', 'select_my_kurly_product_offer')">상품 제안</a></li>
+                        <li><a href="/kurly/mypage/echo_packing" onclick="KurlyTrackerLink('/shop/mypage/echo_packing.php', 'select_my_kurly_eco_packing_feedback')">에코포장 피드백</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </c:if>
 
-                            <li class="menu none_sub menu_login">
-                                <a href="${pageContext.request.contextPath}/members/login" class="link_menu">로그인</a>
-                            </li>
+   
+    <c:if test="${not empty member}">
+        <div id="userMenu_in">
+            <ul class="list_menu">
 
-                            <li class="menu lst"><a href="${pageContext.request.contextPath}/board/list"
-                                    class="link_menu">고객센터</a>
-                                <ul class="sub">
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/board/list"
-                                            onclick="KurlyTrackerLink('#')">공지사항</a>
-                                    </li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/service/faq"
-                                            onclick="KurlyTrackerLink('#')">자주하는 질문</a>
-                                    </li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/mypage/mypage_qna"
-                                            onclick="KurlyTrackerLink('#')">1:1 문의</a>
-                                    </li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/mypage/bulk_order"
-                                            onclick="KurlyTrackerLink('#')">대량주문 문의</a>
-                                    </li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/mypage/offer"
-                                            onclick="KurlyTrackerLink('#')">상품 제안</a>
-                                    </li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/mypage/echo_packing"
-                                            onclick="KurlyTrackerLink('#')">에코포장 피드백</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </div>
-                </c:if>
-
-
-                <c:if test="${not empty member}">
-                    <div id="userMenu_in"></div>
-                        <ul class="list_menu">
-                            <li class="menu menu_user">
-                                <a class="link_menu grade_comm"
-                                    onclick="KurlyTrackerLink('/shop/mypage/mypage_orderlist.php', 'select_my_kurly_tab')">
-                                    <span class="ico_grade grade6">웰컴</span>
-                                    <span class="txt">
-                                        <span class="name">${member.name}</span>
-                                        <span class="sir">님</span>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="menu lst"><a href="${pageContext.request.contextPath}/board/list"
-                                    class="link_menu">고객센터</a>
-                                <ul class="sub">
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/board/list"
-                                            onclick="KurlyTrackerLink('#')">공지사항</a>
-                                    </li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/service/faq"
-                                            onclick="KurlyTrackerLink('#')">자주하는 질문</a>
-                                    </li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/mypage/mypage_qna"
-                                            onclick="KurlyTrackerLink('#')">1:1 문의</a>
-                                    </li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/mypage/bulk_order"
-                                            onclick="KurlyTrackerLink('#')">대량주문 문의</a>
-                                    </li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/mypage/offer"
-                                            onclick="KurlyTrackerLink('#')">상품 제안</a>
-                                    </li>
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/mypage/echo_packing"
-                                            onclick="KurlyTrackerLink('#')">에코포장 피드백</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </c:if>
+                <li class="menu menu_user">
+                    <a class="link_menu grade_comm" onclick="KurlyTrackerLink('/shop/mypage/mypage_orderlist.php', 'select_my_kurly_tab')">
+                        <span class="ico_grade grade6">웰컴</span>
+                        <span class="txt">
+                            <span class="name">${member.name}</span>
+                            <span class="sir">님</span>
+                        </span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="/kurly/order/mypage_orderlist">주문 내역</a></li>
+                        <li><a href="#none">선물 내역</a></li>
+                        <li><a href="/kurly/mypage/destination/list">배송지관리</a></li>
+                        <li><a href="/kurly/mypage/mypage_review">상품 후기</a></li>
+                        <li><a>상품 문의</a></li>
+                        <li><a href="#none" onclick="KurlyTrackerLink('/shop/mypage/mypage_emoney.php', 'select_my_kurly_point_history', {selection_type: 'dropdown'})">적립금</a></li>
+                        <li><a href="#none" onclick="KurlyTrackerLink('/shop/mypage/mypage_coupon.php', 'select_my_kurly_coupon_list', {selection_type: 'dropdown'})">쿠폰</a></li>
+                        <li><a href="#none">개인 정보 수정</a></li>
+                        <li><a href="/kurly/members/logout">로그아웃</a></li>
+                    </ul>
+                </li>
+        
+                <li class="menu lst"><a href="/shop/board/list.php?id=notice" class="link_menu">고객센터</a>
+                    <ul class="sub">
+                        <li><a href="/kurly/board/list" onclick="KurlyTrackerLink('/shop/board/list.php?id=notice', 'select_my_kurly_notice_list')">공지사항</a></li>
+                        <li><a href="/kurly/service/faq" onclick="KurlyTrackerLink('/shop/service/faq.php', 'select_my_kurly_frequently_qna')">자주하는 질문</a></li>
+                        <li><a href="/kurly/mypage/mypage_qna" onclick="KurlyTrackerLink('/shop/mypage/mypage_qna.php', 'select_my_kurly_personal_inquiry_history')">1:1 문의</a></li>
+                        <li><a href="/kurly/mypage/bulk_order" onclick="KurlyTrackerLink('/shop/main/html.php?htmid=mypage/bulk_order.htm', 'select_my_kurly_bulk_order')">대량주문 문의</a></li>
+                        <li><a href="/kurly/mypage/offer" onclick="KurlyTrackerLink('/shop/mypage/offer.php', 'select_my_kurly_product_offer')">상품 제안</a></li>
+                        <li><a href="/kurly/mypage/echo_packing" onclick="KurlyTrackerLink('/shop/mypage/echo_packing.php', 'select_my_kurly_eco_packing_feedback')">에코포장 피드백</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </c:if>
             </div>
             <!-- usermenu 종료 -->
 
