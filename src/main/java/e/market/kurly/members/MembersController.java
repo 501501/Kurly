@@ -14,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 import e.market.kurly.mypage.destination.DestinationDAO;
 import e.market.kurly.mypage.destination.DestinationDTO;
 import e.market.kurly.mypage.destination.DestinationService;
+import e.market.kurly.mypage.emoney.BuyingDTO;
+import e.market.kurly.mypage.emoney.EmoneyService;
 
 @Controller
 @RequestMapping("/members/**")
@@ -23,6 +25,8 @@ public class MembersController {
 	private MembersService membersService;
 	@Autowired
 	private DestinationService destinationService;
+	@Autowired
+	private EmoneyService emoneyService;
 	
 /** ------------------------------------------------*/
 	
@@ -40,6 +44,8 @@ public class MembersController {
 		
 		// 회원 가입정보 추가 (members table)
 		int result = membersService.setRegisterMember(membersDTO);
+		// 가입시 초기적립금 지급
+		emoneyService.welcomePoint(membersDTO);
 		// 배송지 테이블에 추가 (destination table)
 		int destinationResult = destinationService.setInsert(destinationDTO);
 		

@@ -83,5 +83,11 @@
  	</select>
  	<!-- //내 보유적립금 불러오기 END -->
  	
+ 	<!-- 가입시 최초적립금 -->
+ 	<insert id="welcomePoint" parameterType="MembersDTO">
+ 		INSERT INTO EMONEY (EMONEY_SEQ, USER_ID, EMONEY, BALANCE, MEMO, STATUS)
+		VALUES (EMONEY_SEQ.NEXTVAL, #{id}, 5000, 5000, '[최초적립금]5000원 적립', 'N')
+ 	</insert>
+ 	
  	
  </mapper>

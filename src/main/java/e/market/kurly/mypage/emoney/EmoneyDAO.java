@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import e.market.kurly.members.MembersDTO;
+
 @Repository
 public class EmoneyDAO {
 	
@@ -51,6 +53,11 @@ public class EmoneyDAO {
 	/* 총 보유적립금 가져오기 */
 	public int getTotalPoint(String userId) throws Exception {
 		return sqlSession.selectOne(NAMESPACE+"getPointInfo", userId);
+	}
+	
+	/* 가입시 최초적립금 */
+	public int welcomePoint(MembersDTO membersDTO) throws Exception {
+		return sqlSession.insert(NAMESPACE+"welcomePoint", membersDTO);
 	}
 
 }
