@@ -138,7 +138,7 @@
 			<input type="text" name="goodsNo" value="${no}">
         </c:forEach>
         <input type="number" id="totalSum" name="price" value="${sum}" hidden="hidden">
-        <input type="hidden" id="emoneySend" name="use_point"/>
+        <input type="hidden" id="emoneySend" value="0" name="use_point"/>
 	</div>
 	</form>
 
