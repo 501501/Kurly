@@ -65,7 +65,7 @@ public class OrderController {
 	}
 	
 	@PostMapping("order_end")
-	public ModelAndView order_end(String [] productName, Long [] productNum, Long price, Long [] goodsNo, HttpSession session, int use_point) throws Exception {
+	public ModelAndView order_end(String [] productName, String [] productNum, Long price, Long [] goodsNo, HttpSession session, int use_point) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		MembersDTO membersDTO = (MembersDTO) session.getAttribute("member");
 		
@@ -78,7 +78,7 @@ public class OrderController {
 			// 상품번호 (파라미터에서 받아오기)
 			orderDTO.setGoodsNo(goodsNo[i]);
 			orderDTO.setProductName(productName[i]);
-			orderDTO.setProductNum(productNum[i]);
+			orderDTO.setProductNum(Long.parseLong(productNum[i]));
 			orderDTO.setPrice(price);
 			orderDTO.setId(membersDTO.getId());
 			
