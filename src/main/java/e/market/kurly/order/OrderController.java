@@ -71,10 +71,8 @@ public class OrderController {
 		
 		int size = productName.length;
 		OrderDTO orderDTO = new OrderDTO();
-		Long orderNum = orderService.getSeq().getCurrval();
 		
 		for(int i=0; i<size; i++) {
-			orderDTO.setOrderNum(orderNum);
 			// 상품번호 (파라미터에서 받아오기)
 			orderDTO.setGoodsNo(goodsNo[i]);
 			orderDTO.setProductName(productName[i]);
@@ -84,19 +82,19 @@ public class OrderController {
 			
 			orderService.setInsert(orderDTO);
 		}
-		// 구매 적립금 적립
+			// 구매 적립금 적립
 			BuyingDTO buyingDTO = new BuyingDTO();
 			buyingDTO.setOrder_number(orderDTO.getOrderNum().intValue());
 			buyingDTO.setUserId(orderDTO.getId());
 			buyingDTO.setTotalPay(orderDTO.getPrice().intValue());
 			emoneyService.setBuyingPoint(buyingDTO);
 				
-		// 적립금 차감
+			// 적립금 차감
 			buyingDTO.setUse_point(use_point);
 			buyingDTO.setUse_point(buyingDTO.getUse_point());
 			emoneyService.usePoint(buyingDTO);
 				
-		// 구매완료 후 기존 장바구니 전체 삭제
+			// 구매완료 후 기존 장바구니 전체 삭제
 			GoodsCartDTO cartDTO = new GoodsCartDTO();
 			cartDTO.setUserId(orderDTO.getId());
 			cartService.deleteAll(cartDTO);

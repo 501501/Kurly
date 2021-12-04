@@ -26,11 +26,10 @@
 	</select>
 	
 	<insert id="setInsert" parameterType="OrderDTO">
+		<selectKey order="BEFORE" resultType="Long" keyProperty="orderNum">
+				select orderlist_seq.nextval from dual
+		</selectKey>
 		INSERT INTO ORDERLIST
 		VALUES (#{orderNum}, #{goodsNo}, #{productName}, #{productNum}, #{price}, sysdate, sysdate+1, 'n', #{id})
 	</insert>
-	
-	<select id="getSeq" resultType="SequenceDTO">
-		select ORDERLIST_SEQ.nextval, ORDERLIST_SEQ.currval from dual
-	</select>
  </mapper>
